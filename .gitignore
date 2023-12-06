@@ -5,9 +5,14 @@
 # follows official upstream conventions:
 # https://www.drupal.org/docs/develop/using-composer
 
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/example.settings.local.php
+
 # Ignore configuration files that may contain sensitive information
-/web/sites/*/*settings*.php
-/web/sites/*/*services*.yml
+web/sites/default/settings.local.php
+web/sites/*/services*.yml
+!web/sites/*/services.yml
 
 # Ignore paths that may contain user-generated content
 /web/sites/*/files
@@ -60,3 +65,8 @@
 /drush
 /drupal.phar
 /drupal
+
+#/drush/Commands/contrib/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/composer/
