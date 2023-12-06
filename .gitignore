@@ -69,4 +69,5 @@ web/sites/*/services*.yml
 #/drush/Commands/contrib/
 /web/modules/contrib/
 /web/themes/contrib/
+/web/libraries/
 /web/profiles/composer/
