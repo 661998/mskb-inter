@@ -1,0 +1,11 @@
+ug_settings.settings:
+  path: '/ug/config/settings'
+  defaults:
+    _form: 'Drupal\ug_settings\Form\UgSettingsForm'
+    _title: 'UG Admin settings'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'TRUE' 
+      _role: 'administrator'            
+  options:
+    no_cache: 'TRUE'

@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+
+/** 
+ * Implements hook_mail(). 
+*/
+function ug_notification_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'add_notification':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t($params['subject'], $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/** 
+ * Implements hook_views_pre_build(). 
+*/
+function ug_notification_views_pre_build(ViewExecutable $view) {
+  if($view->storage->id() == 'admission_notification' && $view->current_display == 'page_1') {
+    $view->filter['field_ad_sms_notification_value']->accept_null = TRUE;
+    $view->filter['field_ad_email_notification_value']->accept_null = TRUE;
+  }
+}

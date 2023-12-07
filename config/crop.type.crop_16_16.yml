@@ -1,0 +1,12 @@
+uuid: 5e4728d1-da5c-4428-927d-491085e9c2fb
+langcode: en
+status: true
+dependencies: {  }
+label: 'Crop 16:16'
+id: crop_16_16
+description: ''
+aspect_ratio: '16:16'
+soft_limit_width: 150
+soft_limit_height: 150
+hard_limit_width: null
+hard_limit_height: null

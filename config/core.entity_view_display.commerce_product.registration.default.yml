@@ -1,0 +1,51 @@
+uuid: 5675b142-3191-4e1a-9d74-dbfab039d418
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.registration
+    - field.field.commerce_product.registration.field_session
+    - field.field.commerce_product.registration.field_stream
+  module:
+    - commerce_product
+id: commerce_product.registration.default
+targetEntityType: commerce_product
+bundle: registration
+mode: default
+content:
+  field_session:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_stream:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  stores: true
+  uid: true

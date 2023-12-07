@@ -1,0 +1,45 @@
+uuid: 26081359-9f11-42bb-8975-ca46d170f787
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - ug_payment
+    - user
+  theme:
+    - allinonecms
+id: paymentinstruction
+theme: allinonecms
+region: content
+weight: -3
+provider: null
+plugin: payment_instruction_block
+settings:
+  id: payment_instruction_block
+  label: 'Payment Instruction'
+  label_display: '0'
+  provider: ug_payment
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/admission/*\r\n/registration/*\r\n/examination/*\r\n/examination2/*\r\n"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      student: student
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      admission_part_1: admission_part_1
+      examination_part_1: examination_part_1
+      examination_part_2: examination_part_2
+      registration: registration

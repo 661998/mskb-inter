@@ -1,0 +1,23 @@
+uuid: ac835ee8-e4f0-4f46-92bb-5a57f90b4de8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tuition_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_tuition_fee
+field_name: field_tuition_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Tuition Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

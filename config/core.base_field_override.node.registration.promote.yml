@@ -1,0 +1,22 @@
+uuid: 94301b57-861a-4914-bea6-5e6bc815c8bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.registration
+id: node.registration.promote
+field_name: promote
+entity_type: node
+bundle: registration
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

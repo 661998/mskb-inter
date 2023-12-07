@@ -1,0 +1,194 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Install Drupal 9 with Composer.",
+    "type": "project",
+    "license": "MIT",
+    "repositories": {
+        "cropper": {
+            "type": "package",
+            "package": {
+                "name": "cropper/cropper",
+                "version": "4.1.0",
+                "type": "drupal-library",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/fengyuanchen/cropper/archive/refs/tags/v4.1.0.zip"
+                }
+            }
+        },
+        "pdf_using_mpdf":{
+            "type": "package",
+            "package": {
+                "name": "drupal_git/pdf_using_mpdf",
+                "version": "2.2",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/project/pdf_using_mpdf.git",
+                    "type": "git",
+                    "reference": "8.x-2.x"
+                },
+                "require": {
+                    "mpdf/mpdf": "^8.0.4"
+                }
+            }
+        },
+        "fontawesome":{
+            "type": "package",
+            "package": {
+                "name": "fontawesome/fontawesome",
+                "version": "6.1.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://use.fontawesome.com/releases/v6.1.0/fontawesome-free-6.1.0-web.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
+        },
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "require": {
+        "composer/installers": "^1.2 || ^2.0",
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core-recommended": "^10.0",
+        "cweagans/composer-patches": "^1.7",
+        "drush/drush": "^11.6",
+        "drupal/admin_toolbar": "^3.1",
+        "drupal/bootstrap5": "^3.0",
+        "drupal/pathauto": "^1.10",
+        "drupal/profile": "^1.4",
+        "drupal/devel": "^5.1",
+        "drupal/conditional_fields": "^4.0@alpha",
+        "drupal/field_group": "^3.2",
+        "drupal/entity_type_clone": "^4.0",
+        "drupal/image_widget_crop": "^2.3",
+        "drupal/libraries": "^4.0",
+        "cropper/cropper": "^4.1",
+        "drupal/twig_tweak": "^3.1",
+        "drupal/email_registration": "^1.1",
+        "drupal/feeds": "^3.0@beta",
+        "drupal/markup": "^2.0@beta",
+        "drupal/menu_link_attributes": "^1.2",
+        "drupal/fontawesome": "^2.23",
+        "mpdf/mpdf": "^8.1",
+        "drupal/views_bulk_operations": "^4.1",
+        "drupal/hide_revision_field": "^2.2",
+        "drupal/yearonly": "^9.0",
+        "drupal/views_data_export": "^1.3",
+        "drupal/field_permissions": "^1.2",
+        "drupal/tablefield": "^2.3",
+        "drupal/barcodes": "^2.0",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/commerce": "^2.31",
+        "drupal/simple_block": "^1.4",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/registration_role": "^2.0",
+        "drupal/filefield_paths": "^1.0@beta",
+        "drupal/change_pwd_page": "^2.0",
+        "fontawesome/fontawesome": "^6.1",
+        "drupal/superfish": "^1.4",
+        "drupal/administerusersbyrole": "^3.3",
+        "drupal/user_view_mode": "^1.2",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/masquerade": "^2.0@RC",
+        "drupal/redirect_after_login": "^2.7",
+        "drupal/entity_clone": "^2.0@beta",
+        "drupal/phpspreadsheet": "^2.0",
+        "drupal/block_classes": "^1.0",
+        "drupal/core-project-message": "^10.0",
+        "drupal/field_validation": "^1.1"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^10.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/feeds": {
+                "Add a CSV template feature to download a sample CSV file": "https://www.drupal.org/files/issues/2022-07-25/feeds-3186281-30.patch"
+            },
+            "drupal/core": {
+                "Formatter 'URL to image' from ImageUrlFormatter issue": "https://www.drupal.org/files/issues/2022-08-02/3291622-16.patch"
+            },
+            "drupal/change_pwd_page": {
+                "Deprecated function: trim() Passing null to parameter fixed": "https://www.drupal.org/files/issues/2022-09-08/Fixed-deprecated-funciton-php8-3308499-3.patch"
+            },
+            "drupal/commerce": {
+                "commerce-access_denied_after_successfuly_payment": "https://www.drupal.org/files/issues/2020-10-30/commerce-access_denied_after_successfuly_payment-3051241-19.patch"
+            },
+            "drupal/masquerade": {
+                "unmasquerade link shows in menu when not masquerading": "https://www.drupal.org/files/issues/2022-05-06/3271001.patch"
+            }
+         },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            },
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[project-root]/.gitattributes": false
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "web/private/scripts/quicksilver/{$name}/": [
+                "type:quicksilver-script"
+            ]
+        },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": false,
+        "platform": {
+            "php": "8.1"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-project-message": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}

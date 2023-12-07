@@ -1,0 +1,21 @@
+uuid: ba871af4-5517-4f14-b00f-e7ee5e4137a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_date_2
+    - node.type.admission_part_1
+  module:
+    - datetime
+id: node.admission_part_1.field_payment_date_2
+field_name: field_payment_date_2
+entity_type: node
+bundle: admission_part_1
+label: "Payment Date\t2"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

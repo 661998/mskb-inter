@@ -1,0 +1,10 @@
+uuid: 0a7efd53-248b-4015-a337-2c6eafdde265
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.student
+label: Student
+targetEntityType: user
+cache: true

@@ -1,0 +1,8 @@
+uuid: 41a7317e-e83b-4135-b9be-418d67d13ed3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Additional (Arts)'
+vid: additional_arts
+description: 'Use to list Additional Arts subject.'
+weight: 0

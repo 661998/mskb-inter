@@ -1,0 +1,22 @@
+uuid: 7954a2bf-5933-41cb-9b9a-a1ddf8c0a634
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_poor_boys_fund
+field_name: field_poor_boys_fund
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

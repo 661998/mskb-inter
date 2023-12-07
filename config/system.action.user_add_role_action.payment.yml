@@ -1,0 +1,14 @@
+uuid: 6d0c2fd6-adea-4b14-9033-d402960ba39c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.payment
+  module:
+    - user
+id: user_add_role_action.payment
+label: 'Add the Payment role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: payment

@@ -1,0 +1,14 @@
+ug_clc.clc:
+  title: 'Certificate'
+  description: 'CLC, Character & Transfer Certificate'
+  menu_name: main
+  url: "internal:#"
+  enabled: 1
+  expanded: TRUE
+  weight: 5
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-certificate

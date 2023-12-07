@@ -1,0 +1,26 @@
+table{
+  vertical-align:top;
+  border-collapse: collapse;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+p{
+  margin:0px;
+  padding: 0px;
+}
+h2, h3, h4{
+  color:#04519b;
+  margin: 0px;
+  padding: 0px;
+}
+table td,
+table th {
+  font-size: 12px;
+}
+h2{
+  margin:0px;
+  padding: 0px;
+}
+h3{
+  font-size: 16px;
+}

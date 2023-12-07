@@ -1,0 +1,19 @@
+uuid: 6d2a9bfe-bfc9-4e38-900e-770fb9559ef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_utr_ref_number_2
+    - node.type.examination_part_2
+id: node.examination_part_2.field_utr_ref_number_2
+field_name: field_utr_ref_number_2
+entity_type: node
+bundle: examination_part_2
+label: 'UTR/Ref. Number 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: b437605a-8251-47ee-862d-426680037a15
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.examination_part_1
+id: node.examination_part_1.title
+field_name: title
+entity_type: node
+bundle: examination_part_1
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

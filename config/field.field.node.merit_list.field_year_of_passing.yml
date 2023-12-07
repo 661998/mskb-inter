@@ -1,0 +1,21 @@
+uuid: c9db0cd1-db72-40c1-9306-98222805ab5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_of_passing
+    - node.type.merit_list
+  module:
+    - options
+id: node.merit_list.field_year_of_passing
+field_name: field_year_of_passing
+entity_type: node
+bundle: merit_list
+label: 'Year of Passing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

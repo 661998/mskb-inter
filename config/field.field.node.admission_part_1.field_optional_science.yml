@@ -1,0 +1,29 @@
+uuid: 79ea8965-d9a3-41c5-9a52-ca30557b112d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_optional_science
+    - node.type.admission_part_1
+    - taxonomy.vocabulary.optional_science
+id: node.admission_part_1.field_optional_science
+field_name: field_optional_science
+entity_type: node
+bundle: admission_part_1
+label: 'Optional (Science)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      optional_science: optional_science
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

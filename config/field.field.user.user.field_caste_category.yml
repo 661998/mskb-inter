@@ -1,0 +1,21 @@
+uuid: bc97dd4a-6c51-4317-a3d9-eeacbbc4ca2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_caste_category
+  module:
+    - options
+    - user
+id: user.user.field_caste_category
+field_name: field_caste_category
+entity_type: user
+bundle: user
+label: 'Caste Category'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

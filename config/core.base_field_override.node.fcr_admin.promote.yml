@@ -1,0 +1,22 @@
+uuid: b3744896-0cd9-4a16-94a9-d0e072b41c6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fcr_admin
+id: node.fcr_admin.promote
+field_name: promote
+entity_type: node
+bundle: fcr_admin
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

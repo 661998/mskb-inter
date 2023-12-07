@@ -1,0 +1,23 @@
+uuid: 9448e84a-b2f9-4450-b7b8-0c3ad0c762cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_send_to_board
+    - node.type.examination_part_1
+id: node.examination_part_1.field_send_to_board
+field_name: field_send_to_board
+entity_type: node
+bundle: examination_part_1
+label: 'Send to Board'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

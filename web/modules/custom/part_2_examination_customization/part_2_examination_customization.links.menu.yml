@@ -1,0 +1,14 @@
+part_2_examination_customization.part_2:
+  title: 'Part 2'
+  description: 'Part 2 related links.'
+  menu_name: main
+  url: "internal:#"
+  enabled: 1
+  expanded: TRUE
+  weight: 3
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-2

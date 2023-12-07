@@ -1,0 +1,128 @@
+#clc-wrapper {
+    font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+}
+#clc-wrapper {
+    width: 680px;
+    margin: auto;
+}
+#clc-wrapper .clc-header,
+#clc-wrapper .cc-header {
+    margin-top: 50px;
+}
+#clc-wrapper table {
+    width: 100%;
+}
+#clc-wrapper .clc-date,
+#clc-wrapper .tc-date{
+    text-align: right;
+}
+
+#clc-wrapper .form-detail, 
+#clc-wrapper .remark, 
+#clc-wrapper .clabel {
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: justify;
+}
+#clc-wrapper .cc-remark {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 30px;
+}
+#clc-wrapper .tc-detail {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 25px;
+}
+#clc-wrapper .dot {
+    display: inline-block;
+    text-align: center;
+    border-width: 2px;
+    border-bottom: dotted;
+    vertical-align: super;
+}
+#clc-wrapper .cc .dot,
+#clc-wrapper .tc-detail .dot {
+    padding: 0 20px;
+}
+#clc-wrapper .tc-date .dot{
+    border-width: 1px;
+}
+#clc-wrapper .dot.name {
+    width: 490px;
+}
+#clc-wrapper .dot.father {
+    width: 445px;
+    font-weight: normal;
+}
+#clc-wrapper .dot.exam {
+    width: 138px;
+}
+#clc-wrapper .dot.roll {
+    width: 143px;
+}
+#clc-wrapper .dot.session {
+    width: 220px;
+}
+#clc-wrapper .dot.division {
+    width: 175px;
+}
+#clc-wrapper .dot.sub {
+    width: 200px;
+}
+#clc-wrapper .dot.year {
+    width: 140px;
+}
+#clc-wrapper .dot.held {
+    width: 225px;
+}
+#clc-wrapper .dot.exm-roll {
+    width: 250px;
+}
+#clc-wrapper .dot.reg-no {
+    width: 300px;
+}
+#clc-wrapper .note {
+    font-size: 16px;
+}
+#clc-wrapper .footer {
+    font-size: 16px;
+}
+#clc-wrapper .footer td {
+    width: 33%;
+}
+#clc-wrapper .footer td.row-1 {
+    padding: 0px 0px 10px 0px;
+}
+#clc-wrapper .footer td.row-2 {
+    padding: 40px 0px 10px 0px;
+}
+#clc-wrapper .cc-footer td {
+    vertical-align: bottom;
+}
+#clc-wrapper .table-field {
+    width: 100%;
+    border-collapse: collapse;
+}
+#clc-wrapper .table-field th,
+#clc-wrapper .table-field td {
+    padding: 5px;
+    border: 1px solid #000;
+}
+/* print styles */
+@media print {
+    #clc-wrapper .clc-header {
+        margin-top: 250px;
+    }
+    #clc-wrapper .tc-header {
+        margin-top: 280px;
+    }
+    #clc-wrapper .cc-header {
+        margin-top: 160px;
+    }
+}

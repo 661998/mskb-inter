@@ -1,0 +1,21 @@
+uuid: cc5cb994-68b7-431a-b302-af3722b30e4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verification_date
+    - node.type.admission_part_1
+  module:
+    - datetime
+id: node.admission_part_1.field_verification_date
+field_name: field_verification_date
+entity_type: node
+bundle: admission_part_1
+label: 'Verification date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

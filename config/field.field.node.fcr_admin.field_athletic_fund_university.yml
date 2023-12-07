@@ -1,0 +1,23 @@
+uuid: 9f7d17aa-869b-4d55-b5c5-75fcd9715004
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_athletic_fund_university
+    - node.type.fcr_admin
+id: node.fcr_admin.field_athletic_fund_university
+field_name: field_athletic_fund_university
+entity_type: node
+bundle: fcr_admin
+label: 'Athletic Fund (University)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

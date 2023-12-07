@@ -1,0 +1,23 @@
+uuid: abb571b3-ce51-4364-9bd3-0b573883cd24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cost_of_remittance_1x3
+    - node.type.fcr_admin
+id: node.fcr_admin.field_cost_of_remittance_1x3
+field_name: field_cost_of_remittance_1x3
+entity_type: node
+bundle: fcr_admin
+label: 'Cost of Remittance (1x3)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

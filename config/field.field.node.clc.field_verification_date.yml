@@ -1,0 +1,21 @@
+uuid: 2839834c-c907-4876-870c-77ca0b3dac65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verification_date
+    - node.type.clc
+  module:
+    - datetime
+id: node.clc.field_verification_date
+field_name: field_verification_date
+entity_type: node
+bundle: clc
+label: 'Verification date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

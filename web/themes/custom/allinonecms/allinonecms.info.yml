@@ -1,0 +1,20 @@
+name: 'All in One CMS'
+type: theme
+description: 'All in One CMS subtheme based on Bootstrap 5 theme.'
+core_version_requirement: '^9.2 || ^10'
+'base theme': bootstrap5
+libraries:
+  - allinonecms/global-styling
+stylesheets-remove:
+  - '@bootstrap5/css/style.css'
+regions:
+  side_menu: 'Side menu'
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer

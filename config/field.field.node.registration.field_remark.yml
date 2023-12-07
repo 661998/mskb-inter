@@ -1,0 +1,19 @@
+uuid: 72248d85-5248-4699-9130-d0432c0147e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remark
+    - node.type.registration
+id: node.registration.field_remark
+field_name: field_remark
+entity_type: node
+bundle: registration
+label: Remark
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

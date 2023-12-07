@@ -1,0 +1,23 @@
+uuid: d3d2b187-3eb7-4f5a-8dc4-31a11c993e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clc_issued
+    - node.type.clc
+id: node.clc.field_clc_issued
+field_name: field_clc_issued
+entity_type: node
+bundle: clc
+label: 'CLC issued'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

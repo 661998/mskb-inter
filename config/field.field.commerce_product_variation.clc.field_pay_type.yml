@@ -1,0 +1,21 @@
+uuid: 0cc4d3c3-d948-458d-b2a9-39df53e85ec2
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.clc
+    - field.storage.commerce_product_variation.field_pay_type
+  module:
+    - options
+id: commerce_product_variation.clc.field_pay_type
+field_name: field_pay_type
+entity_type: commerce_product_variation
+bundle: clc
+label: 'Pay type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

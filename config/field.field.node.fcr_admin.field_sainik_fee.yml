@@ -1,0 +1,23 @@
+uuid: a3a0b308-c105-4e71-b08f-1b3867334af5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sainik_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_sainik_fee
+field_name: field_sainik_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Sainik fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

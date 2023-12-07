@@ -1,0 +1,21 @@
+uuid: 9aace340-3750-4175-9e8a-e50641990f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nationality
+    - node.type.examination_part_2
+  module:
+    - options
+id: node.examination_part_2.field_nationality
+field_name: field_nationality
+entity_type: node
+bundle: examination_part_2
+label: Nationality
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

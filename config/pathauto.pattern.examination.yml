@@ -1,0 +1,22 @@
+uuid: 72a1eff4-521e-4268-9573-c8642936cc94
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: examination
+label: Examination
+type: 'canonical_entities:node'
+pattern: 'examination/[node:nid]'
+selection_criteria:
+  fbfb07cb-464f-45ec-ad48-f6615b3f794c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: fbfb07cb-464f-45ec-ad48-f6615b3f794c
+    context_mapping:
+      node: node
+    bundles:
+      examination_part_1: examination_part_1
+selection_logic: and
+weight: -9
+relationships: {  }

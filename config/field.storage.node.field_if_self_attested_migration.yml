@@ -1,0 +1,22 @@
+uuid: aa90daff-8dd1-4e11-b061-2926a6ebe40d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_if_self_attested_migration
+field_name: field_if_self_attested_migration
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

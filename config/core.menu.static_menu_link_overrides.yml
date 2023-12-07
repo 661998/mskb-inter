@@ -1,0 +1,39 @@
+_core:
+  default_config_hash: CXhei_vpaZk-3f_Mj2cH0YmpK-ZpKHoSzVA3yZrDq0g
+definitions:
+  contact__site_page:
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+    enabled: true
+  standard__front_page:
+    menu_name: main
+    parent: ''
+    weight: -50
+    expanded: false
+    enabled: false
+  admission_customization__part_1:
+    menu_name: main
+    parent: ''
+    weight: 2
+    expanded: true
+    enabled: true
+  part_2_examination_customization__part_2:
+    menu_name: main
+    parent: ''
+    weight: 3
+    expanded: true
+    enabled: false
+  part_3_examination_customization__part_3:
+    menu_name: main
+    parent: ''
+    weight: 4
+    expanded: true
+    enabled: false
+  admission_customization__examination:
+    menu_name: main
+    parent: admission_customization.part_1
+    weight: 1
+    expanded: true
+    enabled: false

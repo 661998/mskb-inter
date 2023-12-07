@@ -1,0 +1,22 @@
+uuid: 151eed5b-6ce2-4f44-85d7-f33f7c374639
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.transfer_certificate
+id: node.transfer_certificate.promote
+field_name: promote
+entity_type: node
+bundle: transfer_certificate
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

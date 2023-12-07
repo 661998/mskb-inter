@@ -1,0 +1,57 @@
+uuid: 49d6e956-f426-4918-8d92-59cdd5fd79b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intermediate_marksheet
+    - node.type.examination_part_1
+  module:
+    - filefield_paths
+    - image
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[node:field_session:entity:name]/intermarksheet'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: 'intermarksheet-[node:field_application_no]-[node:field_aadhar_number].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.examination_part_1.field_intermediate_marksheet
+field_name: field_intermediate_marksheet
+entity_type: node
+bundle: examination_part_1
+label: 'Intermediate Marksheet'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '100 KB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

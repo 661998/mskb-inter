@@ -1,0 +1,21 @@
+uuid: 702ea23a-23f4-4c23-919e-c27a9d8d7d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_birth
+    - node.type.examination_part_2
+  module:
+    - datetime
+id: node.examination_part_2.field_date_of_birth
+field_name: field_date_of_birth
+entity_type: node
+bundle: examination_part_2
+label: 'Date of Birth'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

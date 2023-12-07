@@ -1,0 +1,25 @@
+uuid: d585652d-e3cb-4882-9fe7-5bcccb29a44f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - ug_miscellaneous
+  theme:
+    - allinonecms
+id: landingpagelinksblock
+theme: allinonecms
+region: content
+weight: 1
+provider: null
+plugin: landing_page_links_block
+settings:
+  id: landing_page_links_block
+  label: 'Landing Page Links Block'
+  label_display: '0'
+  provider: ug_miscellaneous
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/inter-admission\r\n/inter-registration\r\n/ug1-examination\r\n/ug2-examination"

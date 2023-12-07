@@ -1,0 +1,54 @@
+uuid: 5dc59db2-ea3a-4c9f-8c52-0027acfe7ef0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.admission_part_1
+    - node.type.clc
+    - node.type.examination_part_1
+    - node.type.examination_part_2
+    - node.type.registration
+  module:
+    - field_permissions
+    - file
+    - node
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: student
+id: student
+label: Student
+weight: 8
+is_admin: null
+permissions:
+  - 'create admission_part_1 content'
+  - 'create clc content'
+  - 'create examination_part_1 content'
+  - 'create examination_part_2 content'
+  - 'create field_class_roll_no'
+  - 'create field_class_roll_number'
+  - 'create registration content'
+  - 'delete own files'
+  - 'edit own admission_part_1 content'
+  - 'edit own clc content'
+  - 'edit own examination_part_1 content'
+  - 'edit own examination_part_2 content'
+  - 'edit own field_class_roll_no'
+  - 'edit own field_class_roll_number'
+  - 'edit own registration content'
+  - 'view field_class_roll_number'
+  - 'view field_document_verification'
+  - 'view field_form_number'
+  - 'view field_remark'
+  - 'view own field_class_roll_no'
+  - 'view own field_class_roll_number'
+  - 'view own field_document_verification'
+  - 'view own field_form_number'
+  - 'view own field_less_payment_amount'
+  - 'view own field_payment_amount'
+  - 'view own field_payment_date'
+  - 'view own field_payment_date_2'
+  - 'view own field_remark'
+  - 'view own field_utr_ref_number'
+  - 'view own field_utr_ref_number_2'

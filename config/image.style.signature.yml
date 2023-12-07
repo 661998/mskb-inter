@@ -1,0 +1,14 @@
+uuid: e1fe8ea4-c123-4ecb-999e-755d4e697e4c
+langcode: en
+status: true
+dependencies: {  }
+name: signature
+label: Signature
+effects:
+  a2d8e2ea-34fc-4574-8eb5-9adfe697820f:
+    uuid: a2d8e2ea-34fc-4574-8eb5-9adfe697820f
+    id: image_resize
+    weight: 2
+    data:
+      width: 220
+      height: 80

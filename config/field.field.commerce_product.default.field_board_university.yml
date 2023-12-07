@@ -1,0 +1,29 @@
+uuid: 9fe0898b-0480-4d38-aa52-77a215556b17
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_board_university
+    - taxonomy.vocabulary.board_university
+id: commerce_product.default.field_board_university
+field_name: field_board_university
+entity_type: commerce_product
+bundle: default
+label: Board/University
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      board_university: board_university
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: 1d996d7b-718a-4fae-b934-68a2f59b9b30
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_order.field_order_type_nid
+field_name: field_order_type_nid
+entity_type: commerce_order
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

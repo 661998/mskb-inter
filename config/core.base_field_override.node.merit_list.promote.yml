@@ -1,0 +1,22 @@
+uuid: 67649c19-78d2-41ca-8745-21f56ad53959
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.merit_list
+id: node.merit_list.promote
+field_name: promote
+entity_type: node
+bundle: merit_list
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

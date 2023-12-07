@@ -1,0 +1,23 @@
+uuid: 0fd62036-9478-4e26-9568-7c6931aec88f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_medical_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_medical_fee
+field_name: field_medical_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Medical Exam Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

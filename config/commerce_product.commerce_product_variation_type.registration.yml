@@ -1,0 +1,10 @@
+uuid: 0dd63c60-ab39-4dfc-b2da-f00117cf333c
+langcode: en
+status: true
+dependencies: {  }
+id: registration
+label: Registration
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

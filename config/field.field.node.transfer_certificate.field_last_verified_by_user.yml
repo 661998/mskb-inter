@@ -1,0 +1,36 @@
+uuid: ce3d68d3-6947-4442-9139-16b00f07e7dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_verified_by_user
+    - node.type.transfer_certificate
+id: node.transfer_certificate.field_last_verified_by_user
+field_name: field_last_verified_by_user
+entity_type: node
+bundle: transfer_certificate
+label: 'Last Verified by user'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        teacher: teacher
+        college_admin: college_admin
+        content_editor: '0'
+        administrator: '0'
+        student: '0'
+        payment: '0'
+    include_anonymous: true
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 335688f6-e91b-4d53-a5b0-649728462d9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - field_permissions
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_product_variation.field_board_university
+field_name: field_board_university
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

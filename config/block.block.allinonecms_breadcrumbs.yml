@@ -1,0 +1,22 @@
+uuid: 80569982-aeb6-4031-9c67-20333a3bd41b
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: Xukgo3OuoLnumln3AMVtmmmM4jfHT_5fAlOMhyF8gPI
+id: allinonecms_breadcrumbs
+theme: allinonecms
+region: content
+weight: 3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

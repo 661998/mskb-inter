@@ -1,0 +1,29 @@
+ug_settings.settings:
+  title: 'Settings'
+  description: 'Settings.'
+  menu_name: main
+  route_name: ug_settings.settings
+  enabled: 1
+  expanded: TRUE
+  weight: 6
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-gear
+
+ug_settings.users:
+  title: 'Users'
+  description: 'All User list.'
+  menu_name: main
+  route_name: view.users.page_1
+  enabled: 1
+  expanded: TRUE
+  weight: -1
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-users-gear

@@ -1,0 +1,8 @@
+uuid: a9cdae9f-919d-4758-a48b-b23b30143650
+langcode: en
+status: true
+dependencies: {  }
+name: Board/University
+vid: board_university
+description: 'Use to list students Board/University.'
+weight: 0

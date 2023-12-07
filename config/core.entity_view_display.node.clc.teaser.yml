@@ -1,0 +1,82 @@
+uuid: 36ab5b48-80fe-42a0-9324-0a361fe0c36e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.clc.field_aadhar_number
+    - field.field.node.clc.field_approval
+    - field.field.node.clc.field_certificate_number
+    - field.field.node.clc.field_character_certificate_no
+    - field.field.node.clc.field_character_issued
+    - field.field.node.clc.field_class_roll_no
+    - field.field.node.clc.field_clc_issued
+    - field.field.node.clc.field_date_of_birth
+    - field.field.node.clc.field_date_of_issue
+    - field.field.node.clc.field_exam_year
+    - field.field.node.clc.field_examination_date
+    - field.field.node.clc.field_father_s_name
+    - field.field.node.clc.field_final_marksheet
+    - field.field.node.clc.field_form_number
+    - field.field.node.clc.field_gender
+    - field.field.node.clc.field_last_verified_by_user
+    - field.field.node.clc.field_mobile
+    - field.field.node.clc.field_mother_s_name
+    - field.field.node.clc.field_passing_division
+    - field.field.node.clc.field_payment_amount
+    - field.field.node.clc.field_payment_date
+    - field.field.node.clc.field_payment_received
+    - field.field.node.clc.field_permanent_address
+    - field.field.node.clc.field_registration_number
+    - field.field.node.clc.field_related_fee
+    - field.field.node.clc.field_remark
+    - field.field.node.clc.field_roll_number
+    - field.field.node.clc.field_session
+    - field.field.node.clc.field_stream
+    - field.field.node.clc.field_utr_ref_number
+    - field.field.node.clc.field_verification_date
+    - node.type.clc
+  module:
+    - user
+id: node.clc.teaser
+targetEntityType: node
+bundle: clc
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_aadhar_number: true
+  field_approval: true
+  field_certificate_number: true
+  field_character_certificate_no: true
+  field_character_issued: true
+  field_class_roll_no: true
+  field_clc_issued: true
+  field_date_of_birth: true
+  field_date_of_issue: true
+  field_exam_year: true
+  field_examination_date: true
+  field_father_s_name: true
+  field_final_marksheet: true
+  field_form_number: true
+  field_gender: true
+  field_last_verified_by_user: true
+  field_mobile: true
+  field_mother_s_name: true
+  field_passing_division: true
+  field_payment_amount: true
+  field_payment_date: true
+  field_payment_received: true
+  field_permanent_address: true
+  field_registration_number: true
+  field_related_fee: true
+  field_remark: true
+  field_roll_number: true
+  field_session: true
+  field_stream: true
+  field_utr_ref_number: true
+  field_verification_date: true

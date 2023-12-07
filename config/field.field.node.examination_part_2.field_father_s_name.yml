@@ -1,0 +1,19 @@
+uuid: 425fb5a1-fda7-46a0-8d68-4ce04432aa62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_father_s_name
+    - node.type.examination_part_2
+id: node.examination_part_2.field_father_s_name
+field_name: field_father_s_name
+entity_type: node
+bundle: examination_part_2
+label: "Father's Name"
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

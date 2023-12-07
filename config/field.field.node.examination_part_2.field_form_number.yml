@@ -1,0 +1,19 @@
+uuid: 8f5c28dd-7280-4a8b-97b6-45cfa4661af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form_number
+    - node.type.examination_part_2
+id: node.examination_part_2.field_form_number
+field_name: field_form_number
+entity_type: node
+bundle: examination_part_2
+label: 'Form Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

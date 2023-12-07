@@ -1,0 +1,14 @@
+uuid: f9df6c20-43ee-4cd7-a29f-06acd0cfe886
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.payment
+  module:
+    - user
+id: user_remove_role_action.payment
+label: 'Remove the Payment role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: payment

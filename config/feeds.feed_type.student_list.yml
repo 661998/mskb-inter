@@ -1,0 +1,204 @@
+uuid: 0ceb4fbf-0821-40c6-bfb7-306923ef24bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_application_no
+    - field.field.user.user.field_caste_category
+    - field.field.user.user.field_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_registration_purpose
+    - field.field.user.user.field_session
+    - field.field.user.user.field_stream
+  module:
+    - user
+label: 'Student List'
+id: student_list
+description: 'Use to import student.'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:user'
+processor_configuration:
+  values: {  }
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  reference_no:
+    value: 'Reference No'
+    label: 'Reference No'
+    machine_name: reference_no
+    type: csv
+  name:
+    value: Name
+    label: Name
+    machine_name: name
+    type: csv
+  caste_category:
+    value: 'Caste Category'
+    label: 'Caste Category'
+    machine_name: caste_category
+    type: csv
+  stream:
+    value: Stream
+    label: Stream
+    machine_name: stream
+    type: csv
+  phone_number:
+    value: 'Phone Number'
+    label: 'Phone Number'
+    machine_name: phone_number
+    type: csv
+  email:
+    value: Email
+    label: Email
+    machine_name: email
+    type: csv
+  username:
+    value: Username
+    label: Username
+    machine_name: username
+    type: csv
+  password:
+    value: Password
+    label: Password
+    machine_name: password
+    type: csv
+  roles:
+    value: Roles
+    label: Roles
+    machine_name: roles
+    type: csv
+  registration_purpose:
+    value: 'Registration Purpose'
+    label: 'Registration Purpose'
+    machine_name: registration_purpose
+    type: csv
+  session:
+    value: Session
+    label: Session
+    machine_name: session
+    type: csv
+  user_status:
+    value: 'User status'
+    label: 'User status'
+    machine_name: user_status
+    type: csv
+  created:
+    value: Created
+    label: Created
+    machine_name: created
+    type: csv
+mappings:
+  -
+    target: field_application_no
+    map:
+      value: reference_no
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_name
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_caste_category
+    map:
+      value: caste_category
+    settings:
+      language: null
+  -
+    target: field_stream
+    map:
+      target_id: stream
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: stream
+  -
+    target: field_phone_number
+    map:
+      value: phone_number
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: mail
+    map:
+      value: email
+    settings:
+      defuse: false
+    unique: {  }
+  -
+    target: name
+    map:
+      value: username
+    settings: {  }
+    unique: {  }
+  -
+    target: pass
+    map:
+      value: password
+    settings:
+      pass_encryption: plain
+  -
+    target: roles
+    map:
+      target_id: roles
+    settings:
+      reference_by: label
+      allowed_roles:
+        student: student
+        content_editor: 0
+        administrator: 0
+        teacher: 0
+        college_admin: 0
+        payment: 0
+      autocreate: 0
+      revoke_roles: 0
+  -
+    target: field_registration_purpose
+    map:
+      value: registration_purpose
+    settings:
+      language: null
+  -
+    target: field_session
+    map:
+      target_id: session
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: session
+  -
+    target: status
+    map:
+      value: user_status
+    settings: {  }
+  -
+    target: created
+    map:
+      value: created
+    settings:
+      timezone: Asia/Kolkata

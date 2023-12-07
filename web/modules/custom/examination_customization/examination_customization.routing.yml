@@ -1,0 +1,10 @@
+examination_customization.admission_part_1_pdf:
+  path: 'examination-part-1-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\examination_customization\Controller\ExaminationPart1Pdf::content'
+    _title: 'Examination Part 1 PDF'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'

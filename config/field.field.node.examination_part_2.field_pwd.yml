@@ -1,0 +1,21 @@
+uuid: 95caa06e-cf86-4aaf-a6e0-aa51be9b794e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pwd
+    - node.type.examination_part_2
+  module:
+    - options
+id: node.examination_part_2.field_pwd
+field_name: field_pwd
+entity_type: node
+bundle: examination_part_2
+label: 'Differently Abled'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

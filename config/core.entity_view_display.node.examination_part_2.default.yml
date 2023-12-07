@@ -1,0 +1,582 @@
+uuid: 5282145f-f01d-422b-b327-8d8f81e5b69c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.examination_part_2.field_aadhar_number
+    - field.field.node.examination_part_2.field_application_no
+    - field.field.node.examination_part_2.field_caste_category
+    - field.field.node.examination_part_2.field_caste_certificate
+    - field.field.node.examination_part_2.field_class_roll_number
+    - field.field.node.examination_part_2.field_correspondence_address
+    - field.field.node.examination_part_2.field_course
+    - field.field.node.examination_part_2.field_date_of_birth
+    - field.field.node.examination_part_2.field_document_verification
+    - field.field.node.examination_part_2.field_email_id
+    - field.field.node.examination_part_2.field_exam_type
+    - field.field.node.examination_part_2.field_examination_form_number
+    - field.field.node.examination_part_2.field_father_s_name
+    - field.field.node.examination_part_2.field_form_number
+    - field.field.node.examination_part_2.field_gender
+    - field.field.node.examination_part_2.field_last_verified_by_user
+    - field.field.node.examination_part_2.field_less_payment_amount
+    - field.field.node.examination_part_2.field_mobile
+    - field.field.node.examination_part_2.field_mother_s_name
+    - field.field.node.examination_part_2.field_nationality
+    - field.field.node.examination_part_2.field_payment_amount
+    - field.field.node.examination_part_2.field_payment_date
+    - field.field.node.examination_part_2.field_payment_date_2
+    - field.field.node.examination_part_2.field_payment_received
+    - field.field.node.examination_part_2.field_permanent_address
+    - field.field.node.examination_part_2.field_photo
+    - field.field.node.examination_part_2.field_pwd
+    - field.field.node.examination_part_2.field_registration_card
+    - field.field.node.examination_part_2.field_registration_number
+    - field.field.node.examination_part_2.field_registration_year
+    - field.field.node.examination_part_2.field_related_fee
+    - field.field.node.examination_part_2.field_religion
+    - field.field.node.examination_part_2.field_remark
+    - field.field.node.examination_part_2.field_roll_number
+    - field.field.node.examination_part_2.field_send_to_board
+    - field.field.node.examination_part_2.field_session
+    - field.field.node.examination_part_2.field_stream
+    - field.field.node.examination_part_2.field_student_signature
+    - field.field.node.examination_part_2.field_student_signature_hindi
+    - field.field.node.examination_part_2.field_student_type
+    - field.field.node.examination_part_2.field_type_of_disability
+    - field.field.node.examination_part_2.field_utr_ref_number
+    - field.field.node.examination_part_2.field_utr_ref_number_2
+    - field.field.node.examination_part_2.field_verification_date
+    - node.type.examination_part_2
+  module:
+    - address
+    - datetime
+    - field_group
+    - image
+    - options
+    - user
+    - yearonly
+third_party_settings:
+  field_group:
+    group_part_1_examination_form:
+      children:
+        - field_student_type
+        - field_form_number
+        - field_application_no
+        - field_roll_number
+        - field_registration_number
+        - field_registration_year
+        - field_examination_form_number
+        - field_class_roll_number
+        - field_session
+        - field_stream
+        - field_course
+      label: 'Part 2 Examination Form'
+      parent_name: group_textual_details
+      region: content
+      weight: 21
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_p:
+      children:
+        - field_father_s_name
+        - field_mother_s_name
+        - field_date_of_birth
+        - field_gender
+        - field_religion
+        - field_caste_category
+        - field_aadhar_number
+        - field_nationality
+        - field_pwd
+        - field_type_of_disability
+        - field_mobile
+        - field_email_id
+        - field_permanent_address
+        - field_correspondence_address
+      label: 'Personal Details'
+      parent_name: group_textual_details
+      region: content
+      weight: 22
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_official:
+      children:
+        - field_document_verification
+        - field_remark
+        - field_last_verified_by_user
+        - field_verification_date
+      label: Official
+      parent_name: ''
+      region: content
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: subject-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_textual_details:
+      children:
+        - group_part_1_examination_form
+        - group_p
+      label: 'Textual details'
+      parent_name: group_form_details
+      region: content
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: col-md-8
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_form_details:
+      children:
+        - group_textual_details
+        - group_photo_signature
+      label: 'Form Details'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: form-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_photo_signature:
+      children:
+        - field_photo
+        - field_student_signature
+        - field_student_signature_hindi
+      label: 'Photo & Signature'
+      parent_name: group_form_details
+      region: content
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: 'offset-md-1 col-md-3'
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_subject_details:
+      children:
+        - field_exam_type
+        - field_honours_subject_arts
+        - field_honours_subject_commerce
+        - field_honours_subject_science
+        - field_subsidiary_1_arts
+        - field_subsidiary_1_commerce
+        - field_subsidiary_1_science
+        - field_subsidiary_2_arts
+        - field_subsidiary_2_commerce
+        - field_subsidiary_2_science
+        - field_language_composition
+        - field_nh_50_marks
+      label: 'Subject Details'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: subject-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_documents:
+      children:
+        - field_examination_form
+        - field_part_1_admission_challan
+        - field_part_1_admit_card
+        - field_part_1_marksheet
+        - field_part_2_admission_challan
+        - field_part_2_promoted_admit_card
+        - field_part_2_promoted_marksheet
+        - field_registration_card
+        - field_caste_certificate
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: documents-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_payment_details:
+      children:
+        - field_utr_ref_number
+        - field_payment_amount
+        - field_payment_date
+        - field_payment_received
+        - field_utr_ref_number_2
+        - field_payment_date_2
+        - field_less_payment_amount
+      label: 'Payment Details'
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: subject-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+id: node.examination_part_2.default
+targetEntityType: node
+bundle: examination_part_2
+mode: default
+content:
+  field_aadhar_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_application_no:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_caste_category:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_caste_certificate:
+    type: image_url
+    label: above
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_class_roll_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_correspondence_address:
+    type: address_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_course:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_date_of_birth:
+    type: datetime_custom
+    label: inline
+    settings:
+      timezone_override: ''
+      date_format: d-m-Y
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_document_verification:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_email_id:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_exam_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_examination_form_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_father_s_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_form_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_gender:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_last_verified_by_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 38
+    region: content
+  field_less_payment_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_mobile:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_mother_s_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_nationality:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_payment_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_payment_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: dd_mm_yyyy
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_payment_date_2:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: dd_mm_yyyy
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_payment_received:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_permanent_address:
+    type: address_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_pwd:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_registration_card:
+    type: image_url
+    label: above
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_registration_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_registration_year:
+    type: yearonly_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_religion:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_remark:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_roll_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_session:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_stream:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_student_signature:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_student_signature_hindi:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_student_type:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_type_of_disability:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_utr_ref_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_utr_ref_number_2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_verification_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 39
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_related_fee: true
+  field_send_to_board: true

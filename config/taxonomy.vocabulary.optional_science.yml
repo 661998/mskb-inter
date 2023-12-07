@@ -1,0 +1,8 @@
+uuid: a5ebfbae-2474-49af-91ae-4f142d68a3a3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Optional (Science)'
+vid: optional_science
+description: 'Use to list Optional Science subject.'
+weight: 0

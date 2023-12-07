@@ -1,0 +1,19 @@
+uuid: e4b20370-9200-4056-9d46-cfa35b87183e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mother_s_name
+    - node.type.examination_part_1
+id: node.examination_part_1.field_mother_s_name
+field_name: field_mother_s_name
+entity_type: node
+bundle: examination_part_1
+label: "Mother's Name"
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: f62878e2-c1f6-4826-a8bc-ed3fb588b2a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_examination_form_number
+    - node.type.examination_part_2
+id: node.examination_part_2.field_examination_form_number
+field_name: field_examination_form_number
+entity_type: node
+bundle: examination_part_2
+label: 'University Examination Form Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

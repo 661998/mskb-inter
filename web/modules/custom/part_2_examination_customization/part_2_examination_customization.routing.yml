@@ -1,0 +1,10 @@
+part_2_examination_customization.admission_part_1_pdf:
+  path: 'examination-part-2-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\part_2_examination_customization\Controller\ExaminationPart2Pdf::content'
+    _title: 'Examination Part 2 PDF'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'

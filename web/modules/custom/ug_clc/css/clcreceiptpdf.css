@@ -1,0 +1,61 @@
+body, p, td, div { 
+    font-family: freesans; 
+}
+.border-bottom-dotted {
+	border-bottom: 1px dotted #000;
+}
+table{
+    vertical-align:top;
+    border-collapse: collapse;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+p{
+    margin: 0px;
+    padding: 0px;
+}
+table td,
+table th {
+    font-size: 12px;
+}
+h3{
+    font-size: 16px;
+}
+h2, h3, h4{
+    color:#04519b;
+    margin: 0px;
+    padding: 0px;
+}
+.ps-3 {
+	padding-left: 15px !important;
+}
+.pt-3 {
+	padding-top: 15px !important;
+}
+.py-1 {
+	padding-top: 10px !important;
+    padding-top: 10px !important;
+}
+.py-3 {
+	padding-top: 15px !important;
+    padding-top: 15px !important;
+}
+.py-5 {
+	padding-top: 45px !important;
+    padding-top: 45px !important;
+}
+.mb-5 {
+    margin-bottom: 45px !important;
+}
+.sign-box {
+    padding: 5px 10px 40px 10px;
+    border: 1px solid #000;
+}
+.table-field {
+    width: 100%;
+}
+.table-field th,
+.table-field td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}

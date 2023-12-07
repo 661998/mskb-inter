@@ -1,0 +1,23 @@
+uuid: d8817c74-8f95-4c01-9e3e-68121f7b6a5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lib_i_card
+    - node.type.fcr_admin
+id: node.fcr_admin.field_lib_i_card
+field_name: field_lib_i_card
+entity_type: node
+bundle: fcr_admin
+label: 'Lib. I. Card'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

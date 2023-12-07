@@ -1,0 +1,22 @@
+uuid: d21e9de1-9965-4f02-a558-a3152f081b08
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: registration
+label: Registration
+type: 'canonical_entities:node'
+pattern: 'registration/[node:nid]'
+selection_criteria:
+  cb4535a6-a1f3-447f-8214-27122bf7e543:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: cb4535a6-a1f3-447f-8214-27122bf7e543
+    context_mapping:
+      node: node
+    bundles:
+      registration: registration
+selection_logic: and
+weight: -5
+relationships: {  }

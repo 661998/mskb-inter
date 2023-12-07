@@ -1,0 +1,4 @@
+services:
+  admission_customization.services:
+    class: Drupal\admission_customization\Service\ACServices
+    arguments: ["@entity_type.manager", "@current_user", "@database", "@config.factory"]

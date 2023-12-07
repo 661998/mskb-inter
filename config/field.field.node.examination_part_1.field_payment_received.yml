@@ -1,0 +1,21 @@
+uuid: 64046586-290d-44fb-84e3-5ee113274a48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_received
+    - node.type.examination_part_1
+  module:
+    - options
+id: node.examination_part_1.field_payment_received
+field_name: field_payment_received
+entity_type: node
+bundle: examination_part_1
+label: ' Payment Status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,29 @@
+uuid: 88da34b3-00e0-4c9c-b193-64baaa74b1c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_arts
+    - node.type.registration
+    - taxonomy.vocabulary.additional_arts
+id: node.registration.field_additional_arts
+field_name: field_additional_arts
+entity_type: node
+bundle: registration
+label: 'Additional (Arts)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      additional_arts: additional_arts
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

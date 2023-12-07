@@ -1,0 +1,54 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\user\Entity\User;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+* Implements hook_theme().
+*/
+function ug_miscellaneous_theme($existing, $type, $theme, $path) {
+
+  $themes['front_callout'] = [
+    'variables' => [
+      'items' => NULL,
+    ],
+  ];
+  $themes['landing_page_links'] = [
+    'variables' => [
+      'items' => NULL,
+    ],
+  ];
+  $themes['student_dashboard'] = [
+    'variables' => [
+      'items' => NULL,
+    ],
+  ];
+  return $themes;
+}
+
+/**
+* Implements hook_preprocess_node().
+*/
+function ug_miscellaneous_preprocess_node(&$variables) {
+  if($variables['node']->getType() != 'page'){
+    if (\Drupal::currentUser()->isAnonymous()) {
+      $url = Url::fromRoute('system.403');
+      $response = new RedirectResponse($url->toString());
+      $response->send();
+    }else{
+      $node = $variables['node'];
+      $node_uid = $node->getOwnerId();
+      $uid = \Drupal::currentUser()->id();
+      $user = User::load($uid);
+      $roles = $user->getRoles();
+      if (in_array('student', $roles)) {
+        if($uid != $node_uid){
+          $url = Url::fromRoute('system.403');
+          $response = new RedirectResponse($url->toString());
+          $response->send();
+        }
+      }
+    }
+  }
+}

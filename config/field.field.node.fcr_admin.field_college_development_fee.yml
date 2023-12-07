@@ -1,0 +1,23 @@
+uuid: 82188c16-3d91-4790-b92e-5d382a231e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_college_development_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_college_development_fee
+field_name: field_college_development_fee
+entity_type: node
+bundle: fcr_admin
+label: 'College Development fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

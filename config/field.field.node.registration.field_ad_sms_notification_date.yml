@@ -1,0 +1,21 @@
+uuid: 24375cde-9262-430d-98ee-aa1817492252
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_sms_notification_date
+    - node.type.registration
+  module:
+    - datetime
+id: node.registration.field_ad_sms_notification_date
+field_name: field_ad_sms_notification_date
+entity_type: node
+bundle: registration
+label: 'Admission SMS Notification'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

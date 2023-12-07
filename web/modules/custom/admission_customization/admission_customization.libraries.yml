@@ -1,0 +1,8 @@
+admission_customization:
+  version: 1.x
+  js:
+    js/admission_customization.js: {}
+    dependencies:    
+    - core/drupal
+    - core/jquery
+    - core/once

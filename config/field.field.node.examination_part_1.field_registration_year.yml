@@ -1,0 +1,23 @@
+uuid: 86b8ed64-f370-4a67-abbc-adbb0282cd88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_registration_year
+    - node.type.examination_part_1
+  module:
+    - yearonly
+id: node.examination_part_1.field_registration_year
+field_name: field_registration_year
+entity_type: node
+bundle: examination_part_1
+label: 'University Registration Year'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  yearonly_from: '2022'
+  yearonly_to: now
+field_type: yearonly

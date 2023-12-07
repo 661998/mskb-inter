@@ -1,0 +1,29 @@
+uuid: 9ba8696f-9850-4975-96d0-4f14b2646bcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_compulsory_2
+    - node.type.admission_part_1
+    - taxonomy.vocabulary.compulsory_2
+id: node.admission_part_1.field_compulsory_2
+field_name: field_compulsory_2
+entity_type: node
+bundle: admission_part_1
+label: 'Compulsory Group 2'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      compulsory_2: compulsory_2
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

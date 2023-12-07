@@ -1,0 +1,21 @@
+uuid: 14297f4f-cbaa-402a-be54-d563c137918d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caste_category
+    - node.type.registration
+  module:
+    - options
+id: node.registration.field_caste_category
+field_name: field_caste_category
+entity_type: node
+bundle: registration
+label: 'Caste Category'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

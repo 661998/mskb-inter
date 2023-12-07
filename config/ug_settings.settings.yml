@@ -1,0 +1,30 @@
+merit_list: '74'
+admission_part1: '1'
+admission_part1_latefine: 0
+examination_part1: '1'
+examination_part1_latefine: 0
+examination_part2: ''
+examination_part2_latefine: 0
+examination_part3: '1'
+examination_part3_latefine: 0
+admission_part_1: ''
+admission_part_1_latefine: 0
+examination_part_1: ''
+examination_part_1_latefine: 0
+examination_part_2: ''
+examination_part_2_latefine: 0
+examination_part_3: ''
+examination_part_3_latefine: 1
+session_list: '21'
+p1exam_session_list: '21'
+p2exam_session_list: '21'
+p3exam_session_list: '21'
+sms_api_key: qwsaqwsq
+sms_sender: RMLS
+admission_notification_template: 'Dear @name%2C Your Admission is Completed and Your Class Roll Number is @roll Regards%2C RMLS College'
+ad_sms_template: 'Dear @name%2C Your Admission is Completed and Your Class Roll Number is @roll Regards%2C RMLS College'
+ad_email_subject: 'Admission Confirmation'
+ad_email_body: '<p>Dear @name,</p><p>&nbsp;</p><p>Your Admission is Completed and Your Class Roll Number is <strong>@roll</strong>.</p><p>&nbsp;</p><p>Regards,</p><p>Principle</p><p>RMLS College</p>'
+registration: ''
+registration_session: '21'
+registration_latefine: 0

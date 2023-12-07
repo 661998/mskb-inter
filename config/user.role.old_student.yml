@@ -1,0 +1,23 @@
+uuid: 489f09e9-0047-4471-a7ac-83356b4f2e99
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.clc
+    - node.type.transfer_certificate
+  module:
+    - node
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: student
+id: old_student
+label: 'Old Student'
+weight: 11
+is_admin: null
+permissions:
+  - 'create clc content'
+  - 'create transfer_certificate content'
+  - 'edit own clc content'
+  - 'edit own transfer_certificate content'

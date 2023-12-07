@@ -1,0 +1,22 @@
+uuid: 236848fe-cf1e-4296-9c51-04b0c836a8e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: clc
+label: CLC
+type: 'canonical_entities:node'
+pattern: 'clc/[node:nid]'
+selection_criteria:
+  c79947ca-8570-4d4d-b96e-95fd884afbbc:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c79947ca-8570-4d4d-b96e-95fd884afbbc
+    context_mapping:
+      node: node
+    bundles:
+      clc: clc
+selection_logic: and
+weight: -5
+relationships: {  }

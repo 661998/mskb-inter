@@ -1,0 +1,22 @@
+uuid: 020faef6-52b8-4319-9673-9e16f1a6cbec
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_hand_book_directory
+field_name: field_hand_book_directory
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

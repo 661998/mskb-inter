@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 0255a0fe-36e5-49ba-881d-f39a83716ca0
+name: 'MSKB College, Muzaffarpur'
+mail: principal@mskbcollege.ac.in
+slogan: 'MSKB College, Muzaffarpur'
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

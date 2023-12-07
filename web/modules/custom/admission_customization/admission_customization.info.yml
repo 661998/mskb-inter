@@ -1,0 +1,7 @@
+name: Admission Customization
+type: module
+description: 'Used to manage admission.'
+package: Custom
+core_version_requirement: ^9.2 || ^10
+
+version: 1.0

@@ -1,0 +1,21 @@
+uuid: 740536d7-ec37-42b5-a3dc-3b49e32aefc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_student_type
+  module:
+    - options
+id: commerce_product.default.field_student_type
+field_name: field_student_type
+entity_type: commerce_product
+bundle: default
+label: 'Student Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

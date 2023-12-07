@@ -1,0 +1,21 @@
+uuid: e1768705-6ceb-49dc-a2ae-77844262e8d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_of_passing
+    - node.type.registration
+  module:
+    - options
+id: node.registration.field_year_of_passing
+field_name: field_year_of_passing
+entity_type: node
+bundle: registration
+label: 'Year of Passing'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

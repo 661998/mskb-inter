@@ -1,0 +1,23 @@
+uuid: cf42cec9-af1c-4832-9bfa-7ed8ac683e94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_sms_notification
+    - node.type.registration
+id: node.registration.field_ad_sms_notification
+field_name: field_ad_sms_notification
+entity_type: node
+bundle: registration
+label: 'Admission SMS Notification'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Sent
+  off_label: 'Not Sent'
+field_type: boolean

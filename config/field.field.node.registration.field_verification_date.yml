@@ -1,0 +1,21 @@
+uuid: 250e0be8-472e-484e-857a-b7d5d02af6e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verification_date
+    - node.type.registration
+  module:
+    - datetime
+id: node.registration.field_verification_date
+field_name: field_verification_date
+entity_type: node
+bundle: registration
+label: 'Verification date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

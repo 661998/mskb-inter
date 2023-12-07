@@ -1,0 +1,26 @@
+uuid: cfb20e66-2803-42b3-a6f7-85336cd3643d
+langcode: en
+status: true
+dependencies: {  }
+name: node_registration
+label: 'node registration validation'
+entity_type: node
+bundle: registration
+field_validation_rules:
+  67770a06-19e4-4df5-a31f-bf939feddb61:
+    id: numeric_field_validation_rule
+    title: Numeric
+    data:
+      min: '200000000000'
+      max: '999999999999'
+      step: ''
+    weight: 1
+    uuid: 67770a06-19e4-4df5-a31f-bf939feddb61
+    field_name: field_aadhar_number
+    column: value
+    error_message: 'Aadhar number is not correct'
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''

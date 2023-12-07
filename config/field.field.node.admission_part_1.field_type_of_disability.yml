@@ -1,0 +1,19 @@
+uuid: 6d8d84db-8b09-45ef-a441-185afe7aa3e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_disability
+    - node.type.admission_part_1
+id: node.admission_part_1.field_type_of_disability
+field_name: field_type_of_disability
+entity_type: node
+bundle: admission_part_1
+label: 'Type Of Disability'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

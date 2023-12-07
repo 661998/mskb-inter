@@ -1,0 +1,110 @@
+uuid: 35ad5790-4f89-4f6d-aa03-62fc87694af7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.examination_part_1.field_aadhar_number
+    - field.field.node.examination_part_1.field_application_no
+    - field.field.node.examination_part_1.field_caste_category
+    - field.field.node.examination_part_1.field_caste_certificate
+    - field.field.node.examination_part_1.field_class_roll_number
+    - field.field.node.examination_part_1.field_correspondence_address
+    - field.field.node.examination_part_1.field_course
+    - field.field.node.examination_part_1.field_date_of_birth
+    - field.field.node.examination_part_1.field_document_verification
+    - field.field.node.examination_part_1.field_email_id
+    - field.field.node.examination_part_1.field_examination_form
+    - field.field.node.examination_part_1.field_examination_form_number
+    - field.field.node.examination_part_1.field_father_s_name
+    - field.field.node.examination_part_1.field_form_number
+    - field.field.node.examination_part_1.field_gender
+    - field.field.node.examination_part_1.field_intermediate_admit_card
+    - field.field.node.examination_part_1.field_intermediate_marksheet
+    - field.field.node.examination_part_1.field_last_verified_by_user
+    - field.field.node.examination_part_1.field_less_payment_amount
+    - field.field.node.examination_part_1.field_mobile
+    - field.field.node.examination_part_1.field_mother_s_name
+    - field.field.node.examination_part_1.field_nationality
+    - field.field.node.examination_part_1.field_payment_amount
+    - field.field.node.examination_part_1.field_payment_date
+    - field.field.node.examination_part_1.field_payment_date_2
+    - field.field.node.examination_part_1.field_payment_received
+    - field.field.node.examination_part_1.field_permanent_address
+    - field.field.node.examination_part_1.field_photo
+    - field.field.node.examination_part_1.field_pwd
+    - field.field.node.examination_part_1.field_registration_card
+    - field.field.node.examination_part_1.field_registration_number
+    - field.field.node.examination_part_1.field_registration_year
+    - field.field.node.examination_part_1.field_related_fee
+    - field.field.node.examination_part_1.field_religion
+    - field.field.node.examination_part_1.field_remark
+    - field.field.node.examination_part_1.field_send_to_board
+    - field.field.node.examination_part_1.field_session
+    - field.field.node.examination_part_1.field_stream
+    - field.field.node.examination_part_1.field_student_signature
+    - field.field.node.examination_part_1.field_student_signature_hindi
+    - field.field.node.examination_part_1.field_student_type
+    - field.field.node.examination_part_1.field_type_of_disability
+    - field.field.node.examination_part_1.field_utr_ref_number
+    - field.field.node.examination_part_1.field_utr_ref_number_2
+    - field.field.node.examination_part_1.field_verification_date
+    - node.type.examination_part_1
+  module:
+    - user
+id: node.examination_part_1.teaser
+targetEntityType: node
+bundle: examination_part_1
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_aadhar_number: true
+  field_application_no: true
+  field_caste_category: true
+  field_caste_certificate: true
+  field_class_roll_number: true
+  field_correspondence_address: true
+  field_course: true
+  field_date_of_birth: true
+  field_document_verification: true
+  field_email_id: true
+  field_examination_form: true
+  field_examination_form_number: true
+  field_father_s_name: true
+  field_form_number: true
+  field_gender: true
+  field_intermediate_admit_card: true
+  field_intermediate_marksheet: true
+  field_last_verified_by_user: true
+  field_less_payment_amount: true
+  field_mobile: true
+  field_mother_s_name: true
+  field_nationality: true
+  field_payment_amount: true
+  field_payment_date: true
+  field_payment_date_2: true
+  field_payment_received: true
+  field_permanent_address: true
+  field_photo: true
+  field_pwd: true
+  field_registration_card: true
+  field_registration_number: true
+  field_registration_year: true
+  field_related_fee: true
+  field_religion: true
+  field_remark: true
+  field_send_to_board: true
+  field_session: true
+  field_stream: true
+  field_student_signature: true
+  field_student_signature_hindi: true
+  field_student_type: true
+  field_type_of_disability: true
+  field_utr_ref_number: true
+  field_utr_ref_number_2: true
+  field_verification_date: true

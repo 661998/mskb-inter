@@ -1,0 +1,19 @@
+uuid: 318a6a1d-027d-4e86-837d-c61c0ad8701c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_identification_mark
+    - node.type.registration
+id: node.registration.field_identification_mark
+field_name: field_identification_mark
+entity_type: node
+bundle: registration
+label: 'Identification Mark'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: 1264c554-4724-497e-9522-dca3e700305d
+langcode: en
+status: true
+dependencies: {  }
+id: clc
+label: CLC
+traits: {  }
+locked: false
+description: ''
+variationType: clc
+variationTypes:
+  - clc
+multipleVariations: true
+injectVariationFields: true

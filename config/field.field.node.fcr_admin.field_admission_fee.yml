@@ -1,0 +1,23 @@
+uuid: 4584ba40-9894-47e4-99dc-238ca2bd2904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_admission_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_admission_fee
+field_name: field_admission_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Admission Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

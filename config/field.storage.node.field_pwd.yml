@@ -1,0 +1,31 @@
+uuid: 7da893d5-55c5-464b-bc85-ba87fbbdfa0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_pwd
+field_name: field_pwd
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'YES'
+      label: 'YES'
+    -
+      value: 'NO'
+      label: 'NO'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

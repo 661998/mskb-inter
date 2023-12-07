@@ -1,0 +1,23 @@
+uuid: 2cdcb82e-6ec4-4fe4-bb70-ac28d25ba55b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_test_fee
+field_name: field_test_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Test Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

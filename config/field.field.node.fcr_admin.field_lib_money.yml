@@ -1,0 +1,23 @@
+uuid: fb0a9bf7-da84-4e17-aa04-85130f9bf824
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lib_money
+    - node.type.fcr_admin
+id: node.fcr_admin.field_lib_money
+field_name: field_lib_money
+entity_type: node
+bundle: fcr_admin
+label: 'Lib. Money'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,8 @@
+uuid: 71445bc6-bb61-4f2b-a667-1cf3d972c340
+langcode: en
+status: true
+dependencies: {  }
+name: 'Optional (Arts)'
+vid: optional_arts
+description: 'Use to list Optional Arts subject.'
+weight: 0

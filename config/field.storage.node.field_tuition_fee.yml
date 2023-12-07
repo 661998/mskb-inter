@@ -1,0 +1,22 @@
+uuid: 47b5cc2a-b7b5-4dc7-8228-af568819d10d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_tuition_fee
+field_name: field_tuition_fee
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

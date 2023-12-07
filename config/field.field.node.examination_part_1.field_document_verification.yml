@@ -1,0 +1,21 @@
+uuid: a6a4f70e-1dcb-4f90-b643-394cbdf87e94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_verification
+    - node.type.examination_part_1
+  module:
+    - options
+id: node.examination_part_1.field_document_verification
+field_name: field_document_verification
+entity_type: node
+bundle: examination_part_1
+label: 'Verification Status'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

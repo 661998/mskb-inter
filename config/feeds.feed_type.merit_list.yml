@@ -1,0 +1,240 @@
+uuid: 5144bc4f-4e27-4821-9ea0-22b27fcec447
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.merit_list.title
+    - field.field.node.merit_list.field_application_no
+    - field.field.node.merit_list.field_board_university
+    - field.field.node.merit_list.field_caste_category
+    - field.field.node.merit_list.field_email_id
+    - field.field.node.merit_list.field_gender
+    - field.field.node.merit_list.field_merit_list
+    - field.field.node.merit_list.field_mobile
+    - field.field.node.merit_list.field_percentage_of_marks
+    - field.field.node.merit_list.field_roll_code
+    - field.field.node.merit_list.field_roll_no
+    - field.field.node.merit_list.field_selection_category
+    - field.field.node.merit_list.field_session
+    - field.field.node.merit_list.field_stream
+    - field.field.node.merit_list.field_year_of_passing
+    - node.type.merit_list
+  module:
+    - node
+label: 'Merit List'
+id: merit_list
+description: 'Use to import Merit list.'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: merit_list
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  application_no:
+    value: 'Reference No'
+    label: 'Reference No'
+    machine_name: application_no
+    type: csv
+  name:
+    value: Name
+    label: Name
+    machine_name: name
+    type: csv
+  stream:
+    value: Stream
+    label: Stream
+    machine_name: stream
+    type: csv
+  gender:
+    value: Gender
+    label: Gender
+    machine_name: gender
+    type: csv
+  board_university:
+    value: Board/University
+    label: Board/University
+    machine_name: board_university
+    type: csv
+  year_of_passing:
+    value: 'Year of Passing'
+    label: 'Year of Passing'
+    machine_name: year_of_passing
+    type: csv
+  roll_code:
+    value: 'Roll Code'
+    label: 'Roll Code'
+    machine_name: roll_code
+    type: csv
+  roll_no:
+    value: 'Roll No'
+    label: 'Roll No'
+    machine_name: roll_no
+    type: csv
+  caste_category:
+    value: 'Caste Category'
+    label: 'Caste Category'
+    machine_name: caste_category
+    type: csv
+  selection_category:
+    value: 'Selection Category'
+    label: 'Selection Category'
+    machine_name: selection_category
+    type: csv
+  _of_marks:
+    value: '% Of Marks'
+    label: '% Of Marks'
+    machine_name: _of_marks
+    type: csv
+  mobile:
+    value: Mobile
+    label: Mobile
+    machine_name: mobile
+    type: csv
+  email_id:
+    value: 'Email Id'
+    label: 'Email Id'
+    machine_name: email_id
+    type: csv
+  merit_list:
+    value: 'Merit list'
+    label: 'Merit list'
+    machine_name: merit_list
+    type: csv
+  session:
+    value: Session
+    label: Session
+    machine_name: session
+    type: csv
+mappings:
+  -
+    target: field_application_no
+    map:
+      value: application_no
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_stream
+    map:
+      target_id: stream
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: stream
+  -
+    target: field_gender
+    map:
+      value: gender
+    settings:
+      language: null
+  -
+    target: field_board_university
+    map:
+      target_id: board_university
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: board_university
+  -
+    target: field_year_of_passing
+    map:
+      value: year_of_passing
+    settings:
+      language: null
+  -
+    target: field_roll_code
+    map:
+      value: roll_code
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_roll_no
+    map:
+      value: roll_no
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_caste_category
+    map:
+      value: caste_category
+    settings:
+      language: null
+  -
+    target: field_selection_category
+    map:
+      value: selection_category
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_percentage_of_marks
+    map:
+      value: _of_marks
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_mobile
+    map:
+      value: mobile
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_email_id
+    map:
+      value: email_id
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_merit_list
+    map:
+      target_id: merit_list
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: merit_list
+  -
+    target: field_session
+    map:
+      target_id: session
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: session

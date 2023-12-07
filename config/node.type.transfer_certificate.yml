@@ -1,0 +1,18 @@
+uuid: afae81e2-093d-4961-8f7b-9c25f7f63750
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Transfer Certificate'
+type: transfer_certificate
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

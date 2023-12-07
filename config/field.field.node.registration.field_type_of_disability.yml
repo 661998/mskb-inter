@@ -1,0 +1,19 @@
+uuid: 3e335f16-d506-4767-a34e-8bec9561e97b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_disability
+    - node.type.registration
+id: node.registration.field_type_of_disability
+field_name: field_type_of_disability
+entity_type: node
+bundle: registration
+label: 'Type Of Disability'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

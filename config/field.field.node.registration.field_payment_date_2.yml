@@ -1,0 +1,21 @@
+uuid: 60e85115-a198-40c7-8f41-ceede953c7e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_date_2
+    - node.type.registration
+  module:
+    - datetime
+id: node.registration.field_payment_date_2
+field_name: field_payment_date_2
+entity_type: node
+bundle: registration
+label: "Payment Date\t2"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

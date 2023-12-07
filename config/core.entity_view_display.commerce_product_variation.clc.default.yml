@@ -1,0 +1,44 @@
+uuid: 273b8d33-90f6-4173-9e7d-7b3ddc9820e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.clc
+    - field.field.commerce_product_variation.clc.field_pay_type
+  module:
+    - commerce_price
+    - options
+id: commerce_product_variation.clc.default
+targetEntityType: commerce_product_variation
+bundle: clc
+mode: default
+content:
+  field_pay_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  list_price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  product_id: true
+  sku: true
+  title: true

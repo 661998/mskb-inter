@@ -1,0 +1,23 @@
+uuid: 8d9a1f75-890f-4db3-b1be-ce234e9e806e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parking
+    - node.type.fcr_admin
+id: node.fcr_admin.field_parking
+field_name: field_parking
+entity_type: node
+bundle: fcr_admin
+label: Parking
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

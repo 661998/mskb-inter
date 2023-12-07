@@ -1,0 +1,14 @@
+registration_customization.registration:
+  title: 'Registration'
+  description: 'Registration related links.'
+  menu_name: main
+  url: "internal:#"
+  enabled: 1
+  expanded: TRUE
+  weight: 3
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-r

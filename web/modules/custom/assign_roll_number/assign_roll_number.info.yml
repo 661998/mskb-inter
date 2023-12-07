@@ -1,0 +1,7 @@
+name: Assign Roll Number
+type: module
+description: 'Provide custom View action to assign roll number and generate ID card.'
+package: Custom
+core_version_requirement: ^9.2 || ^10
+
+version: 1.0

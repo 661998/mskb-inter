@@ -1,0 +1,18 @@
+uuid: 2c750a04-7aac-4047-a398-035152f51439
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_16_16
+  module:
+    - crop
+name: crop_style_16_16
+label: 'Crop style 16:16'
+effects:
+  4cc98460-8c19-4c0a-a328-550ce12d5aeb:
+    uuid: 4cc98460-8c19-4c0a-a328-550ce12d5aeb
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_16_16
+      automatic_crop_provider: null

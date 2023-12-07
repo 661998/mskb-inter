@@ -1,0 +1,25 @@
+uuid: 4ee997f7-bb16-45b9-983c-5ca310319666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_fee
+    - node.type.examination_part_1
+id: node.examination_part_1.field_related_fee
+field_name: field_related_fee
+entity_type: node
+bundle: examination_part_1
+label: 'Related Fee'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: show_product_variations
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: aa6075b9-cad4-462e-990c-04ed9d9f0a1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.transfer_certificate
+  module:
+    - options
+id: node.transfer_certificate.field_gender
+field_name: field_gender
+entity_type: node
+bundle: transfer_certificate
+label: Gender
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

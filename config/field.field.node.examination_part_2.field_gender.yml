@@ -1,0 +1,21 @@
+uuid: b738521c-84b9-4b68-8b8d-19fd44f16206
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.examination_part_2
+  module:
+    - options
+id: node.examination_part_2.field_gender
+field_name: field_gender
+entity_type: node
+bundle: examination_part_2
+label: Gender
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

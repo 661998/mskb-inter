@@ -1,0 +1,21 @@
+uuid: d2790fdc-a049-4efc-956f-7ff99888966a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_received
+    - node.type.transfer_certificate
+  module:
+    - options
+id: node.transfer_certificate.field_payment_received
+field_name: field_payment_received
+entity_type: node
+bundle: transfer_certificate
+label: 'Payment Received'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 9dbca56b-3263-4e0b-b532-a11e2accbf09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aadhar_number
+    - node.type.examination_part_2
+id: node.examination_part_2.field_aadhar_number
+field_name: field_aadhar_number
+entity_type: node
+bundle: examination_part_2
+label: 'Aadhar Number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

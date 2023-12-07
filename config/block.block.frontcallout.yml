@@ -1,0 +1,34 @@
+uuid: c39908b2-42af-470c-80cc-4f77d13820fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - ug_miscellaneous
+    - user
+  theme:
+    - allinonecms
+id: frontcallout
+theme: allinonecms
+region: content
+weight: 0
+provider: null
+plugin: front_callout_block
+settings:
+  id: front_callout_block
+  label: 'Front Callout'
+  label_display: '0'
+  provider: ug_miscellaneous
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      student: student

@@ -1,0 +1,21 @@
+uuid: 1919ab01-b7bf-4b58-a311-f6f8d07ca401
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verification_date
+    - node.type.transfer_certificate
+  module:
+    - datetime
+id: node.transfer_certificate.field_verification_date
+field_name: field_verification_date
+entity_type: node
+bundle: transfer_certificate
+label: 'Verification date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

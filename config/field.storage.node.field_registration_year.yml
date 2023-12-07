@@ -1,0 +1,23 @@
+uuid: 73642fc9-9985-4276-bfbf-f3c7c2275e21
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - yearonly
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_registration_year
+field_name: field_registration_year
+entity_type: node
+type: yearonly
+settings: {  }
+module: yearonly
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

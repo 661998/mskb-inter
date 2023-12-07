@@ -1,0 +1,18 @@
+uuid: f604e431-779b-400b-82b9-586b71d47f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.corp_4_16
+  module:
+    - crop
+name: corp_style_4_16
+label: 'Corp Style 4:16'
+effects:
+  40347877-b3a0-4c1c-87d9-6c27aea914f9:
+    uuid: 40347877-b3a0-4c1c-87d9-6c27aea914f9
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: corp_4_16
+      automatic_crop_provider: null

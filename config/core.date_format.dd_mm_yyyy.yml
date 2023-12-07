@@ -1,0 +1,8 @@
+uuid: d988b330-7b4d-40f2-b44e-512e3e666b20
+langcode: en
+status: true
+dependencies: {  }
+id: dd_mm_yyyy
+label: DD/MM/YYYY
+locked: false
+pattern: d/m/Y

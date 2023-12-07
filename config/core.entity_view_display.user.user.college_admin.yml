@@ -1,0 +1,64 @@
+uuid: e12d0473-100e-4813-9779-cdf1b737ab2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.college_admin
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.feeds_item
+    - field.field.user.user.field_application_no
+    - field.field.user.user.field_caste_category
+    - field.field.user.user.field_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_registration_purpose
+    - field.field.user.user.field_session
+    - field.field.user.user.field_stream
+  module:
+    - user
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.college_admin
+targetEntityType: user
+bundle: user
+mode: college_admin
+content:
+  field_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_phone_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  masquerade:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+  student_profiles:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  feeds_item: true
+  field_application_no: true
+  field_caste_category: true
+  field_registration_purpose: true
+  field_session: true
+  field_stream: true
+  member_for: true

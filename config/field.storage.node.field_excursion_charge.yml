@@ -1,0 +1,22 @@
+uuid: 28600df7-f86c-442d-af04-9257b9a19a25
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_excursion_charge
+field_name: field_excursion_charge
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: e09a9632-7bb6-4f8a-a723-1990af88d41c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.registration
+    - field.storage.commerce_product.field_stream
+    - taxonomy.vocabulary.stream
+id: commerce_product.registration.field_stream
+field_name: field_stream
+entity_type: commerce_product
+bundle: registration
+label: Stream
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stream: stream
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

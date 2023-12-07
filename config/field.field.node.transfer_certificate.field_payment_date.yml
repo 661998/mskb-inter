@@ -1,0 +1,21 @@
+uuid: 8d5544e2-595c-4433-981a-f51c023e55c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_date
+    - node.type.transfer_certificate
+  module:
+    - datetime
+id: node.transfer_certificate.field_payment_date
+field_name: field_payment_date
+entity_type: node
+bundle: transfer_certificate
+label: 'Payment Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

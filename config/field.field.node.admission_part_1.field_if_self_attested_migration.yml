@@ -1,0 +1,23 @@
+uuid: 7918693d-cdab-4c3b-934f-044b526a7f14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_if_self_attested_migration
+    - node.type.admission_part_1
+id: node.admission_part_1.field_if_self_attested_migration
+field_name: field_if_self_attested_migration
+entity_type: node
+bundle: admission_part_1
+label: 'If Self Attested Migration Certificate'
+description: 'Check this box if student uploaded self Attested form instead of Migration Certificate'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

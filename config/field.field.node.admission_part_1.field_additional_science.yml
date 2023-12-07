@@ -1,0 +1,29 @@
+uuid: 3d71e74e-eb9e-4dd7-9717-efa37357a105
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_science
+    - node.type.admission_part_1
+    - taxonomy.vocabulary.additional_science
+id: node.admission_part_1.field_additional_science
+field_name: field_additional_science
+entity_type: node
+bundle: admission_part_1
+label: 'Additional (Science)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      additional_science: additional_science
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

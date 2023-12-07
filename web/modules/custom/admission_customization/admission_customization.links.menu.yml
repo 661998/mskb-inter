@@ -1,0 +1,110 @@
+admission_customization.merit_list:
+  title: 'Merit List'
+  description: 'All Merit list.'
+  menu_name: main
+  route_name: view.merit_list.page_1
+  enabled: 1
+  expanded: TRUE
+  weight: 0
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-award
+
+admission_customization.students:
+  title: 'Students'
+  description: 'List of all student.'
+  menu_name: main
+  route_name: view.students.page_1
+  enabled: 1
+  weight: 1
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-users
+
+admission_customization.part_1:
+  title: 'Admission'
+  description: 'Admission 1 related links.'
+  menu_name: main
+  url: "internal:#"
+  enabled: 1
+  expanded: TRUE
+  weight: 2
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-a
+
+admission_customization.admission:
+  title: 'Admission List'
+  description: 'Semester 1 admission related links.'
+  menu_name: main
+  parent: admission_customization.part_1
+  route_name: view.admission_part_1.page_1
+  enabled: 1
+  expanded: TRUE
+  weight: 1
+  options:
+    attributes:
+      target: _self
+
+admission_customization.examination:
+  title: 'Examination'
+  description: 'Semester 1 examination related links.'
+  menu_name: main
+  parent: admission_customization.part_1
+  route_name: view.examination_part_1.page_1
+  enabled: 1
+  expanded: TRUE
+  weight: 1
+  options:
+    attributes:
+      target: _self
+
+
+admission_customization.register:
+  title: 'Register'
+  weight: 9
+  route_name: user.register
+  menu_name: account
+  menu_item_roles: anonymous
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-user-plus
+
+admission_customization.forgot_pasword:
+  title: 'Forgot Password'
+  weight: 11
+  route_name: user.pass.http
+  menu_name: account
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-unlock
+
+admission_customization.fcr:
+  title: 'Fee Collection'
+  description: 'List of fee collection.'
+  menu_name: main
+  url: "internal:#"
+  enabled: 1
+  expanded: TRUE
+  weight: 7
+  options:
+    attributes:
+      target: _self
+      class:
+        - fa-solid
+        - fa-indian-rupee-sign

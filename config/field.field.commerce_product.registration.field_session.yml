@@ -1,0 +1,29 @@
+uuid: 111e92f1-e252-423c-924a-eca86da8bb69
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.registration
+    - field.storage.commerce_product.field_session
+    - taxonomy.vocabulary.session
+id: commerce_product.registration.field_session
+field_name: field_session
+entity_type: commerce_product
+bundle: registration
+label: Session
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session: session
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

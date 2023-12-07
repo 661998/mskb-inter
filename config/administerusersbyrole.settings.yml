@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: UiTY9bhUKWJOIWDlOKM3akeeyHuJJRspXETsv3SY6jw
+roles:
+  content_editor: unsafe
+  teacher: safe
+  student: safe
+  college_admin: safe
+  payment: unsafe
+  old_student: unsafe

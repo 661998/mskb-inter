@@ -1,0 +1,23 @@
+uuid: 8a7cbcaa-823a-4e04-9fe1-a7b7a0685709
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_college_societies
+    - node.type.fcr_admin
+id: node.fcr_admin.field_college_societies
+field_name: field_college_societies
+entity_type: node
+bundle: fcr_admin
+label: 'College Societies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

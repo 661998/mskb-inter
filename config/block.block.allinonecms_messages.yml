@@ -1,0 +1,22 @@
+uuid: dbf6f0b3-17ec-44d3-bff7-d080bf703d20
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: 93gZMRukLvOpmShwUs_P9zRVHQRYmLOGh1Zft6NKY24
+id: allinonecms_messages
+theme: allinonecms
+region: content
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

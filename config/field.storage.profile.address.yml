@@ -1,0 +1,28 @@
+uuid: 74c7c299-5ce6-4748-8058-1887c3749bf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - field_permissions
+    - profile
+  enforced:
+    module:
+      - commerce_order
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: 7bB4yBo--Mezm_PhFRPPxFA7NRyFY7a2p8FxJTMbfQY
+id: profile.address
+field_name: address
+entity_type: profile
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

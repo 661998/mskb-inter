@@ -1,0 +1,50 @@
+uuid: f6deaef8-6bdc-4117-b9a9-9737bb48820a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_correspondence_address
+    - node.type.examination_part_1
+  module:
+    - address
+id: node.examination_part_1.field_correspondence_address
+field_name: field_correspondence_address
+entity_type: node
+bundle: examination_part_1
+label: 'Present/Correspondence Address'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    langcode: null
+    country_code: IN
+    administrative_area: Bihar
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    IN: IN
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine2:
+      override: hidden
+  fields: {  }
+field_type: address

@@ -1,0 +1,19 @@
+uuid: c51bd59b-568e-4a4f-9833-84de1c624b39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile
+    - node.type.clc
+id: node.clc.field_mobile
+field_name: field_mobile
+entity_type: node
+bundle: clc
+label: Mobile
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

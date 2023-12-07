@@ -1,0 +1,37 @@
+uuid: dc9076f4-4824-4590-8b91-7bb15fcb63b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - system
+    - ug_miscellaneous
+    - user
+  theme:
+    - allinonecms
+third_party_settings:
+  block_classes:
+    block_class: 'bg-white p-3'
+id: studentdashboard
+theme: allinonecms
+region: sidebar_first
+weight: 0
+provider: null
+plugin: student_dashboard_block
+settings:
+  id: student_dashboard_block
+  label: 'Student Dashboard'
+  label_display: '0'
+  provider: ug_miscellaneous
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/user/*"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      student: student

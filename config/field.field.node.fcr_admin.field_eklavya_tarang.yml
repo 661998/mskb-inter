@@ -1,0 +1,23 @@
+uuid: f5c555bc-daf9-4b87-827e-694652eb691b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eklavya_tarang
+    - node.type.fcr_admin
+id: node.fcr_admin.field_eklavya_tarang
+field_name: field_eklavya_tarang
+entity_type: node
+bundle: fcr_admin
+label: 'Eklavya & Tarang'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

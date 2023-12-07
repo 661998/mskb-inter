@@ -1,0 +1,7 @@
+name: Notification
+type: module
+description: 'Use to send SMS and E-mail notification to user about the events.'
+package: Custom
+core_version_requirement: ^9.2 || ^10
+
+version: 1.0

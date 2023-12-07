@@ -1,0 +1,19 @@
+uuid: 6a3df0d1-eee0-41e0-9cd5-cc6c146dcffd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_id
+    - node.type.admission_part_1
+id: node.admission_part_1.field_email_id
+field_name: field_email_id
+entity_type: node
+bundle: admission_part_1
+label: 'Email Id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

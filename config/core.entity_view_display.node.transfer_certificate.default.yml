@@ -1,0 +1,356 @@
+uuid: 13232df1-20e2-4d0e-9595-543a81a81305
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.transfer_certificate.field_approval
+    - field.field.node.transfer_certificate.field_certificate_number
+    - field.field.node.transfer_certificate.field_character
+    - field.field.node.transfer_certificate.field_class_roll_no
+    - field.field.node.transfer_certificate.field_date_duration
+    - field.field.node.transfer_certificate.field_date_of_issue
+    - field.field.node.transfer_certificate.field_father_s_name
+    - field.field.node.transfer_certificate.field_fee_paid_till
+    - field.field.node.transfer_certificate.field_form_number
+    - field.field.node.transfer_certificate.field_gender
+    - field.field.node.transfer_certificate.field_last_verified_by_user
+    - field.field.node.transfer_certificate.field_mobile
+    - field.field.node.transfer_certificate.field_mother_s_name
+    - field.field.node.transfer_certificate.field_payment_amount
+    - field.field.node.transfer_certificate.field_payment_date
+    - field.field.node.transfer_certificate.field_payment_received
+    - field.field.node.transfer_certificate.field_permanent_address
+    - field.field.node.transfer_certificate.field_related_fee
+    - field.field.node.transfer_certificate.field_remark
+    - field.field.node.transfer_certificate.field_session
+    - field.field.node.transfer_certificate.field_stream
+    - field.field.node.transfer_certificate.field_subject_marks_details
+    - field.field.node.transfer_certificate.field_transfer_issued
+    - field.field.node.transfer_certificate.field_utr_ref_number
+    - field.field.node.transfer_certificate.field_verification_date
+    - node.type.transfer_certificate
+  module:
+    - address
+    - datetime
+    - datetime_range
+    - field_group
+    - options
+    - tablefield
+    - user
+third_party_settings:
+  field_group:
+    group_general_information:
+      children:
+        - links
+        - group_personal_details
+        - group_group_2
+      label: 'General Information'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: form-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_payment_details:
+      children:
+        - field_utr_ref_number
+        - field_payment_amount
+        - field_payment_date
+        - field_payment_received
+      label: 'Payment Details'
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: subject-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_for_office_only:
+      children:
+        - field_approval
+        - field_date_of_issue
+        - field_remark
+        - field_transfer_issued
+        - field_certificate_number
+        - field_related_fee
+        - field_last_verified_by_user
+        - field_verification_date
+      label: 'For Office Only'
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: subject-details
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_personal_details:
+      children:
+        - field_form_number
+        - field_session
+        - field_gender
+        - field_father_s_name
+        - field_mother_s_name
+        - field_permanent_address
+      label: 'Personal Details'
+      parent_name: group_general_information
+      region: content
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: 'col-12 col-md-6 label-50'
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_group_2:
+      children:
+        - field_stream
+        - field_class_roll_no
+        - field_mobile
+        - field_character
+        - field_date_duration
+        - field_fee_paid_till
+      label: 'Group 2'
+      parent_name: group_general_information
+      region: content
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: 'col-12 col-md-6 trans-legend label-50'
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_subject_marks_details:
+      children:
+        - field_subject_marks_details
+      label: 'Subject Marks details'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+id: node.transfer_certificate.default
+targetEntityType: node
+bundle: transfer_certificate
+mode: default
+content:
+  field_approval:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_certificate_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_character:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_class_roll_no:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_date_duration:
+    type: daterange_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: dd_mm_yyyy
+      separator: '-'
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_date_of_issue:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_father_s_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_fee_paid_till:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: dd_mm_yyyy
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_form_number:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_gender:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_last_verified_by_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_mobile:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_mother_s_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_payment_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_payment_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: dd_mm_yyyy
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_payment_received:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_permanent_address:
+    type: address_plain
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_related_fee:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_remark:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_session:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_stream:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_subject_marks_details:
+    type: tablefield
+    label: hidden
+    settings:
+      row_header: true
+      column_header: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_transfer_issued:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_utr_ref_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_verification_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 7c2f961f-10b8-4bc4-9b49-35dd4fd1c5ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_library
+    - node.type.fcr_admin
+id: node.fcr_admin.field_library
+field_name: field_library
+entity_type: node
+bundle: fcr_admin
+label: 'Library fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

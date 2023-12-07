@@ -1,0 +1,23 @@
+uuid: 27a980f0-0f19-402c-9080-84ae9b9362fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+type: 'canonical_entities:node'
+pattern: '/[node:content-type]/[node:title]'
+selection_criteria:
+  b804919b-0b7b-4867-be25-db37946a06d5:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b804919b-0b7b-4867-be25-db37946a06d5
+    context_mapping:
+      node: node
+    bundles:
+      admission_part_1: admission_part_1
+      merit_list: merit_list
+selection_logic: and
+weight: -8
+relationships: {  }

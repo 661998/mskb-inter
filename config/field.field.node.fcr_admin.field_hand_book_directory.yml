@@ -1,0 +1,23 @@
+uuid: 84d5cd9e-f2c1-4738-9cf3-0013378007ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hand_book_directory
+    - node.type.fcr_admin
+id: node.fcr_admin.field_hand_book_directory
+field_name: field_hand_book_directory
+entity_type: node
+bundle: fcr_admin
+label: 'Hand Book/Directory'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

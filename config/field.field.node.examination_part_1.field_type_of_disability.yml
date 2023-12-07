@@ -1,0 +1,19 @@
+uuid: 944a3479-fade-49e2-8b25-fcf1b8d0bfff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_disability
+    - node.type.examination_part_1
+id: node.examination_part_1.field_type_of_disability
+field_name: field_type_of_disability
+entity_type: node
+bundle: examination_part_1
+label: 'Type Of Disability'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

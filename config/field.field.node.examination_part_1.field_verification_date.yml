@@ -1,0 +1,21 @@
+uuid: 601635c9-e35c-46ea-92b2-929bf3139680
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verification_date
+    - node.type.examination_part_1
+  module:
+    - datetime
+id: node.examination_part_1.field_verification_date
+field_name: field_verification_date
+entity_type: node
+bundle: examination_part_1
+label: 'Verification date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,23 @@
+uuid: f58184c1-7c00-473d-9132-a5d3f2f0ea4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_excursion_charge
+    - node.type.fcr_admin
+id: node.fcr_admin.field_excursion_charge
+field_name: field_excursion_charge
+entity_type: node
+bundle: fcr_admin
+label: 'Excursion Charge'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

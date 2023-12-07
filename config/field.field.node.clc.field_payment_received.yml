@@ -1,0 +1,21 @@
+uuid: b97ed831-bede-4522-8b09-279e90b928ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_received
+    - node.type.clc
+  module:
+    - options
+id: node.clc.field_payment_received
+field_name: field_payment_received
+entity_type: node
+bundle: clc
+label: 'Payment Status'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

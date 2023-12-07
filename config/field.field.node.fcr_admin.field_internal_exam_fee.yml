@@ -1,0 +1,23 @@
+uuid: 0eaf2219-d8c1-4006-b498-75768580d120
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_exam_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_internal_exam_fee
+field_name: field_internal_exam_fee
+entity_type: node
+bundle: fcr_admin
+label: 'College Exam Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

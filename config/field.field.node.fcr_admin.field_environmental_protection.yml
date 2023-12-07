@@ -1,0 +1,23 @@
+uuid: 40c9c5e4-bc95-4241-9cac-8c7634d57a96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_environmental_protection
+    - node.type.fcr_admin
+id: node.fcr_admin.field_environmental_protection
+field_name: field_environmental_protection
+entity_type: node
+bundle: fcr_admin
+label: 'Environmental Protection Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

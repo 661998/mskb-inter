@@ -1,0 +1,4 @@
+services:
+  ug_fcr.settings:
+    class: Drupal\ug_fcr\UgFcrContent
+    arguments: ["@entity_type.manager", "@current_user", "@database", "@config.factory"]

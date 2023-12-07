@@ -1,0 +1,25 @@
+uuid: 9f98fe0f-a10d-4a3c-80c3-cf33fd5a1369
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_fee
+    - node.type.registration
+id: node.registration.field_related_fee
+field_name: field_related_fee
+entity_type: node
+bundle: registration
+label: 'Related Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: show_product_variations
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

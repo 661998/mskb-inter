@@ -1,0 +1,35 @@
+uuid: b932f45e-ca97-4241-8428-763abfef1230
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_verified_by_user
+    - node.type.admission_part_1
+id: node.admission_part_1.field_last_verified_by_user
+field_name: field_last_verified_by_user
+entity_type: node
+bundle: admission_part_1
+label: 'Last Verified by user'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        teacher: teacher
+        college_admin: college_admin
+        content_editor: '0'
+        administrator: '0'
+        student: '0'
+    include_anonymous: true
+field_type: entity_reference

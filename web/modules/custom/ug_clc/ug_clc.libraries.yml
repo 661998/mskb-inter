@@ -1,0 +1,11 @@
+ug_clc:
+  version: 1.x
+  css:
+    theme:
+      css/pdf.css: {}
+  js:
+    js/ug_clc.js: {}
+  dependencies:    
+    - core/drupal
+    - core/jquery
+    - core/once

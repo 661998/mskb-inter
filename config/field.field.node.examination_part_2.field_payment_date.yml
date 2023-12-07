@@ -1,0 +1,21 @@
+uuid: 26e8b3f9-83aa-48e3-bcbf-954409886a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_date
+    - node.type.examination_part_2
+  module:
+    - datetime
+id: node.examination_part_2.field_payment_date
+field_name: field_payment_date
+entity_type: node
+bundle: examination_part_2
+label: 'Payment Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

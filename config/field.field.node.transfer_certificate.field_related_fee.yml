@@ -1,0 +1,25 @@
+uuid: 5d282b64-a1ea-4f87-a963-d8d450cb2b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_fee
+    - node.type.transfer_certificate
+id: node.transfer_certificate.field_related_fee
+field_name: field_related_fee
+entity_type: node
+bundle: transfer_certificate
+label: 'Related Fee'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: show_product_variations
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

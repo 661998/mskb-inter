@@ -1,0 +1,23 @@
+uuid: 0be620b6-d54f-4ea4-977b-326f546b231e
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - yearonly
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_exam_year
+field_name: field_exam_year
+entity_type: node
+type: yearonly
+settings: {  }
+module: yearonly
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+uuid: 78e77378-1964-41c8-b42a-df1a792f3eb1
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_progress_fee
+field_name: field_progress_fee
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

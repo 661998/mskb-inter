@@ -1,0 +1,24 @@
+uuid: 184c5bc5-f0cf-4eb4-8d61-7269a1603ad1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.download.field_document_link
+    - field.field.node.download.field_upload_document
+    - node.type.download
+  module:
+    - user
+id: node.download.teaser
+targetEntityType: node
+bundle: download
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_document_link: true
+  field_upload_document: true

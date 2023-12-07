@@ -1,0 +1,21 @@
+uuid: fe816a06-778c-4a1a-a920-5612f9638838
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_approval
+    - node.type.transfer_certificate
+  module:
+    - options
+id: node.transfer_certificate.field_approval
+field_name: field_approval
+entity_type: node
+bundle: transfer_certificate
+label: Approval
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

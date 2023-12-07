@@ -1,0 +1,41 @@
+uuid: 0b293557-249a-493e-a46c-023f66c5c201
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.stream.field_code
+    - field.field.taxonomy_term.stream.field_seats
+    - taxonomy.vocabulary.stream
+  module:
+    - text
+id: taxonomy_term.stream.default
+targetEntityType: taxonomy_term
+bundle: stream
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_code:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_seats:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

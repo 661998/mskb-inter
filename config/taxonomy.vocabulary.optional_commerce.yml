@@ -1,0 +1,8 @@
+uuid: 59d147c9-d7dc-4d04-be7c-fb19e04bcb03
+langcode: en
+status: true
+dependencies: {  }
+name: 'Optional (Commerce)'
+vid: optional_commerce
+description: 'Use to list Optional Commerce subject.'
+weight: 0

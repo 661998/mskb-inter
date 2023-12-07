@@ -1,0 +1,35 @@
+uuid: 2162427a-830b-4c74-8bd4-e8f3598a614f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_verified_by_user
+    - node.type.examination_part_2
+id: node.examination_part_2.field_last_verified_by_user
+field_name: field_last_verified_by_user
+entity_type: node
+bundle: examination_part_2
+label: 'Last Verified by user'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        teacher: teacher
+        college_admin: college_admin
+        content_editor: '0'
+        administrator: '0'
+        student: '0'
+    include_anonymous: true
+field_type: entity_reference

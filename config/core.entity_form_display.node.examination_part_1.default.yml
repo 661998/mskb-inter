@@ -1,0 +1,716 @@
+uuid: fac92ee7-1655-49eb-a106-0c560af6bb23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.examination_part_1.field_aadhar_number
+    - field.field.node.examination_part_1.field_application_no
+    - field.field.node.examination_part_1.field_caste_category
+    - field.field.node.examination_part_1.field_caste_certificate
+    - field.field.node.examination_part_1.field_class_roll_number
+    - field.field.node.examination_part_1.field_correspondence_address
+    - field.field.node.examination_part_1.field_course
+    - field.field.node.examination_part_1.field_date_of_birth
+    - field.field.node.examination_part_1.field_document_verification
+    - field.field.node.examination_part_1.field_email_id
+    - field.field.node.examination_part_1.field_examination_form
+    - field.field.node.examination_part_1.field_examination_form_number
+    - field.field.node.examination_part_1.field_father_s_name
+    - field.field.node.examination_part_1.field_form_number
+    - field.field.node.examination_part_1.field_gender
+    - field.field.node.examination_part_1.field_intermediate_admit_card
+    - field.field.node.examination_part_1.field_intermediate_marksheet
+    - field.field.node.examination_part_1.field_last_verified_by_user
+    - field.field.node.examination_part_1.field_less_payment_amount
+    - field.field.node.examination_part_1.field_mobile
+    - field.field.node.examination_part_1.field_mother_s_name
+    - field.field.node.examination_part_1.field_nationality
+    - field.field.node.examination_part_1.field_payment_amount
+    - field.field.node.examination_part_1.field_payment_date
+    - field.field.node.examination_part_1.field_payment_date_2
+    - field.field.node.examination_part_1.field_payment_received
+    - field.field.node.examination_part_1.field_permanent_address
+    - field.field.node.examination_part_1.field_photo
+    - field.field.node.examination_part_1.field_pwd
+    - field.field.node.examination_part_1.field_registration_card
+    - field.field.node.examination_part_1.field_registration_number
+    - field.field.node.examination_part_1.field_registration_year
+    - field.field.node.examination_part_1.field_related_fee
+    - field.field.node.examination_part_1.field_religion
+    - field.field.node.examination_part_1.field_remark
+    - field.field.node.examination_part_1.field_send_to_board
+    - field.field.node.examination_part_1.field_session
+    - field.field.node.examination_part_1.field_stream
+    - field.field.node.examination_part_1.field_student_signature
+    - field.field.node.examination_part_1.field_student_signature_hindi
+    - field.field.node.examination_part_1.field_student_type
+    - field.field.node.examination_part_1.field_type_of_disability
+    - field.field.node.examination_part_1.field_utr_ref_number
+    - field.field.node.examination_part_1.field_utr_ref_number_2
+    - field.field.node.examination_part_1.field_verification_date
+    - image.style.corp_style_4_16
+    - image.style.thumbnail
+    - node.type.examination_part_1
+  module:
+    - address
+    - datetime
+    - field_group
+    - image
+    - image_widget_crop
+    - path
+    - yearonly
+third_party_settings:
+  field_group:
+    group_personal_details:
+      children:
+        - field_stream
+        - field_student_type
+        - field_course
+        - field_session
+        - title
+        - field_application_no
+        - field_father_s_name
+        - field_mother_s_name
+        - field_date_of_birth
+        - field_gender
+        - field_caste_category
+        - field_mobile
+        - field_email_id
+        - field_aadhar_number
+        - field_pwd
+        - field_type_of_disability
+        - field_nationality
+        - field_religion
+      label: 'Personal Details'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_address_details:
+      children:
+        - field_permanent_address
+        - field_correspondence_address
+      label: 'Address Details'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_graduation_deetails:
+      children:
+        - field_registration_number
+        - field_registration_year
+        - field_class_roll_number
+        - field_examination_form_number
+      label: 'Graduation Details'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_subject_details:
+      children:
+        - field_honours_subject_arts
+        - field_honours_subject_commerce
+        - field_honours_subject_science
+        - field_subsidiary_1_arts
+        - field_subsidiary_1_commerce
+        - field_subsidiary_1_science
+        - field_subsidiary_2_arts
+        - field_subsidiary_2_commerce
+        - field_subsidiary_2_science
+        - field_language_composition
+        - field_nh_50_marks
+      label: 'Subject Details'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_documents:
+      children:
+        - field_intermediate_admit_card
+        - field_intermediate_marksheet
+        - field_examination_form
+        - field_registration_card
+        - field_caste_certificate
+        - field_part_1_admit_card
+        - field_part_1_marksheet
+      label: Documents
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_photo_signature:
+      children:
+        - field_photo
+        - field_student_signature
+        - field_student_signature_hindi
+      label: 'Photo & Signature'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_official:
+      children:
+        - field_document_verification
+        - field_remark
+        - field_last_verified_by_user
+        - field_verification_date
+      label: Official
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_payment_details:
+      children:
+        - field_utr_ref_number
+        - field_payment_date
+        - field_payment_amount
+        - field_payment_received
+        - field_utr_ref_number_2
+        - field_payment_date_2
+        - field_less_payment_amount
+        - field_related_fee
+      label: 'Payment Details'
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: false
+id: node.examination_part_1.default
+targetEntityType: node
+bundle: examination_part_1
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_aadhar_number:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_application_no:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_caste_category:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_caste_certificate:
+    type: image_image
+    weight: 28
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings:
+      conditional_fields:
+        3d5a61a5-b9dc-4c8e-812e-5c323b782cbc:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_caste_category
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 5
+            value: ''
+            values: GEN
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+        c3431806-d4fc-4ab3-a9e0-93379dbc5eb1:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_caste_category
+          settings:
+            state: required
+            condition: value
+            grouping: AND
+            values_set: 5
+            value: ''
+            values: GEN
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_class_roll_number:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_correspondence_address:
+    type: address_default
+    weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_course:
+    type: options_select
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_of_birth:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_document_verification:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email_id:
+    type: email_default
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_examination_form:
+    type: image_image
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_examination_form_number:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_father_s_name:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_gender:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_intermediate_admit_card:
+    type: image_image
+    weight: 24
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_intermediate_marksheet:
+    type: image_image
+    weight: 25
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_last_verified_by_user:
+    type: options_select
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_less_payment_amount:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mobile:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mother_s_name:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_nationality:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_payment_amount:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_payment_date:
+    type: datetime_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_payment_date_2:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_payment_received:
+    type: options_buttons
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_permanent_address:
+    type: address_default
+    weight: 37
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_photo:
+    type: image_widget_crop
+    weight: 24
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: crop_style_16_16
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - crop_16_16
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_pwd:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_registration_card:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_registration_number:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_registration_year:
+    type: yearonly_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_related_fee:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_religion:
+    type: options_select
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_remark:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        65a3463a-1885-4f07-880e-e6d1c50f1706:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_document_verification
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "Not Verified\r\nRejected"
+            value_form:
+              -
+                value: 'Not Verified'
+            effect: show
+            effect_options: {  }
+            selector: ''
+        b82d5f28-6028-4709-a37c-31411ccb8472:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_document_verification
+          settings:
+            state: required
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "Not Verified\r\nRejected"
+            value_form:
+              -
+                value: 'Not Verified'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_session:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_stream:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_student_signature:
+    type: image_widget_crop
+    weight: 25
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: corp_style_4_16
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - corp_4_16
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_student_signature_hindi:
+    type: image_widget_crop
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: corp_style_4_16
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - corp_4_16
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_student_type:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_type_of_disability:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        24706c5b-678a-4508-a83c-36916f03eec0:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_pwd
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: 'YES'
+            effect: show
+            effect_options: {  }
+            selector: ''
+        dd425711-c2ba-48d3-a5be-322c0c927070:
+          entity_type: node
+          bundle: examination_part_1
+          dependee: field_pwd
+          settings:
+            state: required
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: 'YES'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_utr_ref_number:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_utr_ref_number_2:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_verification_date:
+    type: datetime_default
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_form_number: true
+  field_send_to_board: true
+  revision_log: true

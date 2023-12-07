@@ -1,0 +1,8 @@
+uuid: 5c4b9892-5daa-46ef-a517-3abdb6229b71
+langcode: en
+status: true
+dependencies: {  }
+name: 'Compulsory Group 1'
+vid: compulsory
+description: 'Use to list Compulsory Group 1 Subject.'
+weight: 0

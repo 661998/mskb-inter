@@ -1,0 +1,22 @@
+uuid: 6e67cdd0-cb68-4c0c-80f9-dd9047af1697
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.clc
+id: node.clc.promote
+field_name: promote
+entity_type: node
+bundle: clc
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

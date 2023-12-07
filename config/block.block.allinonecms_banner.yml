@@ -1,0 +1,36 @@
+uuid: c082586c-d68d-4953-8b7c-eb61c52b551b
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.banner
+  module:
+    - block_classes
+    - simple_block
+    - system
+    - user
+  theme:
+    - allinonecms
+id: allinonecms_banner
+theme: allinonecms
+region: content
+weight: 0
+provider: null
+plugin: 'simple_block:banner'
+settings:
+  id: 'simple_block:banner'
+  label: Banner
+  label_display: '0'
+  provider: simple_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

@@ -1,0 +1,128 @@
+uuid: 43bd7a7d-7819-4716-8f8c-91caf43a3fcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.feeds_item
+    - field.field.user.user.field_application_no
+    - field.field.user.user.field_caste_category
+    - field.field.user.user.field_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_registration_purpose
+    - field.field.user.user.field_session
+    - field.field.user.user.field_stream
+  module:
+    - user
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+  field_application_no:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        c3d4d0eb-ac22-42d9-982f-e5351b3e08a7:
+          entity_type: user
+          bundle: user
+          dependee: field_registration_purpose
+          settings:
+            state: required
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: admission
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_caste_category:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_phone_number:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_registration_purpose:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_session:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        752826bc-4f4e-4a2a-94f7-6b24e27da71b:
+          entity_type: user
+          bundle: user
+          dependee: field_registration_purpose
+          settings:
+            state: empty
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: certificate
+            effect: empty
+            effect_options:
+              empty:
+                value: ''
+                reset: 1
+            selector: ''
+  field_stream:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  feeds_item: true
+  language: true
+  path: true
+  student_profiles: true
+  timezone: true

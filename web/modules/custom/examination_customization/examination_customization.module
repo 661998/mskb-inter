@@ -1,0 +1,146 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/** 
+ * Implements hook_page_attachments
+ */
+
+function examination_customization_page_attachments(array &$page){
+  $page['#attached']['library'][] = 'examination_customization/examination_customization';
+}
+
+/*
+* hook_form_alter()
+*
+* Notify user to complete their profile
+*/
+function examination_customization_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  $roles = $user->getRoles();
+  $aCServices = \Drupal::service('admission_customization.services');
+
+  if ($form_id == ('node_examination_part_1_form') && in_array('student',$roles)) {
+    //check if node already exist
+    $aCServices->existNodeRedirectByUidType($uid, 'examination_part_1');
+
+    //load admission node
+    $nid = $aCServices->checkExistNodeByUidType($uid, 'admission_part_1');
+    
+    if($nid != null){
+      $admission = Node::load(current($nid));
+      $stream = $admission->get('field_stream')->referencedEntities();
+      $form['field_photo']['widget'][0]['#default_value']['fids'][] = $admission->get('field_photo')->target_id;
+      $form['field_student_signature']['widget'][0]['#default_value']['fids'][] = $admission->get('field_student_signature')->target_id;
+      $form['field_student_signature_hindi']['widget'][0]['#default_value']['fids'][] = $admission->get('field_student_signature_hindi')->target_id;
+
+      $date = strtotime(date($admission->get('field_date_of_birth')->value.'12:00:00'));
+      $form['field_date_of_birth']['widget'][0]['value']['#default_value'] = DrupalDateTime::createFromTimestamp($date);
+      $form['field_aadhar_number']['widget'][0]['value']['#default_value'] = $admission->get('field_aadhar_number')->value;
+      $form['field_selection_category']['widget'][0]['value']['#default_value'] = $admission->get('field_selection_category')->value;
+      $form['field_application_no']['widget'][0]['value']['#default_value'] = $admission->get('field_application_no')->value;
+      $form['field_father_s_name']['widget'][0]['value']['#default_value'] = $admission->get('field_father_s_name')->value;
+      $form['field_mother_s_name']['widget'][0]['value']['#default_value'] = $admission->get('field_mother_s_name')->value;
+      $form['field_permanent_address']['widget'][0]['address']['#default_value'] = $admission->get('field_permanent_address')->getValue()[0];
+      $form['field_correspondence_address']['widget'][0]['address']['#default_value'] = $admission->get('field_correspondence_address')->getValue()[0];
+      $form['field_type_of_disability']['widget'][0]['value']['#default_value'] = $admission->get('field_type_of_disability')->value;
+      $form['title']['widget'][0]['value']['#default_value'] = $admission->getTitle();
+      $form['field_mobile']['widget'][0]['value']['#default_value'] = $admission->get('field_mobile')->value;
+      $form['field_email_id']['widget'][0]['value']['#default_value'] = $user->get('mail')->value;
+      $form['field_religion']['widget']['#default_value'] = $admission->get('field_religion')->target_id;
+      $form['field_course']['widget']['#default_value'] = $admission->get('field_course')->target_id;
+      $form['field_class_roll_number']['widget'][0]['value']['#default_value'] = $admission->get('field_class_roll_no')->value;
+
+      $form['field_session']['widget']['#default_value'] = $admission->get('field_session')->target_id;
+      $form['field_stream']['widget']['#default_value'] = $admission->get('field_stream')->target_id;
+      $form['field_nationality']['widget']['#default_value'] = $admission->get('field_nationality')->value;
+      $form['field_pwd']['widget']['#default_value'] = $admission->get('field_pwd')->value;
+      $form['field_caste_category']['widget']['#default_value'] = $admission->get('field_caste_category')->value;
+      $form['field_gender']['widget']['#default_value'] = $admission->get('field_gender')->value;
+      if (!empty($admission->get('field_intermediate_admit_card')->target_id)) {
+        $form['field_intermediate_admit_card']['widget'][0]['#default_value']['fids'][] = $admission->get('field_intermediate_admit_card')->target_id;
+      }
+      if (!empty($admission->get('field_intermediate_marksheet')->target_id)) {
+        $form['field_intermediate_marksheet']['widget'][0]['#default_value']['fids'][] = $admission->get('field_intermediate_marksheet')->target_id;
+      }
+      if (!empty($admission->get('field_caste_certificate')->target_id)) {
+        $form['field_caste_certificate']['widget'][0]['#default_value']['fids'][] = $admission->get('field_caste_certificate')->target_id;
+      }
+    }
+
+    $form['#validate'][] = 'student_examination_part_1_form_validate';
+  }
+
+  // Readonly added to all related fields
+  if (($form_id == 'node_examination_part_1_form' || $form_id == 'node_examination_part_1_edit_form' ) && in_array('student',$roles)) {
+    $form['field_application_no']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_mobile']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_email_id']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_class_roll_number']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_session']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_caste_category']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_stream']['widget']['#attributes']['readonly'] = 'readonly';
+  }
+
+  if($form_id == 'node_examination_part_1_edit_form' && in_array('student',$roles)){
+    $entity = \Drupal::routeMatch()->getParameter('node');
+    if ($entity instanceof NodeInterface) { // Check if it is a node
+      if ($entity->field_document_verification->value == 'Verified') {
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$entity->id());
+        $response = new RedirectResponse($alias);
+        $response->send();
+        \Drupal::messenger()->addWarning(t('You can\'t update Verified Forms'));
+      }
+    }
+    $form['#validate'][] = 'student_examination_part_1_form_validate'; 
+  }
+
+  // Set Last Varified by user field for Teacher and College admin
+  if ($form_id == ('node_examination_part_1_edit_form') && (in_array('teacher',$roles) || in_array('college_admin',$roles))) {
+    $form['field_last_verified_by_user']['widget']['#default_value'] = $uid;
+    $form['field_last_verified_by_user']['#attributes']['class'][]= 'd-none';
+    $form['field_verification_date']['widget'][0]['value']['#default_value'] = new DrupalDateTime('now');
+    $form['field_verification_date']['#attributes']['class'][]= 'd-none';
+  }
+
+}
+
+/** 
+ * Implements student admission part 1 validation
+ */
+function student_examination_part_1_form_validate($form, &$form_state) {
+  $caste_category = $form_state->getValue('field_caste_category')[0]['value'];
+  if (!empty($form_state->getValue('field_student_type')))
+    $student_type = $form_state->getValue('field_student_type')[0]['value'];
+  $stream = $form_state->getValue('field_stream')[0]['target_id'];
+
+  if($caste_category != 'GEN' && empty($form_state->getValue('field_caste_certificate')[0]['fids'])){
+    $form_state->setErrorByName('field_caste_certificate', t('Caste certificate field is required.'));
+  }
+  if(strlen($form_state->getValue('field_mobile')[0]["value"]) != 10){
+    $form_state->setErrorByName('field_mobile', t('Mobile Number should be 10 digit.'));
+  }
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ */
+function examination_customization_node_insert(NodeInterface $node) {
+  // Set the node title to the node ID and save.
+  if ($node->getType() == 'examination_part_1') {
+    $aCServices = \Drupal::service('admission_customization.services');
+    $form_no = $aCServices->generateFormNo('examination_part_1');
+    $node->set('field_form_number', $form_no);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+}

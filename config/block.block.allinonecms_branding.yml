@@ -1,0 +1,25 @@
+uuid: 7852a7fa-7246-411d-b2ff-7d5852355fca
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: XkEo4Vkxij5xUxm1PRBcQnkTyEr89RL1JF1Z4Cn2oWA
+id: allinonecms_branding
+theme: allinonecms
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

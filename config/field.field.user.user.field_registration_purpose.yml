@@ -1,0 +1,21 @@
+uuid: 86299cb3-42e9-4e27-b905-d959aaa83f38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_registration_purpose
+  module:
+    - options
+    - user
+id: user.user.field_registration_purpose
+field_name: field_registration_purpose
+entity_type: user
+bundle: user
+label: 'Registration Purpose'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

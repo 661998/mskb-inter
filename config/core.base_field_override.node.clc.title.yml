@@ -1,0 +1,18 @@
+uuid: feebda1b-b27d-44ff-9b7f-c3ad8908e69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.clc
+id: node.clc.title
+field_name: title
+entity_type: node
+bundle: clc
+label: 'Student Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

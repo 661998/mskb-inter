@@ -1,0 +1,19 @@
+uuid: dd7d3451-6342-47e7-8c82-9c275c458ac6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remark
+    - node.type.examination_part_2
+id: node.examination_part_2.field_remark
+field_name: field_remark
+entity_type: node
+bundle: examination_part_2
+label: Remark
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

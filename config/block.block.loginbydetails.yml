@@ -1,0 +1,38 @@
+uuid: 128f6db7-b79c-4188-ac73-e1017086f031
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - system
+    - ug_miscellaneous
+    - user
+  theme:
+    - allinonecms
+third_party_settings:
+  block_classes:
+    title_class: 'h3 text-center mb-2'
+    block_class: 'bg-white p-3'
+id: loginbydetails
+theme: allinonecms
+region: sidebar_second
+weight: 0
+provider: null
+plugin: login_by_details_block
+settings:
+  id: login_by_details_block
+  label: 'Login By Details'
+  label_display: visible
+  provider: ug_miscellaneous
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/login
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

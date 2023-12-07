@@ -1,0 +1,23 @@
+uuid: ab71a8fe-db06-4f39-a7ed-0c6fdb50aa6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_transfer_issued
+    - node.type.transfer_certificate
+id: node.transfer_certificate.field_transfer_issued
+field_name: field_transfer_issued
+entity_type: node
+bundle: transfer_certificate
+label: 'Transfer Issued'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

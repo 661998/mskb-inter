@@ -1,0 +1,23 @@
+uuid: 73272956-a3f8-49e3-98b9-bc49879e0b25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_n_c_c_
+    - node.type.fcr_admin
+id: node.fcr_admin.field_n_c_c_
+field_name: field_n_c_c_
+entity_type: node
+bundle: fcr_admin
+label: N.C.C.
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

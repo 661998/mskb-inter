@@ -1,0 +1,240 @@
+<?php
+
+namespace Drupal\commerce_ccavenue_mcpg\Plugin\Commerce\PaymentGateway;
+
+use Drupal\commerce_ccavenue_mcpg\CCAvenueEncryption;
+use Drupal\commerce_order\Entity\OrderInterface;
+use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\OffsitePaymentGatewayBase;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Messenger\MessengerTrait;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Provides the Off-site Redirect payment gateway.
+ *
+ * @CommercePaymentGateway(
+ *   id = "ccavenue_payment",
+ *   label = "CCAvenue MCPG",
+ *   display_label = "CCAvenue MCPG",
+ *    forms = {
+ *     "offsite-payment" =
+ *   "Drupal\commerce_ccavenue_mcpg\PluginForm\CCAvenuePayment\PaymentCCAvenueForm",
+ *   },
+ *   payment_method_types = {"credit_card"},
+ *   credit_card_types = {
+ *     "amex", "dinersclub", "discover", "jcb", "maestro", "mastercard", "visa",
+ *   },
+ *   requires_billing_information = FALSE,
+ * )
+ */
+class CCAvenuePayment extends OffsitePaymentGatewayBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $supp_currency = [
+      'INR' => 'Indian Rupee',
+      'USD' => 'United States Dollar',
+      'SGD' => 'Singapore Dollar',
+      'GBP' => 'Pound Sterling',
+      'EUR' => 'Euro',
+    ];
+    $form['merchant_id'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Merchant ID'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['merchant_id'],
+      '#required' => TRUE,
+    ];
+    $form['access_code'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('CCavenue Access Code'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['access_code'],
+      '#required' => TRUE,
+    ];
+    $form['working_key'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('CCavenue Working Key'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['working_key'],
+      '#required' => TRUE,
+    ];
+    $form['merchant_id2'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Merchant ID2'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['merchant_id2'] ? $this->configuration['merchant_id2'] : '',
+    ];
+    $form['access_code2'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('CCavenue Access Code2'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['access_code2'] ? $this->configuration['access_code2'] : '',
+    ];
+    $form['working_key2'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('CCavenue Working Key2'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $this->configuration['working_key2'] ? $this->configuration['working_key2'] : '',
+    ];
+
+    $form['currency'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Default Currency'),
+      '#options' => $supp_currency,
+      '#default_value' => (isset($this->configuration['working_key'])) ? $this->configuration['working_key'] : 'INR',
+    ];
+    $form['language'] = [
+      '#type' => 'hidden',
+      '#title' => $this->t('Language'),
+      '#default_value' => 'EN',
+    ];
+    $form['pmode'] = [
+      '#type' => 'hidden',
+      '#title' => $this->t('Mode'),
+      '#default_value' => $this->getMode(),
+    ];
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    if (!$form_state->getErrors()) {
+      $values = $form_state->getValue($form['#parents']);
+      $this->configuration['merchant_id'] = $values['merchant_id'];
+      $this->configuration['access_code'] = $values['access_code'];
+      $this->configuration['working_key'] = $values['working_key'];
+      $this->configuration['merchant_id2'] = $values['merchant_id2'];
+      $this->configuration['access_code2'] = $values['access_code2'];
+      $this->configuration['working_key2'] = $values['working_key2'];
+      $this->configuration['currency'] = $values['currency'];
+      $this->configuration['language'] = $values['language'];
+      $this->configuration['pmode'] = $values['pmode'];
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function onReturn(OrderInterface $order, Request $request) {
+    $response = array();
+    $encResponse = $request->get('encResp');
+    $decrypt = new CCAvenueEncryption();
+    $rcvdString = $decrypt->decrypt($encResponse, $this->configuration['working_key']);
+    if(empty($rcvdString)){
+      $rcvdString = $decrypt->decrypt($encResponse, $this->configuration['working_key2']); 
+    }
+    $decryptValues = explode('&', $rcvdString);
+
+    for ($i = 0; $i < count($decryptValues); $i++) {
+      $information = explode('=', $decryptValues[$i]);
+      if (count($information) == 2) {
+        $response[$information[0]] = $information[1];
+      }
+    }
+
+    switch ($response['order_status']) {
+
+      case 'Success':
+      if($order->id() == $response['order_id'] && round($order->getTotalPrice()->getNumber(), 2) == round($response['mer_amount'], 2)){
+        $payment_storage = $this->entityTypeManager->getStorage('commerce_payment');
+        $payment = $payment_storage->create([
+          'state' => 'authorization',
+          'amount' => $order->getTotalPrice(),
+          'payment_gateway' => $this->parentEntity->id(),
+          'order_id' => $order->id(),
+          'test' => $this->getMode() == 'test',
+          'remote_id' => $response['tracking_id'],
+          'remote_state' => $response['order_status'],
+          'authorized' => $this->time->getRequestTime(),
+        ]);
+        $payment->save();
+        $this->messenger()->addMessage(t('Your payment was successful with Order Id : @orderid and Transaction Id : @transaction_id', [
+          '@orderid' => $order->id(),
+          '@transaction_id' => $response['tracking_id'],
+        ]));
+        
+        $total_amount = intval($order->total_price->number);
+        $current_date = date('Y-m-d', time());
+        $node_obj = \Drupal::entityTypeManager()->getStorage('node')->load($order->field_order_type_nid->value);
+        $variation_id = '';
+        foreach ($order->getItems() as $order_item) {
+          $product_variation = $order_item->getPurchasedEntity();
+          $variation_id = $product_variation->get('variation_id')->value;
+        }
+
+        if($node_obj->field_payment_received->value == 3){
+   	      $node_obj->field_utr_ref_number_2 = $response['tracking_id'];
+          $node_obj->field_less_payment_amount = $total_amount;
+          $node_obj->field_payment_received = 1;
+          $node_obj->field_payment_date2 = $current_date;
+          $node_obj->field_related_fee = $variation_id;
+     	}else{
+          $node_obj->field_utr_ref_number = $response['tracking_id'];
+          $node_obj->field_payment_amount = $total_amount;
+          $node_obj->field_payment_received = 1;
+          $node_obj->field_payment_date = $current_date;
+          $node_obj->field_related_fee = $variation_id;
+   	    }
+   	    $node_obj->save();
+      }else{
+        $this->messenger()->addError(t('Security error : Illegal access detected. Please contact administrator.'));
+      }
+      break;
+
+      case 'Aborted':
+      $this->messenger()->addError(t('The transaction has been aborted.'));
+      break;
+
+      case 'Failure':
+      $this->messenger()->addError(t('The transaction has been declined.'));
+      break;
+
+      default:
+      $this->messenger()->addError(t('Payment has been failed. Please try again or choose a different payment option.'));
+      break;
+    }
+    
+     $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$order->field_order_type_nid->value);
+
+   	 $response = new RedirectResponse($path_alias);
+     $response->send();
+     return;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function onCancel(OrderInterface $order, Request $request) {
+    $status = $request->get('status');
+    $this->messenger()->addError(t('Payment @status on @gateway but may resume the checkout process here when you are ready.', [
+      '@status' => $status,
+      '@gateway' => $this->getDisplayLabel(),
+    ]));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    return parent::defaultConfiguration() + [
+      'merchant_id' => '',
+      'access_code' => '',
+      'working_key' => '',
+    ];
+  }
+
+}

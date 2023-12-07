@@ -1,0 +1,50 @@
+uuid: 9f9711d9-7361-4e8d-bb38-c0a6b83926e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.merit_list.feeds_item
+    - field.field.node.merit_list.field_application_no
+    - field.field.node.merit_list.field_board_university
+    - field.field.node.merit_list.field_caste_category
+    - field.field.node.merit_list.field_email_id
+    - field.field.node.merit_list.field_gender
+    - field.field.node.merit_list.field_merit_list
+    - field.field.node.merit_list.field_mobile
+    - field.field.node.merit_list.field_percentage_of_marks
+    - field.field.node.merit_list.field_roll_code
+    - field.field.node.merit_list.field_roll_no
+    - field.field.node.merit_list.field_selection_category
+    - field.field.node.merit_list.field_session
+    - field.field.node.merit_list.field_stream
+    - field.field.node.merit_list.field_year_of_passing
+    - node.type.merit_list
+  module:
+    - user
+id: node.merit_list.teaser
+targetEntityType: node
+bundle: merit_list
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_application_no: true
+  field_board_university: true
+  field_caste_category: true
+  field_email_id: true
+  field_gender: true
+  field_merit_list: true
+  field_mobile: true
+  field_percentage_of_marks: true
+  field_roll_code: true
+  field_roll_no: true
+  field_selection_category: true
+  field_session: true
+  field_stream: true
+  field_year_of_passing: true

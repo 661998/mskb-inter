@@ -1,0 +1,19 @@
+uuid: f74666d7-b4a3-4810-9a09-8b3b926708d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name_of_college
+    - node.type.admission_part_1
+id: node.admission_part_1.field_name_of_college
+field_name: field_name_of_college
+entity_type: node
+bundle: admission_part_1
+label: 'Name Of School/College'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

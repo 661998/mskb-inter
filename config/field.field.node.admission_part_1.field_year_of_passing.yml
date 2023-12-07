@@ -1,0 +1,21 @@
+uuid: 5fbff7e7-4d29-4d98-97cd-d85a292a005a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_of_passing
+    - node.type.admission_part_1
+  module:
+    - options
+id: node.admission_part_1.field_year_of_passing
+field_name: field_year_of_passing
+entity_type: node
+bundle: admission_part_1
+label: 'Year of Passing'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

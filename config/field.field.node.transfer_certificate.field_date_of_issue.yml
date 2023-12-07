@@ -1,0 +1,21 @@
+uuid: fed1325c-541a-4c03-b3d8-d703c912af79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_issue
+    - node.type.transfer_certificate
+  module:
+    - datetime
+id: node.transfer_certificate.field_date_of_issue
+field_name: field_date_of_issue
+entity_type: node
+bundle: transfer_certificate
+label: 'Date of Issue'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,23 @@
+uuid: 36ea97ec-70fa-4558-99ce-fa4dd74c1522
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_email_notification
+    - node.type.registration
+id: node.registration.field_ad_email_notification
+field_name: field_ad_email_notification
+entity_type: node
+bundle: registration
+label: 'Admission E-mail Notification'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Sent
+  off_label: 'Not Sent'
+field_type: boolean

@@ -1,0 +1,29 @@
+uuid: ad6be5e2-0cb2-466c-ac59-7f0a3b673f7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session
+    - node.type.transfer_certificate
+    - taxonomy.vocabulary.session
+id: node.transfer_certificate.field_session
+field_name: field_session
+entity_type: node
+bundle: transfer_certificate
+label: Session
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session: session
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

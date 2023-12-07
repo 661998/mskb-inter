@@ -1,0 +1,19 @@
+uuid: d831a662-29a6-403b-a7f4-5380806d32cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_amount
+    - node.type.examination_part_1
+id: node.examination_part_1.field_payment_amount
+field_name: field_payment_amount
+entity_type: node
+bundle: examination_part_1
+label: 'Payment Amount'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

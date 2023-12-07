@@ -1,0 +1,21 @@
+uuid: 81fe0396-d4f2-491e-a3f7-6a859efb79fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_select_type
+    - node.type.page
+  module:
+    - options
+id: node.page.field_select_type
+field_name: field_select_type
+entity_type: node
+bundle: page
+label: 'Select type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,25 @@
+uuid: 527b0b52-f498-492f-8737-8c04aa849c8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - ug_clc
+  theme:
+    - allinonecms
+id: clcreceiptblock
+theme: allinonecms
+region: content
+weight: 2
+provider: null
+plugin: clc_receipt_block
+settings:
+  id: clc_receipt_block
+  label: 'CLC department Clearing Block'
+  label_display: '0'
+  provider: ug_clc
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/clc/*'

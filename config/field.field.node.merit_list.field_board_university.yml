@@ -1,0 +1,29 @@
+uuid: 9687827b-a437-4be1-a362-e863883dff83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_university
+    - node.type.merit_list
+    - taxonomy.vocabulary.board_university
+id: node.merit_list.field_board_university
+field_name: field_board_university
+entity_type: node
+bundle: merit_list
+label: Board/University
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      board_university: board_university
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

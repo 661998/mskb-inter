@@ -1,0 +1,4 @@
+services:
+  ug_payment.settings:
+    class: Drupal\ug_payment\UcPaymentContent
+    arguments: ["@entity_type.manager", "@current_user", "@database", "@config.factory"]

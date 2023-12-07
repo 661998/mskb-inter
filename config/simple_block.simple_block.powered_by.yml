@@ -1,0 +1,11 @@
+uuid: 0465a88c-6dc8-4245-b664-f269222fcbeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: powered_by
+title: 'Powered by ITBOX'
+content:
+  value: '<div class="container"><p class="m-0">Design &amp; Developed by <a class="text-decoration-none text-warning fw-bold" href="https://itboxss.com" target="_blank">ITBOX</a></p></div>'
+  format: full_html

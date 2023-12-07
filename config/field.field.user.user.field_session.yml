@@ -1,0 +1,34 @@
+uuid: bfc112b4-61ad-44f5-b53c-a5bbca9ab737
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_session
+    - taxonomy.vocabulary.session
+  content:
+    - 'taxonomy_term:session:87b9ea2b-5831-45b7-93e3-04b8ac5dd324'
+  module:
+    - user
+id: user.user.field_session
+field_name: field_session
+entity_type: user
+bundle: user
+label: Session
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 87b9ea2b-5831-45b7-93e3-04b8ac5dd324
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session: session
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

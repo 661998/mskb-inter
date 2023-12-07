@@ -1,0 +1,68 @@
+<?php
+
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\UserInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/*
+* hook_form_alter()
+*/
+function ug_settings_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  $roles = $user->getRoles();
+
+  if (($form_id == 'node_admission_part_1_form' || $form_id == 'node_admission_part_1_edit_form') && in_array('student',$roles)) {
+    $config = \Drupal::config('ug_settings.settings');
+    if(!$config->get('admission_part1')){
+      $response = new RedirectResponse('/user');
+      $response->send();
+      \Drupal::messenger()->addWarning(t('Admission has been closed now.'));
+    }
+  }
+
+  if (($form_id == 'node_examination_part_1_form' || $form_id == 'node_examination_part_1_edit_form') && in_array('student',$roles)) {
+    $config = \Drupal::config('ug_settings.settings');
+    if(!$config->get('admission_part1')){
+      $response = new RedirectResponse('/user');
+      $response->send();
+      \Drupal::messenger()->addWarning(t('Part1 Examination has been closed now.'));
+    }
+  }
+
+  if (($form_id == 'node_examination_part_2_form' || $form_id == 'node_examination_part_2_edit_form') && in_array('student',$roles)) {
+    $config = \Drupal::config('ug_settings.settings');
+    if(!$config->get('admission_part1')){
+      $response = new RedirectResponse('/user');
+      $response->send();
+      \Drupal::messenger()->addWarning(t('Part2 Examination has been closed now.'));
+    }
+  }
+
+  if (($form_id == 'node_examination_part_3_form' || $form_id == 'node_examination_part_3_edit_form') && in_array('student',$roles)) {
+    $config = \Drupal::config('ug_settings.settings');
+    if(!$config->get('admission_part1')){
+      $response = new RedirectResponse('/user');
+      $response->send();
+      \Drupal::messenger()->addWarning(t('Part3 Examination has been closed now.'));
+    }
+  }
+
+}
+
+/*
+* hook_entity_form_mode_alter()
+*/
+function ug_settings_entity_form_mode_alter(&$form_mode, EntityInterface $entity) {
+  if ($entity instanceof UserInterface && $entity->hasRole('college_admin')) {
+    $form_mode = 'college_admin';
+  }
+  if ($entity instanceof UserInterface && $entity->hasRole('payment')) {
+    $form_mode = 'payment';
+  }
+  if ($entity instanceof UserInterface && $entity->hasRole('teacher')) {
+    $form_mode = 'teacher';
+  }
+}

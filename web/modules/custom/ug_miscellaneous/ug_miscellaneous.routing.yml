@@ -1,0 +1,10 @@
+ug_miscellaneous.personaldetails:
+  path: '/login-by-personal-validation'
+  defaults:
+    _form: 'Drupal\ug_miscellaneous\Form\PersonalValidationForm'
+    _title: 'Login By Personal Details'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'FALSE'          
+  options:
+    no_cache: 'TRUE'

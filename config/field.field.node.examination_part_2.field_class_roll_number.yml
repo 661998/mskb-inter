@@ -1,0 +1,19 @@
+uuid: dee16ddc-b1de-46cd-b008-cf37d038d999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_roll_number
+    - node.type.examination_part_2
+id: node.examination_part_2.field_class_roll_number
+field_name: field_class_roll_number
+entity_type: node
+bundle: examination_part_2
+label: 'Class Roll Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

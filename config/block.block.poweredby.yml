@@ -1,0 +1,22 @@
+uuid: 3dd74a35-60e9-4c92-9112-12d4fd447ec1
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.powered_by
+  module:
+    - simple_block
+  theme:
+    - allinonecms
+id: poweredby
+theme: allinonecms
+region: footer
+weight: 0
+provider: null
+plugin: 'simple_block:powered_by'
+settings:
+  id: 'simple_block:powered_by'
+  label: 'Powered by'
+  label_display: '0'
+  provider: simple_block
+visibility: {  }

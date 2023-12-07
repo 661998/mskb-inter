@@ -1,0 +1,23 @@
+uuid: 4afe45f2-9c08-44d9-b29f-f74331f8b82b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra_curricular_fee_cultu
+    - node.type.fcr_admin
+id: node.fcr_admin.field_extra_curricular_fee_cultu
+field_name: field_extra_curricular_fee_cultu
+entity_type: node
+bundle: fcr_admin
+label: 'Extra-Curricular Fee (Cultural)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

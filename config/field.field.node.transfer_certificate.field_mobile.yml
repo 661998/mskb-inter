@@ -1,0 +1,19 @@
+uuid: d88e40fa-78dd-4a20-ba9b-936fbd22dda7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile
+    - node.type.transfer_certificate
+id: node.transfer_certificate.field_mobile
+field_name: field_mobile
+entity_type: node
+bundle: transfer_certificate
+label: Mobile
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

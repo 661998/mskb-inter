@@ -1,0 +1,135 @@
+.id_wrapper {
+    width: 215px;
+    float: left;
+}
+.id_front,
+.id_back {
+    font-family: sans-serif;
+    width: 190px;
+    height: 330px;
+    border: 1px solid #000;
+    padding: 0px 10px;
+    margin: 0px 5px 0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.id_front {
+    background-image: url(/themes/custom/allinonecms/images/id_bg.jpg);
+}
+
+.id_back {
+    background-image: url(/themes/custom/allinonecms/images/id_bg.jpg);
+    margin-top: 5px;
+}
+
+.front_content_wrapper,
+.back_content_wrapper {
+    margin-top: 64px;
+    position: relative;
+}
+
+.card__info {
+    font-size: 8px;
+    font-weight: bold;
+    background-color: blue;
+    color: #fff;
+    width: 130px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    margin: 0px auto 3px auto;
+}
+
+.front_content_wrapper,
+.user__name {
+    text-align: center;
+}
+
+.id_label_no,
+.id_label {
+    font-size: 10px;
+    font-weight: bold;
+    color: mediumblue;
+}
+
+.id_value_no,
+.id_value {
+    font-size: 10px;
+    font-weight: bold;
+    word-break: break-all;
+    hyphens:auto
+}
+
+.profile__photo {
+    width: 95px;
+    height: 105px;
+    background: #80808061;
+    margin: 3px auto 0px auto;
+    border: 2px solid #d30808;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.student__name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 3px;
+    line-height: 14px;
+}
+.course-details {
+    margin-top: 0px;
+}
+
+.s-details,
+.course-details {
+    line-height: 1;
+    overflow: wrap
+}
+
+.qr-sign,
+.s-details,
+.course-details {
+    border-collapse: collapse;
+    font-family: sans-serif;
+}
+
+.qr-sign td,
+.s-details td,
+.course-details td  {
+    margin: 0px;
+    padding: 0px;
+}
+
+.qr-sign td {
+    width: 50%;
+    border: 1px solid #8080802b;
+    background-color: #fff;
+}
+.p-sign {
+    font-size: 8px;
+}
+.s-details td,
+.course-details td  {
+    /* width: 50%; */
+}
+.s-details {
+    margin-top: 10px;
+}
+
+.f__name .id_value {
+    font-size: 9px;
+}
+
+.id_back .bottom_text {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}

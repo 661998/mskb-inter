@@ -1,0 +1,10 @@
+admission_customization.admission_part_1_pdf:
+  path: 'admission-part-1-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\admission_customization\Controller\AdmissionPart1Pdf::content'
+    _title: 'Admission Part 1 PDF'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'

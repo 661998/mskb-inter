@@ -1,0 +1,22 @@
+uuid: dafdafba-31ef-4652-85b0-a22c13e3daeb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: ex
+label: 'Examination Part 3'
+type: 'canonical_entities:node'
+pattern: 'examination3/[node:nid]'
+selection_criteria:
+  ec71de74-526f-489f-a593-7329c75013be:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ec71de74-526f-489f-a593-7329c75013be
+    context_mapping:
+      node: node
+    bundles:
+      examination_part_3: examination_part_3
+selection_logic: and
+weight: -5
+relationships: {  }

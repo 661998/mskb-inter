@@ -1,0 +1,21 @@
+uuid: d6a74e4b-77d1-4347-8155-a43aad641c53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fee_paid_till
+    - node.type.transfer_certificate
+  module:
+    - datetime
+id: node.transfer_certificate.field_fee_paid_till
+field_name: field_fee_paid_till
+entity_type: node
+bundle: transfer_certificate
+label: 'Fee paid till'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

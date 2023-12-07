@@ -1,0 +1,21 @@
+uuid: e0b1e275-48e1-4bee-ad62-a7c8af84fff0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_type
+    - node.type.examination_part_1
+  module:
+    - options
+id: node.examination_part_1.field_student_type
+field_name: field_student_type
+entity_type: node
+bundle: examination_part_1
+label: 'Student Type'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: dcc30656-f035-465e-9e7c-3609a26fd7e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_identity_card_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_identity_card_fee
+field_name: field_identity_card_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Identity Card Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,8 @@
+uuid: aae8b286-4e52-48fd-9964-e3b77548ef2e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Merit list'
+vid: merit_list
+description: ''
+weight: 0

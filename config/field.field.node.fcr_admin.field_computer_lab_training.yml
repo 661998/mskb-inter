@@ -1,0 +1,23 @@
+uuid: 27a6b9f8-d943-49d8-baa9-9e69438f9eb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_computer_lab_training
+    - node.type.fcr_admin
+id: node.fcr_admin.field_computer_lab_training
+field_name: field_computer_lab_training
+entity_type: node
+bundle: fcr_admin
+label: 'Computer Lab & Training'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

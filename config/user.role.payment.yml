@@ -1,0 +1,79 @@
+uuid: ba90367f-c684-4cf8-92ad-b61c9e54a3d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - file
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: payment
+id: payment
+label: Payment
+weight: 10
+is_admin: null
+permissions:
+  - 'create field_date_of_issue'
+  - 'create field_less_payment_amount'
+  - 'create field_payment_amount'
+  - 'create field_payment_date'
+  - 'create field_payment_date_2'
+  - 'create field_payment_received'
+  - 'create field_remark'
+  - 'create field_utr_ref_number'
+  - 'create field_utr_ref_number_2'
+  - 'delete own files'
+  - 'edit field_approval'
+  - 'edit field_character_issued'
+  - 'edit field_clc_issued'
+  - 'edit field_date_of_issue'
+  - 'edit field_less_payment_amount'
+  - 'edit field_payment_amount'
+  - 'edit field_payment_date'
+  - 'edit field_payment_date_2'
+  - 'edit field_payment_received'
+  - 'edit field_remark'
+  - 'edit field_utr_ref_number'
+  - 'edit field_utr_ref_number_2'
+  - 'edit own field_approval'
+  - 'edit own field_character_issued'
+  - 'edit own field_clc_issued'
+  - 'edit own field_date_of_issue'
+  - 'edit own field_less_payment_amount'
+  - 'edit own field_payment_amount'
+  - 'edit own field_payment_date'
+  - 'edit own field_payment_date_2'
+  - 'edit own field_payment_received'
+  - 'edit own field_remark'
+  - 'edit own field_utr_ref_number'
+  - 'edit own field_utr_ref_number_2'
+  - 'view field_approval'
+  - 'view field_certificate_number'
+  - 'view field_character_certificate_no'
+  - 'view field_character_issued'
+  - 'view field_clc_issued'
+  - 'view field_date_of_issue'
+  - 'view field_less_payment_amount'
+  - 'view field_payment_amount'
+  - 'view field_payment_date'
+  - 'view field_payment_date_2'
+  - 'view field_payment_received'
+  - 'view field_remark'
+  - 'view field_utr_ref_number'
+  - 'view field_utr_ref_number_2'
+  - 'view own field_approval'
+  - 'view own field_certificate_number'
+  - 'view own field_character_certificate_no'
+  - 'view own field_character_issued'
+  - 'view own field_clc_issued'
+  - 'view own field_date_of_issue'
+  - 'view own field_less_payment_amount'
+  - 'view own field_payment_amount'
+  - 'view own field_payment_date'
+  - 'view own field_payment_date_2'
+  - 'view own field_payment_received'
+  - 'view own field_remark'
+  - 'view own field_utr_ref_number'
+  - 'view own field_utr_ref_number_2'

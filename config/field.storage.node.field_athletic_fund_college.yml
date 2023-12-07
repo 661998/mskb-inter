@@ -1,0 +1,22 @@
+uuid: ebe3245d-ef0d-4bbc-8a33-236725dbba57
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_athletic_fund_college
+field_name: field_athletic_fund_college
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

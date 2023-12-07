@@ -1,0 +1,21 @@
+uuid: fab068e9-4c17-44ae-b70e-65db71991ab2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_received
+    - node.type.registration
+  module:
+    - options
+id: node.registration.field_payment_received
+field_name: field_payment_received
+entity_type: node
+bundle: registration
+label: ' Payment Status'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,128 @@
+<?php 
+
+use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_node_presave().
+ */
+function ug_clc_node_presave(NodeInterface $node) {
+  $clcServices = \Drupal::service('ug_clc.services');
+  if ($node->getType() == 'clc') {
+    if($node->field_approval->value == 'Approved'){
+      if($node->field_certificate_number->isEmpty() && $node->field_character_certificate_no->isEmpty()){
+        $c_no = $clcServices->generateCertificateNo('clc','field_certificate_number','IN');
+        $node->set('field_certificate_number', $c_no);
+        $node->set('field_character_certificate_no', $c_no);    
+      }
+    }
+  }
+  if ($node->getType() == 'transfer_certificate') {
+    if($node->field_approval->value == 'Approved'){
+      if($node->field_certificate_number->isEmpty()){
+        $c_no = $clcServices->generateCertificateNo('transfer_certificate','field_certificate_number','INTC');
+        $node->set('field_certificate_number', $c_no);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ */
+function ug_clc_node_insert(NodeInterface $node) {
+  // Set form number and save.
+  if ($node->getType() == 'clc') {
+    $aCServices = \Drupal::service('admission_customization.services');
+    $form_no = $aCServices->generateFormNo('clc');
+    $node->set('field_form_number', $form_no);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+  if ($node->getType() == 'transfer_certificate') {
+    $aCServices = \Drupal::service('admission_customization.services');
+    $form_no = $aCServices->generateFormNo('transfer_certificate');
+    $node->set('field_form_number', $form_no);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+}
+
+/*
+* hook_form_alter()
+*/
+function ug_clc_form_alter(&$form, FormStateInterface $form_state, $form_id){
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  $roles = $user->getRoles();
+  $aCServices = \Drupal::service('admission_customization.services');
+
+  if ($form_id == ('node_clc_form') && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    //check if node already exist
+    $aCServices->existNodeRedirectByUidType($uid, 'clc');
+
+    $form['#title'] = t('Fill CLC Form');
+    $form['field_session']['widget']['#default_value'] = $user->get('field_session')->target_id;
+    $form['field_stream']['widget']['#default_value'] = $user->get('field_stream')->target_id;
+    $form['title']['widget'][0]['value']['#default_value'] = $user->get('field_name')->value;
+    $form['field_mobile']['widget'][0]['value']['#default_value'] = $user->get('field_phone_number')->value;
+    $form['field_email_id']['widget'][0]['value']['#default_value'] = $user->get('mail')->value;
+  }
+
+  // Readonly added to all related fields
+  if (($form_id == 'node_clc_form' || $form_id == 'node_clc_edit_form' ) && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_mobile']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_email_id']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_session']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_stream']['widget']['#attributes']['readonly'] = 'readonly';
+  }
+
+  // Transfer Certificate 
+  if ($form_id == ('node_transfer_certificate_form') && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    //check if node already exist
+    $aCServices->existNodeRedirectByUidType($uid, 'transfer_certificate');
+
+    $form['#title'] = t('Fill Transfer Certificate Form');
+    $form['title']['widget'][0]['value']['#default_value'] = $user->get('field_name')->value;
+    $form['field_session']['widget']['#default_value'] = $user->get('field_session')->target_id;
+    $form['field_stream']['widget']['#default_value'] = $user->get('field_stream')->target_id;
+  }
+
+  // Change Ecamination date format to Month, Year
+  if (($form_id == 'node_clc_form' || $form_id == 'node_clc_edit_form' )) {
+    $form['field_examination_date']['widget'][0]['value']['#date_part_order'] = ['month','year'];
+  }
+  
+  // Readonly added to all related fields
+  if (($form_id == 'node_transfer_certificate_form' || $form_id == 'node_transfer_certificate_edit_form' ) && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_session']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_stream']['widget']['#attributes']['readonly'] = 'readonly';
+  }
+
+  if (($form_id == 'node_transfer_certificate_edit_form' || $form_id == 'node_clc_edit_form') && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    if (!empty($form['field_approval']['widget']['#default_value'])) {
+      if ($form['field_approval']['widget']['#default_value'][0] == 'Approved') {
+        $nid = $form_state->getformObject()->getEntity()->id();
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$nid);
+        $response = new RedirectResponse($alias);
+        $response->send();
+        \Drupal::messenger()->addWarning(t('You can\'t update Approved Forms'));
+      }
+    }
+  }
+
+  // Set Last Varified by user field for Teacher and College admin
+  if (($form_id == 'node_transfer_certificate_edit_form' || $form_id == 'node_clc_edit_form') && (in_array('teacher',$roles) || in_array('college_admin',$roles))) {
+    $form['field_last_verified_by_user']['widget']['#default_value'] = $uid;
+    $form['field_last_verified_by_user']['#attributes']['class'][]= 'd-none';
+    $form['field_verification_date']['widget'][0]['value']['#default_value'] = new DrupalDateTime('now');
+    $form['field_verification_date']['#attributes']['class'][]= 'd-none';
+  }
+  
+}

@@ -1,0 +1,19 @@
+uuid: d92619cc-da75-4754-84f5-51db3f5254b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_id
+    - node.type.registration
+id: node.registration.field_email_id
+field_name: field_email_id
+entity_type: node
+bundle: registration
+label: 'Email Id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

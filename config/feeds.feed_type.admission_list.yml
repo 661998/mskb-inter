@@ -1,0 +1,329 @@
+uuid: b906f246-8b6c-42de-9dae-025deb507201
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.admission_part_1.title
+    - field.field.node.admission_part_1.field_application_no
+    - field.field.node.admission_part_1.field_board_university
+    - field.field.node.admission_part_1.field_caste_category
+    - field.field.node.admission_part_1.field_correspondence_address
+    - field.field.node.admission_part_1.field_date_of_birth
+    - field.field.node.admission_part_1.field_document_verification
+    - field.field.node.admission_part_1.field_email_id
+    - field.field.node.admission_part_1.field_father_s_name
+    - field.field.node.admission_part_1.field_gender
+    - field.field.node.admission_part_1.field_mobile
+    - field.field.node.admission_part_1.field_payment_received
+    - field.field.node.admission_part_1.field_percentage_of_marks
+    - field.field.node.admission_part_1.field_permanent_address
+    - field.field.node.admission_part_1.field_selection_category
+    - field.field.node.admission_part_1.field_session
+    - field.field.node.admission_part_1.field_stream
+    - field.field.node.admission_part_1.field_year_of_passing
+    - node.type.admission_part_1
+  module:
+    - address
+    - node
+label: 'Admission List'
+id: admission_list
+description: 'Use to import admission form.'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: admission_part_1
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  reference_no:
+    value: 'Reference No'
+    label: 'Reference No'
+    machine_name: reference_no
+    type: csv
+  stream:
+    value: Stream
+    label: Stream
+    machine_name: stream
+    type: csv
+  session:
+    value: Session
+    label: Session
+    machine_name: session
+    type: csv
+  name:
+    value: Name
+    label: Name
+    machine_name: name
+    type: csv
+  father_s_name:
+    value: "Father's Name"
+    label: "Father's Name"
+    machine_name: father_s_name
+    type: csv
+  date_of_birth:
+    value: 'Date of Birth'
+    label: 'Date of Birth'
+    machine_name: date_of_birth
+    type: csv
+  gender:
+    value: Gender
+    label: Gender
+    machine_name: gender
+    type: csv
+  caste_category:
+    value: 'Caste Category'
+    label: 'Caste Category'
+    machine_name: caste_category
+    type: csv
+  selection_category:
+    value: 'Selection Category'
+    label: 'Selection Category'
+    machine_name: selection_category
+    type: csv
+  mobile:
+    value: Mobile
+    label: Mobile
+    machine_name: mobile
+    type: csv
+  email_id:
+    value: 'Email Id'
+    label: 'Email Id'
+    machine_name: email_id
+    type: csv
+  permanent_address_country:
+    value: 'Permanent Address Country'
+    label: 'Permanent Address Country'
+    machine_name: permanent_address_country
+    type: csv
+  permanent_address:
+    value: 'Permanent Address'
+    label: 'Permanent Address'
+    machine_name: permanent_address
+    type: csv
+  present_correspondence_address_country:
+    value: 'Present/Correspondence Address Country'
+    label: 'Present/Correspondence Address Country'
+    machine_name: present_correspondence_address_country
+    type: csv
+  present_correspondence_address:
+    value: 'Present/Correspondence Address'
+    label: 'Present/Correspondence Address'
+    machine_name: present_correspondence_address
+    type: csv
+  _of_marks:
+    value: '% Of Marks'
+    label: '% Of Marks'
+    machine_name: _of_marks
+    type: csv
+  year_of_passing:
+    value: 'Year of Passing'
+    label: 'Year of Passing'
+    machine_name: year_of_passing
+    type: csv
+  board_university:
+    value: Board/University
+    label: Board/University
+    machine_name: board_university
+    type: csv
+  payment_status:
+    value: 'Payment Status'
+    label: 'Payment Status'
+    machine_name: payment_status
+    type: csv
+  user:
+    value: User
+    label: User
+    machine_name: user
+    type: csv
+  created:
+    value: Created
+    label: Created
+    machine_name: created
+    type: csv
+mappings:
+  -
+    target: field_application_no
+    map:
+      value: reference_no
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_stream
+    map:
+      target_id: stream
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: stream
+  -
+    target: field_session
+    map:
+      target_id: session
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: session
+  -
+    target: title
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_father_s_name
+    map:
+      value: father_s_name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_date_of_birth
+    map:
+      value: date_of_birth
+    settings:
+      language: ''
+      timezone: Asia/Kolkata
+  -
+    target: field_gender
+    map:
+      value: gender
+    settings:
+      language: null
+  -
+    target: field_caste_category
+    map:
+      value: caste_category
+    settings:
+      language: null
+  -
+    target: field_selection_category
+    map:
+      value: selection_category
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_mobile
+    map:
+      value: mobile
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_email_id
+    map:
+      value: email_id
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_permanent_address
+    map:
+      langcode: ''
+      country_code: permanent_address_country
+      administrative_area: ''
+      locality: ''
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: permanent_address
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+    settings:
+      language: null
+  -
+    target: field_correspondence_address
+    map:
+      langcode: ''
+      country_code: present_correspondence_address_country
+      administrative_area: ''
+      locality: ''
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: present_correspondence_address
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+    settings:
+      language: null
+  -
+    target: field_percentage_of_marks
+    map:
+      value: _of_marks
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_year_of_passing
+    map:
+      value: year_of_passing
+    settings:
+      language: null
+  -
+    target: field_board_university
+    map:
+      target_id: board_university
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: board_university
+  -
+    target: field_payment_received
+    map:
+      value: payment_status
+    settings:
+      language: null
+  -
+    target: field_document_verification
+    map:
+      value: ''
+    settings:
+      language: null
+  -
+    target: uid
+    map:
+      target_id: user
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: created
+    map:
+      value: created
+    settings:
+      language: ''
+      timezone: Asia/Kolkata

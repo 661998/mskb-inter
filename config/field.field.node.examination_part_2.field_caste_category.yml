@@ -1,0 +1,21 @@
+uuid: 45ff7ca6-65cd-4200-b2b0-1309e8ec9943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caste_category
+    - node.type.examination_part_2
+  module:
+    - options
+id: node.examination_part_2.field_caste_category
+field_name: field_caste_category
+entity_type: node
+bundle: examination_part_2
+label: 'Caste Category'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

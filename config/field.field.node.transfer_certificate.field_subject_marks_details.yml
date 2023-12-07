@@ -1,0 +1,90 @@
+uuid: a302693f-341b-48c0-85f9-8a68701fd060
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subject_marks_details
+    - node.type.transfer_certificate
+  module:
+    - tablefield
+id: node.transfer_certificate.field_subject_marks_details
+field_name: field_subject_marks_details
+entity_type: node
+bundle: transfer_certificate
+label: 'Subject Marks details'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    caption: ''
+    rebuild:
+      cols: '7'
+      rows: '6'
+    value:
+      0:
+        weight: '0'
+        0: 'Subject of Examination'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+      caption: ''
+      1:
+        weight: '1'
+        0: 'Present in Lecture'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+      2:
+        weight: '2'
+        0: 'Marks in first Topical Examination'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+      3:
+        weight: '3'
+        0: 'Marks in second Topical Examination'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+      4:
+        weight: '4'
+        0: 'Marks in third Topical Examination'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+      5:
+        weight: '5'
+        0: 'Marks in fourth Topical Examination'
+        1: ''
+        2: ''
+        3: ''
+        4: ''
+        5: ''
+        6: ''
+default_value_callback: ''
+settings:
+  export: false
+  restrict_rebuild: true
+  restrict_import: true
+  lock_values: true
+  cell_processing: 0
+  empty_rules:
+    ignore_table_structure: false
+    ignore_table_header: false
+field_type: tablefield

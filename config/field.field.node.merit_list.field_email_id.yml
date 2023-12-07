@@ -1,0 +1,19 @@
+uuid: a143cfa7-488a-4e6f-a3ff-6299fd8e5003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_id
+    - node.type.merit_list
+id: node.merit_list.field_email_id
+field_name: field_email_id
+entity_type: node
+bundle: merit_list
+label: 'Email Id'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

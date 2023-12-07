@@ -1,0 +1,22 @@
+uuid: ec529804-6db0-4f24-8f81-a409c6e82ca5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: wFZ018QaOCq79WaigbQHByWAOUQmlOIVVmZKVBTH10w
+id: allinonecms_content
+theme: allinonecms
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: 30a13b0e-8e45-4446-92e1-db8690ecca45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exam_year
+    - node.type.clc
+  module:
+    - yearonly
+id: node.clc.field_exam_year
+field_name: field_exam_year
+entity_type: node
+bundle: clc
+label: 'Exam Year'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  yearonly_from: '1990'
+  yearonly_to: now
+field_type: yearonly

@@ -1,0 +1,19 @@
+uuid: f76334c9-40b8-43ed-a4d7-76d405e1df05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form_number
+    - node.type.admission_part_1
+id: node.admission_part_1.field_form_number
+field_name: field_form_number
+entity_type: node
+bundle: admission_part_1
+label: 'Form Number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

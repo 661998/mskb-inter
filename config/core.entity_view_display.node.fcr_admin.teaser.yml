@@ -1,0 +1,108 @@
+uuid: 77088247-b46d-48ca-b208-de6e54247207
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.fcr_admin.field_admission_fee
+    - field.field.node.fcr_admin.field_army_flag_red_cross_t_b
+    - field.field.node.fcr_admin.field_athletic_fund_college
+    - field.field.node.fcr_admin.field_athletic_fund_university
+    - field.field.node.fcr_admin.field_building_maintenances_fund
+    - field.field.node.fcr_admin.field_college_development_fee
+    - field.field.node.fcr_admin.field_college_societies
+    - field.field.node.fcr_admin.field_common_room_fund
+    - field.field.node.fcr_admin.field_computer_lab_training
+    - field.field.node.fcr_admin.field_cost_of_remittance_1x3
+    - field.field.node.fcr_admin.field_cycle_levy
+    - field.field.node.fcr_admin.field_eklavya_tarang
+    - field.field.node.fcr_admin.field_electricity_fee_generator
+    - field.field.node.fcr_admin.field_environmental_protection
+    - field.field.node.fcr_admin.field_excursion_charge
+    - field.field.node.fcr_admin.field_extra_curricular_fee_cultu
+    - field.field.node.fcr_admin.field_furniture_charge
+    - field.field.node.fcr_admin.field_games_fee
+    - field.field.node.fcr_admin.field_generator_fee
+    - field.field.node.fcr_admin.field_gradening_charge
+    - field.field.node.fcr_admin.field_hand_book_directory
+    - field.field.node.fcr_admin.field_identity_card_fee
+    - field.field.node.fcr_admin.field_internal_exam_fee
+    - field.field.node.fcr_admin.field_laboratory_fee
+    - field.field.node.fcr_admin.field_lib_i_card
+    - field.field.node.fcr_admin.field_lib_money
+    - field.field.node.fcr_admin.field_library
+    - field.field.node.fcr_admin.field_magazine_fund
+    - field.field.node.fcr_admin.field_medical_fee
+    - field.field.node.fcr_admin.field_migration_fee
+    - field.field.node.fcr_admin.field_n_c_c_
+    - field.field.node.fcr_admin.field_necessary_fee
+    - field.field.node.fcr_admin.field_nss_fee
+    - field.field.node.fcr_admin.field_parking
+    - field.field.node.fcr_admin.field_poor_boys_fund
+    - field.field.node.fcr_admin.field_progress_fee
+    - field.field.node.fcr_admin.field_registration_fee
+    - field.field.node.fcr_admin.field_related_fee
+    - field.field.node.fcr_admin.field_sainik_fee
+    - field.field.node.fcr_admin.field_society_subscription
+    - field.field.node.fcr_admin.field_student_union_fund
+    - field.field.node.fcr_admin.field_student_welfare_fee
+    - field.field.node.fcr_admin.field_test_fee
+    - field.field.node.fcr_admin.field_tuition_fee
+    - node.type.fcr_admin
+  module:
+    - user
+id: node.fcr_admin.teaser
+targetEntityType: node
+bundle: fcr_admin
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_admission_fee: true
+  field_army_flag_red_cross_t_b: true
+  field_athletic_fund_college: true
+  field_athletic_fund_university: true
+  field_building_maintenances_fund: true
+  field_college_development_fee: true
+  field_college_societies: true
+  field_common_room_fund: true
+  field_computer_lab_training: true
+  field_cost_of_remittance_1x3: true
+  field_cycle_levy: true
+  field_eklavya_tarang: true
+  field_electricity_fee_generator: true
+  field_environmental_protection: true
+  field_excursion_charge: true
+  field_extra_curricular_fee_cultu: true
+  field_furniture_charge: true
+  field_games_fee: true
+  field_generator_fee: true
+  field_gradening_charge: true
+  field_hand_book_directory: true
+  field_identity_card_fee: true
+  field_internal_exam_fee: true
+  field_laboratory_fee: true
+  field_lib_i_card: true
+  field_lib_money: true
+  field_library: true
+  field_magazine_fund: true
+  field_medical_fee: true
+  field_migration_fee: true
+  field_n_c_c_: true
+  field_necessary_fee: true
+  field_nss_fee: true
+  field_parking: true
+  field_poor_boys_fund: true
+  field_progress_fee: true
+  field_registration_fee: true
+  field_related_fee: true
+  field_sainik_fee: true
+  field_society_subscription: true
+  field_student_union_fund: true
+  field_student_welfare_fee: true
+  field_test_fee: true
+  field_tuition_fee: true

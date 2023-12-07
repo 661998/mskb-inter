@@ -1,0 +1,21 @@
+uuid: 04ff4586-8278-48e0-bc78-3268d42a030b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caste_category
+    - node.type.merit_list
+  module:
+    - options
+id: node.merit_list.field_caste_category
+field_name: field_caste_category
+entity_type: node
+bundle: merit_list
+label: 'Caste Category'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: a234f1f7-8afe-4e0b-937d-04fb15fa9a63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.merit_list
+  module:
+    - options
+id: node.merit_list.field_gender
+field_name: field_gender
+entity_type: node
+bundle: merit_list
+label: Gender
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

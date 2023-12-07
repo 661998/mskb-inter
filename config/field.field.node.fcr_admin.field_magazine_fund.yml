@@ -1,0 +1,23 @@
+uuid: cc1270ab-c2d8-463c-b518-cd16efccd897
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_fund
+    - node.type.fcr_admin
+id: node.fcr_admin.field_magazine_fund
+field_name: field_magazine_fund
+entity_type: node
+bundle: fcr_admin
+label: 'Magazine fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

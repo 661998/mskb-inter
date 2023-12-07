@@ -1,0 +1,453 @@
+// Sub theme styling.
+@import 'variables_drupal';
+
+// Bootstrap overriden variables.
+// @see https://getbootstrap.com/docs/5.1/customize/sass/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap5/scss/style';
+
+// Global
+.fa-solid, .fas {
+    font-weight: 900 !important;
+}
+main {
+    padding: 10px;
+}
+
+.form-control[readonly] {
+	background-color: #e9ecef;
+	opacity: 1;
+}
+select[readonly="readonly"] {
+	pointer-events: none;
+}
+// Side Menu CSS
+.shrink {
+    width: 80px;
+    .region-side-menu{
+        nav{
+            .nav-item{
+                span, a{
+                    font-size: 0px;
+                }
+            }
+        }
+    }
+}
+.slow-mo{
+    transition: ease .5s all;
+    .nav-item{
+        transition: ease .5s all;
+        width: 100%;
+    }
+}
+.icon {
+    width: fit-content;
+    margin: 10px;
+    cursor: pointer;
+    i {
+        font-size: 40px;
+    }
+}
+.region-side-menu{
+    border-top: 1px solid #6e6c6c7a;
+    a {
+        color: $primary;
+    }
+}
+// Side menu Start
+#side-menu {
+    padding: 0px 10px;
+    .dropdown-menu {
+        box-shadow: 0px 2px 10px #ccc;
+    }
+}
+nav{
+    .fa-circle-check::before {
+        color: green !important;
+    }
+    .fa-circle-exclamation::before{
+        color: red !important;
+    }
+    .nav-item{
+        span, a{
+            transition: ease .5s all;
+            &::before{
+                font-size: 30px;
+                width: 40px;
+                display: inline-block;
+            }
+            &::after {
+                font-size: 18px;
+            }
+            &.fa-solid {
+                transition: ease .5s all;
+                font-weight: normal !important;
+                font-family: unset;
+                display: flex;
+                align-items: center;
+                &::before{
+                    font-weight: 900;
+                    font-family: "Font Awesome 6 Free";
+                }
+            }
+        }
+        .nav-item{
+            span, a{
+                font-size: 16px !important;
+            }
+        }
+        .dropdown{
+            ul.dropdown-menu {
+                position: absolute;
+                inset: 0 auto auto 98%;
+                margin: 0px;
+                transform: translate3d(0px, 15px, 0px);
+            }
+        }
+        &.dropdown ul.dropdown-menu.show{
+            li.dropdown:hover > ul.dropdown-menu{
+                display: block;
+            }
+        }
+        &:has(a.is-active) > a{
+            background-color: $primary !important;
+            color: #fff !important;
+        }
+    }
+    > ul > li > a {
+        text-align: center;
+    }
+}
+
+// Side menu End
+
+// Superfish
+.block-superfish {
+    margin-top: 15px;
+    .sf-accordion-toggle {
+        .sf-expanded {
+            display: none;
+        }
+    }
+    .nav-item.menuparent {
+        ul {
+            background: $primary;
+            top: 48px;
+        }
+        .sf-accordion-button {
+            float: right;
+            font-size: 0px !important;
+            padding: 15px !important;
+            border: 1px solid #fff;
+            text-align: center;
+            border-radius: 5px;
+            &::after {
+                font-size: 12px;
+                color: #fff;
+                margin-left: 0px !important;
+            }
+        }
+        .nav-link.menuparent {
+            float: left;
+        }
+    }
+
+}
+// Superfish end
+
+// Account menu
+.menu--account {
+    a {
+        &::before {
+            font-size: 24px !important;
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            width: auto !important;
+            margin-right: 10px;
+        }
+        &[href="/user/login"] {
+            display: flex;
+            align-items: center;
+            &::before{
+                content: "\f2f6";
+                font-size: 18px !important;
+            }
+        }
+        &[href="/user/logout"] {
+            display: flex;
+            align-items: center;
+            &::before{
+                content: "\f2f5";
+                font-size: 18px !important;
+            }
+        }
+        &[href="/user"] {
+            display: flex;
+            align-items: center;
+            &::before{
+                content: "\f007";
+                font-size: 18px !important;
+            }
+        }
+        &[href="/user/change-password"] {
+            display: flex;
+            align-items: center;
+            &::before{
+                content: "\f084";
+                font-size: 18px !important;
+            }
+        }
+        &.is-active {
+            color: $navbar-dark-active-color;
+        }
+    }
+}
+
+// User logged in design
+body.user-logged-in {
+    .menu--account {
+        a {
+            &[href="/user/register"] {
+                display: none;
+            }
+            &[href="/user/password"] {
+                display: none;
+            }
+        }
+    }
+}
+
+//form add admission
+header{
+    .navbar-toggler{
+        i{
+            font-size: 32px;
+        }
+    }
+}
+
+// Main content 
+main{
+    .region-content {
+        background: white;
+        padding: 15px;    
+        .breadcrumb {
+            padding: 8px 15px !important;
+            margin-bottom: 20px !important;
+            list-style: none;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        form.node-examination-part-2-form,
+        form.node-examination-part-2-edit-form,
+        form.node-examination-part-1-form,
+        form.node-examination-part-1-edit-form,
+        form.node-admission-part-1-form,
+        form.node-admission-part-1-edit-form,
+        form.node-registration-form,
+        form.node-registration-edit-form {
+            margin: 0;
+            > fieldset{
+                > .fieldset-wrapper{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    margin: 0px -15px;
+                    > .form-wrapper {
+                        @media (min-width: 767px){
+                            width: 50%;
+                        }
+                        @media (max-width: 766.99px){
+                            width: 100%;
+                        }
+                        flex: 0 0 auto;
+                        padding: 0px 15px;
+                        .form-item {
+                            label {
+                                font-size: 15px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                details {
+                    summary {
+                        display: block;
+                        border: none;
+                    }
+                }
+            }
+            .field--type-datetime {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                .label {
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .container-inline{
+                    div {
+                        width: 100%;
+                        input {
+                            padding: .375rem .75rem;
+                            border: 1px solid #ced4da;
+                            border-radius: .375rem;
+                            width: 100%;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .fieldset-legend {
+            font-weight: bold;
+        }
+        .page-title {
+            text-align: left !important;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    }
+    .form-actions .btn {
+        min-width: 150px;
+    }
+}
+
+//css for admissoin article
+article.node--type-examination-part-3,
+article.node--type-examination-part-2,
+article.node--type-examination-part-1,
+article.node.node--type-admission-part-1,
+article.node.node--type-registration {
+    .form-details {
+        fieldset{
+            margin-top: 0;
+        }
+        >.fieldset-wrapper{
+            display: flex;
+            padding: 0;
+            .col-md-8{
+                >legend{
+                    display: none;
+                }
+                .field__label {
+                    width: 50%;
+                    font-weight: 600;
+                }
+            }
+            .col-md-3 {
+                >legend{
+                    display: none;
+                }
+                img {
+                    max-width: 250px;
+                }
+            }
+        }
+    }
+    .form-details, .col-md-8, .col-md-3 {
+        >legend{
+            display: none;
+        }
+        >.fieldset-wrapper{
+            padding: 0;
+        }
+        border: none;
+    }
+    .fieldset-legend {
+        font-weight: bold;
+    }
+    .intermediate-detail{
+        .fieldset-wrapper{
+            .field {
+                width: 25%;
+            }
+        }
+    }
+    .subject-details{
+        .fieldset-wrapper{
+            .field {
+                min-width: 20%;
+            }
+        }
+    }
+    .documents-details {
+        .fieldset-wrapper{
+            .field {
+                min-width: 20%;
+                .field__label {
+                    min-height: 60px;
+                }
+            }
+        }
+    }
+    .intermediate-detail, .subject-details , .documents-details {
+        .fieldset-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            .field {
+                div{
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 5px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+// Expose filter
+.views-exposed-form {
+    .form--inline {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        .form-item, 
+        .form-actions {
+            margin-top: 0px;
+            float: unset;
+        }
+    }
+}
+
+// User Register, Login and Forgot password page
+body:not(.user-logged-in),
+body.change-password{
+    &.path-user {
+        .region-content {
+            max-width: 450px;
+            margin: auto;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width: 991.99px) {
+    #side-menu{
+        display: none;
+    }
+    .body-part {
+        width: 100%;
+    }
+    .navbar-collapse.show{
+        display: flex;
+        .region {
+            width: 100%;
+        }
+    }
+}
+@media only screen and (min-width: 992px) {
+    .region-nav-main {
+        display: none;
+    }
+    .slow-mo ~ .body-part {
+        max-width: calc(100% - 80px);
+    }
+    .slow-mo.shrink ~ .body-part {
+        max-width: calc(100% - 80px);
+    }
+}

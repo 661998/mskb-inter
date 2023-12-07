@@ -1,0 +1,24 @@
+uuid: a37f4b6f-e64a-4f08-857d-31c05d5eb0c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_last_verified_by_user
+field_name: field_last_verified_by_user
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

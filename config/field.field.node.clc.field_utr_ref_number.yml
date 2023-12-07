@@ -1,0 +1,19 @@
+uuid: d79a2f9c-2c98-4460-8458-b1ddc0b3c108
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_utr_ref_number
+    - node.type.clc
+id: node.clc.field_utr_ref_number
+field_name: field_utr_ref_number
+entity_type: node
+bundle: clc
+label: 'UTR/Ref. Number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

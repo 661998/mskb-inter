@@ -1,0 +1,288 @@
+<?php
+
+use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+use Drupal\user\UserInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/** 
+ * Implements hook_page_attachments
+ */
+
+function admission_customization_page_attachments(array &$page){
+  $page['#attached']['library'][] = 'admission_customization/admission_customization';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function admission_customization_theme() {
+  return [
+    'status_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/*
+* hook_form_alter()
+*/
+function admission_customization_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  $roles = $user->getRoles();
+  $ugsettingManager = \Drupal::config('ug_settings.settings');
+  $admisson = $ugsettingManager->get('admission_part_1');
+  $aCServices = \Drupal::service('admission_customization.services');
+
+  if (!$user->get('field_application_no')->isEmpty()) {
+    $ofss = $user->get('field_application_no')->value;
+    $merit_nid = check_ofss_exist($ofss);
+    if(!empty($merit_nid)){
+      $merit = \Drupal::entityTypeManager()->getStorage('node')->load(current($merit_nid));
+    }
+  }
+
+  if ($form_id == ('node_admission_part_1_form') && in_array('student',$roles)) {
+    //check if node already exist
+    $aCServices->existNodeRedirectByUidType($uid, 'admission_part_1');
+
+    // Disable Admisson form if admission is closed
+    if(empty($admisson)){
+      \Drupal::messenger()->addError(t('Admisson is now closed for this session.'));
+      $alias = Url::fromRoute('<front>')->toString();
+      $response = new RedirectResponse($alias);
+      $response->send();
+      exit();
+    }
+
+    // Get details form merit list
+    if(isset($merit)){
+      if (!$merit->get('field_percentage_of_marks')->isEmpty()) {
+        $form['field_percentage_of_marks']['widget'][0]['value']['#default_value'] = $merit->get('field_percentage_of_marks')->value;
+      }
+      if (!$merit->get('field_board_university')->isEmpty()) {
+        $form['field_board_university']['widget']['#default_value'] = $merit->get('field_board_university')->target_id;
+      }
+      if (!$merit->get('field_gender')->isEmpty()) {
+        $form['field_gender']['widget']['#default_value'] = $merit->get('field_gender')->value;
+      }
+      if (!$merit->get('field_selection_category')->isEmpty()) {
+        $form['field_selection_category']['widget'][0]['value']['#default_value'] = $merit->get('field_selection_category')->value;
+      }
+      if (!$merit->get('field_year_of_passing')->isEmpty()) {
+        $form['field_year_of_passing']['widget']['#default_value'] = $merit->get('field_year_of_passing')->value;
+      }
+    }
+
+    $form['field_document_verification']['#access'] = 0;
+    $form['field_session']['widget']['#default_value'] = $user->get('field_session')->target_id;
+    $form['field_stream']['widget']['#default_value'] = $user->get('field_stream')->target_id;
+    $form['title']['widget'][0]['value']['#default_value'] = $user->get('field_name')->value;
+    $form['field_mobile']['widget'][0]['value']['#default_value'] = $user->get('field_phone_number')->value;
+    $form['field_email_id']['widget'][0]['value']['#default_value'] = $user->get('mail')->value;
+    $form['field_caste_category']['widget']['#default_value'] = $user->get('field_caste_category')->value;
+    $form['field_application_no']['widget'][0]['value']['#default_value'] = $ofss;
+
+
+
+    $form['#validate'][] = 'student_admission_part_1_form_validate';
+  }
+
+  if($form_id == 'node_admission_part_1_edit_form' && in_array('student',$roles)){
+    $entity = \Drupal::routeMatch()->getParameter('node');
+    if ($entity instanceof NodeInterface) { // Check if it is a node
+      if ($entity->field_document_verification->value == 'Verified') {
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$entity->id());
+        $response = new RedirectResponse($alias);
+        $response->send();
+        \Drupal::messenger()->addWarning(t('You can\'t update Verified Forms'));
+      }
+    }
+    $form['#validate'][] = 'student_admission_part_1_form_validate';
+  }
+
+  // Readonly added to all related fields
+  if (($form_id == 'node_admission_part_1_form' || $form_id == 'node_admission_part_1_edit_form' ) && in_array('student',$roles)) {
+    $form['field_application_no']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_mobile']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_email_id']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_session']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_caste_category']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_stream']['widget']['#attributes']['readonly'] = 'readonly';
+
+    if(isset($merit)){
+      if (!$merit->get('field_percentage_of_marks')->isEmpty()) {
+        $form['field_percentage_of_marks']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+      }
+      if (!$merit->get('field_board_university')->isEmpty()) {
+        $form['field_board_university']['widget']['#attributes']['readonly'] = 'readonly';
+      }
+      if (!$merit->get('field_gender')->isEmpty()) {
+        $form['field_gender']['widget']['#attributes']['readonly'] = 'readonly';
+      }
+      if (!$merit->get('field_selection_category')->isEmpty()) {
+        $form['field_selection_category']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+      }
+      if (!$merit->get('field_year_of_passing')->isEmpty()) {
+        $form['field_year_of_passing']['widget']['#attributes']['readonly'] = 'readonly';
+      }
+    }
+  }
+
+  // Set Last Varified by user field for Teacher and College admin
+  if ($form_id == ('node_admission_part_1_edit_form') && (in_array('teacher',$roles) || in_array('college_admin',$roles))) {
+    $form['field_last_verified_by_user']['widget']['#default_value'] = $uid;
+    $form['field_last_verified_by_user']['#attributes']['class'][]= 'd-none';
+    $form['field_verification_date']['widget'][0]['value']['#default_value'] = new DrupalDateTime('now');
+    $form['field_verification_date']['#attributes']['class'][]= 'd-none';
+  }
+
+  if ($form_id == 'user_register_form' && !in_array('administrator',$roles)) {
+    $form['#validate'][] = 'student_registration_form_validate';
+  }
+}
+
+/** 
+ * Implements student admission part 1 validation
+ */
+function student_admission_part_1_form_validate($form, &$form_state) {
+  $caste_category = $form_state->getValue('field_caste_category')[0]['value'];
+  if($caste_category != 'GEN' && empty($form_state->getValue('field_caste_certificate')[0]['fids'])){
+    $form_state->setErrorByName('field_caste_certificate', t('Caste certificate field is required.'));
+  }
+  if(strlen($form_state->getValue('field_mobile')[0]["value"]) != 10){
+    $form_state->setErrorByName('field_mobile', t('Mobile Number should be 10 digit.'));
+  }
+
+  // Migration certificate validation
+  $tid = $form_state->getValue('field_board_university')[0]['target_id'];
+  $term = Term::load($tid)->getName();
+  if($term != 'BSEB, Bihar'){
+    if(empty($form_state->getValue('field_migration_certificate')[0]['fids'])){
+      $form_state->setErrorByName('field_migration_certificate', t('Migration certificate field is required.'));
+    }
+  }
+
+  $passing_year = $form_state->getValue('field_year_of_passing')[0]['value'];
+  $years = range(date('Y') - 0, date('Y') - 2);
+  if (!in_array($passing_year, $years)){
+    if(empty($form_state->getValue('field_affidavit_certificate')[0]['fids'])){
+      $form_state->setErrorByName('field_affidavit_certificate', t('Affidavit certificate	field is required.'));
+    }
+  }
+  if(!empty($form_state->getValue('field_stream'))){
+    $sTid = $form_state->getValue('field_stream')[0]['target_id'];
+    $stream = Term::load($sTid)->getName();
+    if($stream == 'Arts'){
+      if(count($form_state->getValue('field_optional_arts')) != 3){
+        $form_state->setErrorByName('field_optional_arts', t('Optional(Arts) should hold 3 Values.'));
+      }
+    }elseif($stream == 'Science'){
+      if(count($form_state->getValue('field_optional_science')) != 3){
+        $form_state->setErrorByName('field_optional_science', t('Optional(Science) should hold 3 Values.'));
+      }
+    }elseif($stream == 'Commerce'){
+      if(count($form_state->getValue('field_optional_commerce')) != 3){
+        $form_state->setErrorByName('field_optional_commerce', t('Optional(Commerce) should hold 3 Values.'));
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ */
+function admission_customization_node_insert(NodeInterface $node) {
+  // Set the node title to the node ID and save.
+  if ($node->getType() == 'admission_part_1') {
+    $aCServices = \Drupal::service('admission_customization.services');
+    $form_no = $aCServices->generateFormNo('admission_part_1');
+    $node->set('field_form_number', $form_no);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+}
+
+/** 
+ * Implements hook__email_registration_name
+ */
+function admission_customization_email_registration_name(UserInterface $account) {
+  // Your hook implementation should ensure that the resulting string
+  // works as a username. You can use email_registration_cleanup_username($name)
+  // to clean up the name.
+  return email_registration_cleanup_username('IN' . $account->id());
+}
+
+/** 
+ * Implements student registration validation
+ */
+function student_registration_form_validate($form, &$form_state) {
+  $aCServices = \Drupal::service('admission_customization.services');
+  $ugsettingManager = \Drupal::config('ug_settings.settings');
+  $session = $ugsettingManager->get('session_list');
+  $merit = $ugsettingManager->get('merit_list');
+
+  // Restrict support email
+  $mail_type = explode("@",$form_state->getValue('mail'));
+  if($mail_type) {
+    $mail_type = end($mail_type);
+    $valid_mail_type = array("gmail.com", "yahoo.com", "outlook.com");
+    if (!in_array($mail_type, $valid_mail_type)) {
+      $form_state->setErrorByName('mail', t('Email id is not Valid.'));
+    }
+  }
+
+  $stream = $form_state->getValue('field_stream')[0]['target_id'];
+
+  if(strlen($form_state->getValue('field_phone_number')[0]["value"]) != 10){
+    $form_state->setErrorByName('field_phone_number', t('Phone Number should be 10 digit.'));
+  }
+
+  //validation with exist mobile number
+  $data_user  = \Drupal::EntityTypeManager()->getStorage('user')->loadByProperties([
+    'field_phone_number' => $form_state->getValue('field_phone_number')[0]['value'],
+  ]);
+  if(!empty($data_user)){
+    $form_state->setErrorByName('field_phone_number', t('Phone Number is already exist.'));
+  }
+
+  // Validate with exist Reference number
+  if(!empty($form_state->getValue('field_application_no'))){
+    $user_applications_obj  = \Drupal::EntityTypeManager()->getStorage('user')->loadByProperties([
+      'field_application_no' => $form_state->getValue('field_application_no')[0]['value'],
+    ]);
+    if(!empty($user_applications_obj)){
+      $form_state->setErrorByName('field_application_no', t('Reference Number is already exist.'));
+    }
+  }
+
+  // Application field should be required for admission
+  if(empty($form_state->getValue('field_application_no')) && ($form_state->getValue('field_registration_purpose')[0]['value'] == 'admission')){
+    $form_state->setErrorByName('field_application_no', t('Application Number is required.')); 
+  }
+
+  if(!empty($form_state->getValue('field_application_no')) && ($form_state->getValue('field_registration_purpose')[0]['value'] == 'admission')){
+    $ofss = $form_state->getValue('field_application_no')[0]['value'];
+    $merit_nid = $aCServices->checkOfss($ofss, $session, $merit);
+    if(empty($merit_nid)){
+      $form_state->setErrorByName('field_application_no', t('Invalid Reference Number')); 
+    }else{
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load(current($merit_nid));
+      if(!empty($stream)){
+        if($node->get('field_stream')->target_id != $stream){
+          $form_state->setErrorByName('field_stream', t('Please select correct Stream.'));
+        }
+      }
+      if($node->get('field_caste_category')->value != $form_state->getValue('field_caste_category')[0]['value']){
+        $form_state->setErrorByName('field_category', t('Select correct Category'));
+      }
+    }
+  }
+}

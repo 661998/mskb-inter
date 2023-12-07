@@ -1,0 +1,7 @@
+name: Registration Customization
+type: module
+description: 'Used to manage registration.'
+package: Custom
+core_version_requirement: ^9.2 || ^10
+
+version: 1.0

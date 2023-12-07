@@ -1,0 +1,36 @@
+uuid: 8314d410-e0b3-455c-8936-8f4c8b7f96a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+    - user
+  theme:
+    - allinonecms
+id: mainnavigation
+theme: allinonecms
+region: side_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      teacher: teacher
+      college_admin: college_admin
+      payment: payment

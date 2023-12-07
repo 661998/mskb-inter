@@ -1,0 +1,10 @@
+registration_customization.registration_pdf:
+  path: 'registration-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\registration_customization\Controller\RegistrationPdf::content'
+    _title: 'Registration PDF'
+  requirements:
+      _permission: 'access content'   
+      _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'

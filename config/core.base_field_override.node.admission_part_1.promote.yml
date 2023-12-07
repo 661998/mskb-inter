@@ -1,0 +1,22 @@
+uuid: 8e1ccf63-e690-4875-8d59-fe26f9b4b6fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.admission_part_1
+id: node.admission_part_1.promote
+field_name: promote
+entity_type: node
+bundle: admission_part_1
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

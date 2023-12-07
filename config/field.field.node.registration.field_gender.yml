@@ -1,0 +1,21 @@
+uuid: 03aec604-c2cb-4904-aeed-8d768bd47a8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.registration
+  module:
+    - options
+id: node.registration.field_gender
+field_name: field_gender
+entity_type: node
+bundle: registration
+label: Gender
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

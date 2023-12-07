@@ -1,0 +1,23 @@
+uuid: 70992deb-fb78-489c-b42d-0b83997c2989
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_common_room_fund
+    - node.type.fcr_admin
+id: node.fcr_admin.field_common_room_fund
+field_name: field_common_room_fund
+entity_type: node
+bundle: fcr_admin
+label: 'Common Room Fund'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

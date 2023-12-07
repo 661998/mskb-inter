@@ -1,0 +1,55 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+<input type="hidden" name="access_kye" id="access_key" value="{{ form.access_key }}">
+{# {{ devel_dump(form.data['#value']) }} #}
+{{ form.session }}
+
+
+    {% if form.data['#value'] %}
+        <div class="row">
+        {% for key,value in form.data['#value'] %}
+            <div class="col-sm-12 col-md-6">
+                <div class="table-responsive">
+                    <table class="table caption-top">
+                        <caption class="h5 text-center text-capitalize fw-bold">{{ key }}</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Stream</th>
+                                {% if key == 'admission' %}
+                                    <th scope="col">Seats</th>
+                                    <th scope="col">Seats Occupied</th>
+                                    <th scope="col">Seat Availability</th>
+                                {% endif %}
+                                {% if key == 'registration' %}
+                                    <th scope="col">Admitted</th>
+                                    <th scope="col">Registration Filled</th>
+                                    <th scope="col">Remaining</th>
+                                {% endif %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in value %}
+                                <tr>
+                                    <td scope="row">{{ row.stream}}</td>
+                                    <td>{{ row.seats}}</td>
+                                    <td>{{ row.occupied}}</td>
+                                    <td>
+                                        {% if row.availability > 0 %}
+                                            <span class="btn btn-success text-white">{{ row.availability}}</span>
+                                        {% else %}
+                                            <span class="btn btn-danger text-white">Full</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center">No result found!</div>
+    {% endif %}
+

@@ -1,0 +1,27 @@
+uuid: 216f60b2-4ed0-43fb-8466-beb12376afa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: 4pk9ggDSf0ZaxcA5XoLBZyaUbzR7bWouMTJksb8kweU
+id: allinonecms_account_menu
+theme: allinonecms
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

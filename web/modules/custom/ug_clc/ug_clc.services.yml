@@ -1,0 +1,4 @@
+services:
+  ug_clc.services:
+    class: Drupal\ug_clc\Service\ClcServices
+    arguments: ["@entity_type.manager", "@current_user", "@database", "@config.factory"]

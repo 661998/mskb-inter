@@ -1,0 +1,26 @@
+uuid: 164e347e-7eb5-4a6f-9c85-c42c3a390e74
+langcode: en
+status: true
+dependencies: {  }
+name: node_admission_part_1
+label: 'node admission_part_1 validation'
+entity_type: node
+bundle: admission_part_1
+field_validation_rules:
+  e87b8c8b-012c-4985-8ca3-c622ec6b7bdc:
+    id: numeric_field_validation_rule
+    title: Numeric
+    data:
+      min: '200000000000'
+      max: '999999999999'
+      step: ''
+    weight: 1
+    uuid: e87b8c8b-012c-4985-8ca3-c622ec6b7bdc
+    field_name: field_aadhar_number
+    column: value
+    error_message: 'Aadhar number is not correct'
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''

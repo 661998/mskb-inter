@@ -1,0 +1,11 @@
+uuid: 9ea1cf91-5c54-4213-a39e-184af5a1d2e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: banner
+title: Banner
+content:
+  value: '<h2 class="text-align-center">Mahila Shilp Kala Bhawan, Muzaffarpur</h2><p class="text-align-center">Mahila Shilp Kala Bhawan was founded in 1965 by the first President of India His Excellency Dr. Rajendra Prasad with a view to imparting sewing, Weaving and other Crafts to the downtrodden women of the society. The main objective was to train them for job opportunities and to enable them for earning their livelihood. Along with these crafts the traditional education was provided to the girl students so that they can also obtain the requisite degrees. Later on the “Sansthan” (Institution) was divided into 3 parts – Middle School, High School and Degree College. The College come in shape by the great efforts of Late Shanta Devi on 9th Aug. 1965.</p><p class="text-align-center"><strong><u>This portal is used to fill admission, registration and examination forms and to apply for CLC, Character and Transfer Certificate.</u></strong></p>'
+  format: full_html

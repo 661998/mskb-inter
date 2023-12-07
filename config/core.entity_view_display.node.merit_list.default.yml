@@ -1,0 +1,144 @@
+uuid: c19e72c6-3ac4-4414-94fd-ed029c226e55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.merit_list.feeds_item
+    - field.field.node.merit_list.field_application_no
+    - field.field.node.merit_list.field_board_university
+    - field.field.node.merit_list.field_caste_category
+    - field.field.node.merit_list.field_email_id
+    - field.field.node.merit_list.field_gender
+    - field.field.node.merit_list.field_merit_list
+    - field.field.node.merit_list.field_mobile
+    - field.field.node.merit_list.field_percentage_of_marks
+    - field.field.node.merit_list.field_roll_code
+    - field.field.node.merit_list.field_roll_no
+    - field.field.node.merit_list.field_selection_category
+    - field.field.node.merit_list.field_session
+    - field.field.node.merit_list.field_stream
+    - field.field.node.merit_list.field_year_of_passing
+    - node.type.merit_list
+  module:
+    - options
+    - user
+id: node.merit_list.default
+targetEntityType: node
+bundle: merit_list
+mode: default
+content:
+  field_application_no:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_board_university:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_caste_category:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_email_id:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_gender:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_merit_list:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_mobile:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_percentage_of_marks:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_roll_code:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_roll_no:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_selection_category:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_session:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_stream:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_year_of_passing:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  feeds_item: true

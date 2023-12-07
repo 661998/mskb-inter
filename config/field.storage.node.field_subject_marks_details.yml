@@ -1,0 +1,23 @@
+uuid: 2b888804-9cf9-45e0-ad3e-df2cd00c3212
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - tablefield
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_subject_marks_details
+field_name: field_subject_marks_details
+entity_type: node
+type: tablefield
+settings: {  }
+module: tablefield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

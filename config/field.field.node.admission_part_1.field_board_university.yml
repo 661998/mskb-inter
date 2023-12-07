@@ -1,0 +1,29 @@
+uuid: 2e84f3c8-0cad-42ec-8cfe-5f903199adc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_university
+    - node.type.admission_part_1
+    - taxonomy.vocabulary.board_university
+id: node.admission_part_1.field_board_university
+field_name: field_board_university
+entity_type: node
+bundle: admission_part_1
+label: Board/University
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      board_university: board_university
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

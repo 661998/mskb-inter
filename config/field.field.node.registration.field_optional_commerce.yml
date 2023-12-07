@@ -1,0 +1,29 @@
+uuid: e02ff43a-cfcb-4e63-8f3b-e7dd0d88ab7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_optional_commerce
+    - node.type.registration
+    - taxonomy.vocabulary.optional_commerce
+id: node.registration.field_optional_commerce
+field_name: field_optional_commerce
+entity_type: node
+bundle: registration
+label: 'Optional (Commerce)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      optional_commerce: optional_commerce
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

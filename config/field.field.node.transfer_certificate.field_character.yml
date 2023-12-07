@@ -1,0 +1,21 @@
+uuid: e0e3f64d-6db4-4fc5-a2a8-73703ddbfdbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character
+    - node.type.transfer_certificate
+  module:
+    - options
+id: node.transfer_certificate.field_character
+field_name: field_character
+entity_type: node
+bundle: transfer_certificate
+label: Character
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

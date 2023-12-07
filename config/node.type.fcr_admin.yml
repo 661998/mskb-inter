@@ -1,0 +1,18 @@
+uuid: 312c9b2f-aea4-442c-94cf-b9505e93c534
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'FCR Admin'
+type: fcr_admin
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

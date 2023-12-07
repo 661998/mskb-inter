@@ -1,0 +1,20 @@
+uuid: 2be6bee3-e6af-4404-8d0b-a92d40cf79a9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: MdbhhlnKJOeVpt-iyrg17fiyqVDV7Vy43fvtcS575Kg
+id: allinonecms_local_actions
+theme: allinonecms
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: 2ea782c0-857c-4ed7-8a0e-f4223fb286cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_religion
+    - node.type.examination_part_2
+    - taxonomy.vocabulary.religion
+id: node.examination_part_2.field_religion
+field_name: field_religion
+entity_type: node
+bundle: examination_part_2
+label: Religion
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      religion: religion
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

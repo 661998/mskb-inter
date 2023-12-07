@@ -1,0 +1,25 @@
+uuid: a21a84f4-4327-4d8a-877d-ddb2b43bc09c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - ug_payment
+  theme:
+    - allinonecms
+id: clcpaymentinstruction
+theme: allinonecms
+region: content
+weight: -2
+provider: null
+plugin: clc_payment_instruction_block
+settings:
+  id: clc_payment_instruction_block
+  label: 'CLC Payment Instruction'
+  label_display: '0'
+  provider: ug_payment
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/clc/*'

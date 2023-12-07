@@ -1,0 +1,69 @@
+uuid: c967e9c1-2697-4f82-97a7-d26e4bad86ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.admission_part_1
+    - node.type.examination_part_1
+    - node.type.examination_part_2
+  module:
+    - field_permissions
+    - file
+    - node
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: teacher
+id: teacher
+label: Teacher
+weight: 7
+is_admin: null
+permissions:
+  - 'create admission_part_1 content'
+  - 'create examination_part_1 content'
+  - 'create examination_part_2 content'
+  - 'create field_document_verification'
+  - 'create field_remark'
+  - 'create field_verification_date'
+  - 'delete own files'
+  - 'edit any admission_part_1 content'
+  - 'edit any examination_part_1 content'
+  - 'edit any examination_part_2 content'
+  - 'edit field_document_verification'
+  - 'edit field_last_verified_by_user'
+  - 'edit field_remark'
+  - 'edit field_verification_date'
+  - 'edit own admission_part_1 content'
+  - 'edit own field_document_verification'
+  - 'edit own field_last_verified_by_user'
+  - 'edit own field_remark'
+  - 'edit own field_verification_date'
+  - 'view field_certificate_number'
+  - 'view field_document_verification'
+  - 'view field_form_number'
+  - 'view field_last_verified_by_user'
+  - 'view field_less_payment_amount'
+  - 'view field_payment_amount'
+  - 'view field_payment_date'
+  - 'view field_payment_date_2'
+  - 'view field_payment_received'
+  - 'view field_remark'
+  - 'view field_send_to_board'
+  - 'view field_utr_ref_number'
+  - 'view field_utr_ref_number_2'
+  - 'view field_verification_date'
+  - 'view own field_certificate_number'
+  - 'view own field_document_verification'
+  - 'view own field_form_number'
+  - 'view own field_last_verified_by_user'
+  - 'view own field_less_payment_amount'
+  - 'view own field_payment_amount'
+  - 'view own field_payment_date'
+  - 'view own field_payment_date_2'
+  - 'view own field_payment_received'
+  - 'view own field_remark'
+  - 'view own field_send_to_board'
+  - 'view own field_utr_ref_number'
+  - 'view own field_utr_ref_number_2'
+  - 'view own field_verification_date'

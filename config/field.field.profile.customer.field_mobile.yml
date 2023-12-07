@@ -1,0 +1,19 @@
+uuid: 9106408f-10c8-4fa1-92c0-3071f73314f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_mobile
+    - profile.type.customer
+id: profile.customer.field_mobile
+field_name: field_mobile
+entity_type: profile
+bundle: customer
+label: Mobile
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

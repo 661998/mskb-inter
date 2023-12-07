@@ -1,0 +1,22 @@
+uuid: 0db790c4-ab98-46d3-8192-059e6a55cd4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_registration_fee
+field_name: field_registration_fee
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

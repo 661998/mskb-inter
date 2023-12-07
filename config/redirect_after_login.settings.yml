@@ -1,0 +1,10 @@
+login_redirection:
+  anonymous: null
+  authenticated: /
+  content_editor: /
+  administrator: /
+  teacher: /
+  student: /inter-admission
+  college_admin: /
+  payment: /
+exclude_urls: ''

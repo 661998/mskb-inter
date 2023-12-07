@@ -1,0 +1,21 @@
+uuid: 4dd437bc-09f2-45b2-a351-af18f9bebac5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_email_notification_date
+    - node.type.admission_part_1
+  module:
+    - datetime
+id: node.admission_part_1.field_ad_email_notification_date
+field_name: field_ad_email_notification_date
+entity_type: node
+bundle: admission_part_1
+label: 'Admission E-mail Notification Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

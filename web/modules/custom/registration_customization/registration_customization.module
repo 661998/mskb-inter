@@ -1,0 +1,226 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/** 
+ * Implements hook_page_attachments
+ */
+
+function registration_customization_page_attachments(array &$page){
+  $page['#attached']['library'][] = 'registration_customization/registration_customization';
+}
+
+/*
+* hook_form_alter()
+*
+* Notify user to complete their profile
+*/
+function registration_customization_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $uid = \Drupal::currentUser()->id();
+  $user = User::load($uid);
+  $roles = $user->getRoles();
+  $aCServices = \Drupal::service('admission_customization.services');
+  $ugsettingManager = \Drupal::config('ug_settings.settings');
+  $reg = $ugsettingManager->get('registration');
+  
+  if ($form_id == ('node_registration_form') && in_array('student',$roles)) {
+    //check if node already exist
+    $aCServices->existNodeRedirectByUidType($uid, 'registration');
+
+    // Disable Registration Form if Registration is closed
+    if(empty($reg)){
+      \Drupal::messenger()->addError(t('Registration is now closed for this session.'));
+      $alias = Url::fromRoute('<front>')->toString();
+      $response = new RedirectResponse($alias);
+      $response->send();
+      exit();
+    }
+
+    //load admission node
+    $nid = $aCServices->checkExistNodeByUidType($uid, 'admission_part_1');
+    
+    if($nid != null){
+      $admission = Node::load(current($nid));
+      $stream = $admission->get('field_stream')->referencedEntities();
+
+      $form['field_session']['widget']['#default_value'] = $admission->get('field_session')->target_id;
+      $form['field_stream']['widget']['#default_value'] = $admission->get('field_stream')->target_id;
+      $form['title']['widget'][0]['value']['#default_value'] = $admission->getTitle();
+      $form['field_application_no']['widget'][0]['value']['#default_value'] = $admission->get('field_application_no')->value;
+      $form['field_class_roll_no']['widget'][0]['value']['#default_value'] = $admission->get('field_class_roll_no')->value;
+      $form['field_father_s_name']['widget'][0]['value']['#default_value'] = $admission->get('field_father_s_name')->value;
+      $form['field_mother_s_name']['widget'][0]['value']['#default_value'] = $admission->get('field_mother_s_name')->value;
+      $date = strtotime(date($admission->get('field_date_of_birth')->value.'12:00:00'));
+      $form['field_date_of_birth']['widget'][0]['value']['#default_value'] = DrupalDateTime::createFromTimestamp($date);
+      $form['field_aadhar_number']['widget'][0]['value']['#default_value'] = $admission->get('field_aadhar_number')->value;
+      $form['field_nationality']['widget']['#default_value'] = $admission->get('field_nationality')->value;
+      $form['field_pwd']['widget']['#default_value'] = $admission->get('field_pwd')->value;
+      $form['field_type_of_disability']['widget'][0]['value']['#default_value'] = $admission->get('field_type_of_disability')->value;
+      $form['field_caste_category']['widget']['#default_value'] = $admission->get('field_caste_category')->value;
+      $form['field_selection_category']['widget'][0]['value']['#default_value'] = $admission->get('field_selection_category')->value;
+      $form['field_gender']['widget']['#default_value'] = $admission->get('field_gender')->value;
+      $form['field_mobile']['widget'][0]['value']['#default_value'] = $admission->get('field_mobile')->value;
+      $form['field_email_id']['widget'][0]['value']['#default_value'] = $admission->get('field_email_id')->value;
+      $form['field_religion']['widget']['#default_value'] = $admission->get('field_religion')->target_id;
+      $form['field_permanent_address']['widget'][0]['address']['#default_value'] = $admission->get('field_permanent_address')->getValue()[0];
+      $form['field_correspondence_address']['widget'][0]['address']['#default_value'] = $admission->get('field_correspondence_address')->getValue()[0];
+
+      $form['field_name_of_college']['widget'][0]['value']['#default_value'] = $admission->get('field_name_of_college')->value;
+      $form['field_percentage_of_marks']['widget'][0]['value']['#default_value'] = $admission->get('field_percentage_of_marks')->value;
+      $form['field_board_university']['widget']['#default_value'] = $admission->get('field_board_university')->target_id;
+      $form['field_year_of_passing']['widget']['#default_value'] = $admission->get('field_year_of_passing')->value;
+
+      $form['field_compulsory']['widget']['#default_value'] = $admission->get('field_compulsory')->target_id;
+      $form['field_compulsory_2']['widget']['#default_value'] = $admission->get('field_compulsory_2')->target_id;
+
+      if(current($stream)->get('name')->value == 'Arts'){ 
+        $ids = array_column($admission->get('field_optional_arts')->getValue(), 'target_id');
+        $form['field_optional_arts']['widget']['#default_value'] = $ids;
+        $form['field_additional_arts']['widget']['#default_value'] = $admission->get('field_additional_arts')->target_id;
+      } elseif(current($stream)->get('name')->value == 'Commerce'){ 
+        $ids = array_column($admission->get('field_optional_commerce')->getValue(), 'target_id');
+        $form['field_optional_commerce']['widget']['#default_value'] = $ids;
+        $form['field_additional_commerce']['widget']['#default_value'] = $admission->get('field_additional_commerce')->target_id;
+      } else {
+        $ids = array_column($admission->get('field_optional_science')->getValue(), 'target_id');
+        $form['field_optional_science']['widget']['#default_value'] = $ids;
+        $form['field_additional_science']['widget']['#default_value'] = $admission->get('field_additional_science')->target_id;
+      } {
+        $ids = array_column($admission->get('field_optional_science')->getValue(), 'target_id');
+        $form['field_optional_science']['widget']['#default_value'] = $ids;
+        $form['field_additional_science']['widget']['#default_value'] = $admission->get('field_additional_science')->target_id;
+      }
+
+      if (!empty($admission->get('field_caste_certificate')->target_id)) {
+        $form['field_caste_certificate']['widget'][0]['#default_value']['fids'][] = $admission->get('field_caste_certificate')->target_id;
+      }
+      if (!empty($admission->get('field_10th_registration')->target_id)) {
+        $form['field_10th_registration']['widget'][0]['#default_value']['fids'][] = $admission->get('field_10th_registration')->target_id;
+      }
+      if (!empty($admission->get('field_migration_certificate')->target_id)) {
+        $form['field_migration_certificate']['widget'][0]['#default_value']['fids'][] = $admission->get('field_migration_certificate')->target_id;
+      }
+      if (!empty($admission->get('field_10th_marksheet')->target_id)) {
+        $form['field_10th_marksheet']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_10th_marksheet')->target_id;
+      }
+      if (!empty($admission->get('field_10th_admit_card')->target_id)) {
+        $form['field_10th_admit_card']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_10th_admit_card')->target_id;
+      }
+      if (!empty($admission->get('field_10th_slc')->target_id)) {
+        $form['field_10th_slc']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_10th_slc')->target_id;
+      }
+      if (!empty($admission->get('field_ofss_form')->target_id)) {
+        $form['field_ofss_form']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_ofss_form')->target_id;
+      }
+
+      if (!empty($admission->get('field_photo')->target_id)) {
+        $form['field_photo']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_photo')->target_id;
+      }
+      if (!empty($admission->get('field_student_signature')->target_id)) {
+        $form['field_student_signature']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_student_signature')->target_id;
+      }
+      if (!empty($admission->get('field_student_signature_hindi')->target_id)) {
+        $form['field_student_signature_hindi']['widget'][0]['#default_value']['fids'][] = @$admission->get('field_student_signature_hindi')->target_id;
+      }
+
+    }
+    $form['#validate'][] = 'node_registration_form_validate';
+  }
+
+  // Readonly added to all related fields
+  if (($form_id == 'node_registration_form' || $form_id == 'node_registration_edit_form' ) && in_array('student',$roles)) {
+    $form['field_application_no']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_mobile']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_email_id']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    // $form['field_aadhar_number']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_session']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_caste_category']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_stream']['widget']['#attributes']['readonly'] = 'readonly';
+    $form['field_board_university']['widget']['#attributes']['readonly'] = 'readonly';
+  }
+
+  if($form_id == 'node_registration_edit_form' && in_array('student',$roles)){
+    $entity = \Drupal::routeMatch()->getParameter('node');
+    if ($entity instanceof NodeInterface) { // Check if it is a node
+      if ($entity->field_document_verification->value == 'Verified') {
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$entity->id());
+        $response = new RedirectResponse($alias);
+        $response->send();
+        \Drupal::messenger()->addWarning(t('You can\'t update Verified Forms'));
+      }
+    }  
+  }
+
+  // Set Last Varified by user field for Teacher and College admin
+  if ($form_id == ('node_registration_edit_form') && (in_array('teacher',$roles) || in_array('college_admin',$roles))) {
+    $form['field_last_verified_by_user']['widget']['#default_value'] = $uid;
+    $form['field_last_verified_by_user']['#attributes']['class'][]= 'd-none';
+    $form['field_verification_date']['widget'][0]['value']['#default_value'] = new DrupalDateTime('now');
+    $form['field_verification_date']['#attributes']['class'][]= 'd-none';
+  }
+
+}
+
+/** 
+ * Implements Registration form validation
+ */
+function node_registration_form_validate($form, &$form_state) {
+  $caste_category = $form_state->getValue('field_caste_category')[0]['value'];
+  if($caste_category != 'GEN' && empty($form_state->getValue('field_caste_certificate')[0]['fids'])){
+    $form_state->setErrorByName('field_caste_certificate', t('Caste certificate field is required.'));
+  }
+  if(strlen($form_state->getValue('field_mobile')[0]["value"]) != 10){
+    $form_state->setErrorByName('field_mobile', t('Mobile Number should be 10 digit.'));
+  }
+
+  // Migration certificate validation
+  $tid = $form_state->getValue('field_board_university')[0]['target_id'];
+  $term = Term::load($tid)->getName();
+  if($term != 'BSEB, Bihar'){
+    if(empty($form_state->getValue('field_migration_certificate')[0]['fids'])){
+      $form_state->setErrorByName('field_migration_certificate', t('Migration certificate field is required.'));
+    }
+  }
+
+  if(!empty($form_state->getValue('field_stream'))){
+    $sTid = $form_state->getValue('field_stream')[0]['target_id'];
+    $stream = Term::load($sTid)->getName();
+    if($stream == 'Arts'){
+      if(count($form_state->getValue('field_optional_arts')) != 3){
+        $form_state->setErrorByName('field_optional_arts', t('Optional(Arts) should hold 3 Values.'));
+      }
+    }elseif($stream == 'Science'){
+      if(count($form_state->getValue('field_optional_science')) != 3){
+        $form_state->setErrorByName('field_optional_science', t('Optional(Science) should hold 3 Values.'));
+      }
+    }elseif($stream == 'Commerce'){
+      if(count($form_state->getValue('field_optional_commerce')) != 3){
+        $form_state->setErrorByName('field_optional_commerce', t('Optional(Commerce) should hold 3 Values.'));
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ */
+function registration_customization_node_insert(NodeInterface $node) {
+  // Set the node title to the node ID and save.
+  if ($node->getType() == 'registration') {
+    $aCServices = \Drupal::service('admission_customization.services');
+    $form_no = $aCServices->generateFormNo('registration');
+    $node->set('field_form_number', $form_no);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+}

@@ -1,0 +1,34 @@
+uuid: 5b808069-5678-44cd-854d-2bf662e3a286
+langcode: en
+status: true
+dependencies:
+  module:
+    - admission_customization
+    - system
+    - user
+  theme:
+    - allinonecms
+id: admissionstatus
+theme: allinonecms
+region: content
+weight: 0
+provider: null
+plugin: admission_status
+settings:
+  id: admission_status
+  label: 'Admission Status'
+  label_display: '0'
+  provider: admission_customization
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      college_admin: college_admin

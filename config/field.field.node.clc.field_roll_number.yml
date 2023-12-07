@@ -1,0 +1,19 @@
+uuid: 317f12ca-d45a-4eff-89aa-0992ac507858
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_roll_number
+    - node.type.clc
+id: node.clc.field_roll_number
+field_name: field_roll_number
+entity_type: node
+bundle: clc
+label: 'Examination Roll No.'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

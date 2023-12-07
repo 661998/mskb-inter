@@ -1,0 +1,23 @@
+uuid: 64619b04-689b-44e7-a70e-9d21ac20a180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_welfare_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_student_welfare_fee
+field_name: field_student_welfare_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Student Welfare Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

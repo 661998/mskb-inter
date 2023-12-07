@@ -1,0 +1,23 @@
+uuid: 418e7b2f-92e5-491e-b47b-fec88e435ff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_send_to_board
+    - node.type.registration
+id: node.registration.field_send_to_board
+field_name: field_send_to_board
+entity_type: node
+bundle: registration
+label: 'Send to Board'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

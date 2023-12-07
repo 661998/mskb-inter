@@ -1,0 +1,10 @@
+uuid: 4cda5b35-09e3-41c7-a4e5-560dabd0a86a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.payment
+label: Payment
+targetEntityType: user
+cache: true

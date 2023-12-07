@@ -1,0 +1,18 @@
+uuid: efeaf28a-b8a1-4cbe-bb4a-ef7e91ef0726
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.transfer_certificate
+id: node.transfer_certificate.title
+field_name: title
+entity_type: node
+bundle: transfer_certificate
+label: 'Student Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

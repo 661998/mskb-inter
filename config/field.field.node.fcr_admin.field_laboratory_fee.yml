@@ -1,0 +1,23 @@
+uuid: 23ec407f-5e5a-42ba-8f71-655d62797240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_laboratory_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_laboratory_fee
+field_name: field_laboratory_fee
+entity_type: node
+bundle: fcr_admin
+label: 'Laboratory Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

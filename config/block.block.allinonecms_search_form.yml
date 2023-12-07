@@ -1,0 +1,23 @@
+uuid: 93288db7-8f89-4d1e-870e-e1c8f63e603d
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: uxR1k7_AKaPfThGM57OIiJtjoindM2FyTzz3KChUkuU
+id: allinonecms_search_form
+theme: allinonecms
+region: nav_additional
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

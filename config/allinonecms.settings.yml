@@ -1,0 +1,23 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 1
+  path: 'public://allinonecms_logo.png'
+favicon:
+  use_default: 1
+  path: 'public://fav_rmls.png'
+  mimetype: image/png
+b5_top_container: 'container-fluid m-0 p-0'
+b5_top_container_config: ''
+b5_body_schema: none
+b5_body_bg_schema: light
+b5_navbar_schema: dark
+b5_navbar_bg_schema: primary
+b5_footer_schema: light
+b5_footer_bg_schema: light
+subtheme_folder: themes/custom
+subtheme_name: 'B5 subtheme'
+subtheme_machine_name: b5subtheme

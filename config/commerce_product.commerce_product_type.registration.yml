@@ -1,0 +1,14 @@
+uuid: 8fa37bc2-1134-45a5-af95-7a288cd5b27b
+langcode: en
+status: true
+dependencies: {  }
+id: registration
+label: Registration
+traits: {  }
+locked: false
+description: 'Use to get Intermediate Registration Fee.'
+variationType: null
+variationTypes:
+  - registration
+multipleVariations: true
+injectVariationFields: true

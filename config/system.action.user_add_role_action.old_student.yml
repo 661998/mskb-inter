@@ -1,0 +1,14 @@
+uuid: 4b3c426f-8ca5-4ebd-8f9e-9f34ba2933ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.old_student
+  module:
+    - user
+id: user_add_role_action.old_student
+label: 'Add the Old Student role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: old_student

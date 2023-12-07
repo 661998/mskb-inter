@@ -1,0 +1,23 @@
+uuid: 80333d94-3975-496c-bc43-076e2db947ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nss_fee
+    - node.type.fcr_admin
+id: node.fcr_admin.field_nss_fee
+field_name: field_nss_fee
+entity_type: node
+bundle: fcr_admin
+label: 'NSS Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

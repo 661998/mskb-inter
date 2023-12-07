@@ -1,0 +1,21 @@
+uuid: a3623af8-0a46-4bc0-8350-5f58804d3ac5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_examination_date
+    - node.type.clc
+  module:
+    - datetime
+id: node.clc.field_examination_date
+field_name: field_examination_date
+entity_type: node
+bundle: clc
+label: 'Examination Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

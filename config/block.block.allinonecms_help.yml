@@ -1,0 +1,22 @@
+uuid: 867682f8-97cb-438e-b8db-4e164799c142
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - allinonecms
+_core:
+  default_config_hash: '-SqNg5VNDjivd3FO_ofl3r4TdwJcImgd5lQuDssfM7A'
+id: allinonecms_help
+theme: allinonecms
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

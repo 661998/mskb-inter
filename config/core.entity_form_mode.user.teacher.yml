@@ -1,0 +1,10 @@
+uuid: 921ab4fd-5b5c-4141-ad6b-acb6375cb432
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.teacher
+label: Teacher
+targetEntityType: user
+cache: true

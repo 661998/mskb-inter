@@ -1,0 +1,29 @@
+uuid: 542d5b15-c761-4ec8-986e-fb99e11ed86f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session
+    - node.type.examination_part_2
+    - taxonomy.vocabulary.session
+id: node.examination_part_2.field_session
+field_name: field_session
+entity_type: node
+bundle: examination_part_2
+label: Session
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session: session
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

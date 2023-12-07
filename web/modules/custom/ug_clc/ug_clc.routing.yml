@@ -1,0 +1,60 @@
+ug_clc.clc_pdf:
+  path: 'clc-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\ug_clc\Controller\ClcPdf::content'
+    _title: 'CLC'
+  requirements:
+    _custom_access: '\Drupal\ug_clc\Controller\ClcPdf::access'
+    _permission: 'access content'   
+    _user_is_logged_in: 'TRUE'
+    _role: 'administrator+college_admin'
+  options:
+    no_cache: 'TRUE'
+
+ug_clc.character_certificate_pdf:
+  path: 'character-certificate-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\ug_clc\Controller\CharacterCertificatePdf::content'
+    _title: 'Character Certificate'
+  requirements:
+    _custom_access: '\Drupal\ug_clc\Controller\CharacterCertificatePdf::access'
+    _permission: 'access content'   
+    _user_is_logged_in: 'TRUE'
+    _role: 'administrator+college_admin'
+  options:
+    no_cache: 'TRUE'
+
+ug_clc.transfer_certificate_pdf:
+  path: 'transfer-certificate-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\ug_clc\Controller\TransferCertificatePdf::content'
+    _title: 'Transfer Certificate'
+  requirements:
+    _custom_access: '\Drupal\ug_clc\Controller\TransferCertificatePdf::access'
+    _permission: 'access content'   
+    _user_is_logged_in: 'TRUE'
+    _role: 'administrator+college_admin'
+  options:
+    no_cache: 'TRUE'
+
+ug_clc.clcreciept_pdf:
+  path: 'clc-receipt-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\ug_clc\Controller\ClcReceiptPdf::content'
+    _title: 'CLC Receipt PDF'
+  requirements:
+    _permission: 'access content'   
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'
+
+ug_clc.tcreciept_pdf:
+  path: 'tc-receipt-pdf/{nid}'
+  defaults:
+    _controller: '\Drupal\ug_clc\Controller\TcReceiptPdf::content'
+    _title: 'Transfer Certificate Receipt PDF'
+  requirements:
+    _permission: 'access content'   
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: 'TRUE'

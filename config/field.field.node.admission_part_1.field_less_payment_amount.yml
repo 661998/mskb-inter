@@ -1,0 +1,19 @@
+uuid: 10d66c1d-986c-487d-8447-e4f03a86a527
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_less_payment_amount
+    - node.type.admission_part_1
+id: node.admission_part_1.field_less_payment_amount
+field_name: field_less_payment_amount
+entity_type: node
+bundle: admission_part_1
+label: 'Less Payment Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

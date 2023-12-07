@@ -1,0 +1,363 @@
+uuid: 9ac48908-b424-461e-857f-255f068e34c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.transfer_certificate.field_approval
+    - field.field.node.transfer_certificate.field_certificate_number
+    - field.field.node.transfer_certificate.field_character
+    - field.field.node.transfer_certificate.field_class_roll_no
+    - field.field.node.transfer_certificate.field_date_duration
+    - field.field.node.transfer_certificate.field_date_of_issue
+    - field.field.node.transfer_certificate.field_father_s_name
+    - field.field.node.transfer_certificate.field_fee_paid_till
+    - field.field.node.transfer_certificate.field_form_number
+    - field.field.node.transfer_certificate.field_gender
+    - field.field.node.transfer_certificate.field_last_verified_by_user
+    - field.field.node.transfer_certificate.field_mobile
+    - field.field.node.transfer_certificate.field_mother_s_name
+    - field.field.node.transfer_certificate.field_payment_amount
+    - field.field.node.transfer_certificate.field_payment_date
+    - field.field.node.transfer_certificate.field_payment_received
+    - field.field.node.transfer_certificate.field_permanent_address
+    - field.field.node.transfer_certificate.field_related_fee
+    - field.field.node.transfer_certificate.field_remark
+    - field.field.node.transfer_certificate.field_session
+    - field.field.node.transfer_certificate.field_stream
+    - field.field.node.transfer_certificate.field_subject_marks_details
+    - field.field.node.transfer_certificate.field_transfer_issued
+    - field.field.node.transfer_certificate.field_utr_ref_number
+    - field.field.node.transfer_certificate.field_verification_date
+    - node.type.transfer_certificate
+  module:
+    - address
+    - datetime
+    - datetime_range
+    - field_group
+    - path
+    - tablefield
+third_party_settings:
+  field_group:
+    group_general_information:
+      children:
+        - field_form_number
+        - title
+        - field_session
+        - field_stream
+        - field_class_roll_no
+        - field_mobile
+        - field_gender
+        - field_father_s_name
+        - field_mother_s_name
+        - field_character
+        - field_date_duration
+        - field_fee_paid_till
+      label: 'General Information'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_address_details:
+      children:
+        - field_permanent_address
+      label: 'Address Details'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: only-permanent-address
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_subject_and_marks_details:
+      children:
+        - field_subject_marks_details
+      label: 'Subject and Marks details'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_payment_details:
+      children:
+        - field_utr_ref_number
+        - field_payment_amount
+        - field_payment_date
+        - field_payment_received
+        - field_related_fee
+      label: 'Payment Details'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_for_office_only:
+      children:
+        - field_approval
+        - field_date_of_issue
+        - field_certificate_number
+        - field_remark
+        - field_transfer_issued
+        - field_verification_date
+        - field_last_verified_by_user
+      label: 'For Office Only'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: node.transfer_certificate.default
+targetEntityType: node
+bundle: transfer_certificate
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_approval:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_certificate_number:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_character:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_class_roll_no:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date_duration:
+    type: daterange_default
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_of_issue:
+    type: datetime_default
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_father_s_name:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fee_paid_till:
+    type: datetime_default
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_form_number:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_gender:
+    type: options_select
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_last_verified_by_user:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_mobile:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mother_s_name:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_payment_amount:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_payment_date:
+    type: datetime_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_payment_received:
+    type: options_buttons
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_permanent_address:
+    type: address_default
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_related_fee:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_remark:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_session:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_stream:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subject_marks_details:
+    type: tablefield
+    weight: 22
+    region: content
+    settings:
+      input_type: textfield
+    third_party_settings: {  }
+  field_transfer_issued:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_utr_ref_number:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_verification_date:
+    type: datetime_default
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  revision_log: true

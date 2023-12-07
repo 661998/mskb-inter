@@ -1,0 +1,21 @@
+uuid: 8d161a0a-b432-4307-80d7-6315de6d6b8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_duration
+    - node.type.transfer_certificate
+  module:
+    - datetime_range
+id: node.transfer_certificate.field_date_duration
+field_name: field_date_duration
+entity_type: node
+bundle: transfer_certificate
+label: 'Date Duration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

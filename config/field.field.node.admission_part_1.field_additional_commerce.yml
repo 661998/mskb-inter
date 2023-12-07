@@ -1,0 +1,29 @@
+uuid: 53b8a473-7aa8-4177-a297-90254acf4971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_commerce
+    - node.type.admission_part_1
+    - taxonomy.vocabulary.additional_commerce
+id: node.admission_part_1.field_additional_commerce
+field_name: field_additional_commerce
+entity_type: node
+bundle: admission_part_1
+label: 'Additional (Commerce)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      additional_commerce: additional_commerce
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

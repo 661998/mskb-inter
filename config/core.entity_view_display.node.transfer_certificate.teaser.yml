@@ -1,0 +1,70 @@
+uuid: ad503ba2-6cac-494a-8ee1-af9336573e7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.transfer_certificate.field_approval
+    - field.field.node.transfer_certificate.field_certificate_number
+    - field.field.node.transfer_certificate.field_character
+    - field.field.node.transfer_certificate.field_class_roll_no
+    - field.field.node.transfer_certificate.field_date_duration
+    - field.field.node.transfer_certificate.field_date_of_issue
+    - field.field.node.transfer_certificate.field_father_s_name
+    - field.field.node.transfer_certificate.field_fee_paid_till
+    - field.field.node.transfer_certificate.field_form_number
+    - field.field.node.transfer_certificate.field_gender
+    - field.field.node.transfer_certificate.field_last_verified_by_user
+    - field.field.node.transfer_certificate.field_mobile
+    - field.field.node.transfer_certificate.field_mother_s_name
+    - field.field.node.transfer_certificate.field_payment_amount
+    - field.field.node.transfer_certificate.field_payment_date
+    - field.field.node.transfer_certificate.field_payment_received
+    - field.field.node.transfer_certificate.field_permanent_address
+    - field.field.node.transfer_certificate.field_related_fee
+    - field.field.node.transfer_certificate.field_remark
+    - field.field.node.transfer_certificate.field_session
+    - field.field.node.transfer_certificate.field_stream
+    - field.field.node.transfer_certificate.field_subject_marks_details
+    - field.field.node.transfer_certificate.field_transfer_issued
+    - field.field.node.transfer_certificate.field_utr_ref_number
+    - field.field.node.transfer_certificate.field_verification_date
+    - node.type.transfer_certificate
+  module:
+    - user
+id: node.transfer_certificate.teaser
+targetEntityType: node
+bundle: transfer_certificate
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_approval: true
+  field_certificate_number: true
+  field_character: true
+  field_class_roll_no: true
+  field_date_duration: true
+  field_date_of_issue: true
+  field_father_s_name: true
+  field_fee_paid_till: true
+  field_form_number: true
+  field_gender: true
+  field_last_verified_by_user: true
+  field_mobile: true
+  field_mother_s_name: true
+  field_payment_amount: true
+  field_payment_date: true
+  field_payment_received: true
+  field_permanent_address: true
+  field_related_fee: true
+  field_remark: true
+  field_session: true
+  field_stream: true
+  field_subject_marks_details: true
+  field_transfer_issued: true
+  field_utr_ref_number: true
+  field_verification_date: true

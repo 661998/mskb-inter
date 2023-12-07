@@ -1,0 +1,10 @@
+uuid: d04f0c67-1162-4223-bb11-7373a50becf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.college_admin
+label: 'College Admin'
+targetEntityType: user
+cache: true
