@@ -47,7 +47,7 @@ web/sites/*/services*.yml
 /web/composer.json
 /web/composer.lock
 /web/example.gitignore
-/web/index.php
+#/web/index.php
 /web/INSTALL.txt
 /web/LICENSE.txt
 /web/README.txt
