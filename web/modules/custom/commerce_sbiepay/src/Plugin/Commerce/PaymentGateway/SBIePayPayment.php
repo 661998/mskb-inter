@@ -102,7 +102,7 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
     $decrypt = new SBIePayEncryption();
     $rcvdString = $decrypt->decrypt($encResponse, $this->configuration['merchant_key']);
     $decryptValues = explode('&', $rcvdString);
-
+    dd($rcvdString);
     for ($i = 0; $i < count($decryptValues); $i++) {
       $information = explode('=', $decryptValues[$i]);
       if (count($information) == 2) {
