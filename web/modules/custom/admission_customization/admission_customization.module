@@ -41,7 +41,8 @@ function admission_customization_form_alter(&$form, FormStateInterface $form_sta
 
   if (!$user->get('field_application_no')->isEmpty()) {
     $ofss = $user->get('field_application_no')->value;
-    $merit_nid = check_ofss_exist($ofss);
+    $session = $user->get('field_session')->target_id;
+    $merit_nid = $aCServices->checkOfss($ofss, $session);
     if(!empty($merit_nid)){
       $merit = \Drupal::entityTypeManager()->getStorage('node')->load(current($merit_nid));
     }
@@ -79,6 +80,8 @@ function admission_customization_form_alter(&$form, FormStateInterface $form_sta
       }
     }
 
+    $form['#title'] = t('Fill Admission Form');
+    $form['field_class_roll_no']['#access'] = 0;
     $form['field_document_verification']['#access'] = 0;
     $form['field_session']['widget']['#default_value'] = $user->get('field_session')->target_id;
     $form['field_stream']['widget']['#default_value'] = $user->get('field_stream')->target_id;
@@ -145,6 +148,13 @@ function admission_customization_form_alter(&$form, FormStateInterface $form_sta
 
   if ($form_id == 'user_register_form' && !in_array('administrator',$roles)) {
     $form['#validate'][] = 'student_registration_form_validate';
+  }
+
+  // Stop student to edit their account.
+  if ($form_id == 'user_form' && (in_array('student',$roles) || in_array('old_student',$roles))) {
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/user/'.$uid);
+    $response = new RedirectResponse($alias);
+    $response->send();
   }
 }
 

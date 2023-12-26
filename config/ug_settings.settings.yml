@@ -1,4 +1,4 @@
-merit_list: '74'
+merit_list: '69'
 admission_part1: '1'
 admission_part1_latefine: 0
 examination_part1: '1'
@@ -7,7 +7,7 @@ examination_part2: ''
 examination_part2_latefine: 0
 examination_part3: '1'
 examination_part3_latefine: 0
-admission_part_1: ''
+admission_part_1: '1'
 admission_part_1_latefine: 0
 examination_part_1: ''
 examination_part_1_latefine: 0
@@ -28,3 +28,5 @@ ad_email_body: '<p>Dear @name,</p><p>&nbsp;</p><p>Your Admission is Completed an
 registration: ''
 registration_session: '21'
 registration_latefine: 0
+clc: 0
+transfer_certificate: 0

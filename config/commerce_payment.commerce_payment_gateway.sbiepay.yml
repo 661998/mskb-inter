@@ -1,0 +1,23 @@
+uuid: 3cba5184-583f-4e86-8b6a-8c8ac65a1592
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_sbiepay
+id: sbiepay
+label: SBIePay
+weight: null
+plugin: sbiepay_payment
+configuration:
+  display_label: SBIePay
+  mode: test
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  merchant_id: '1000605'
+  merchant_key: pWhMnIEMc4q6hKdi2Fx50Ii8CKAoSIqv9ScSpwuMHM4=
+  currency: INR
+  language: EN
+  pmode: test
+conditions: {  }
+conditionOperator: AND

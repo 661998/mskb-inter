@@ -1,0 +1,9 @@
+name: Commerce SBIePay
+type: module
+description: 'Provides Commerce integration for SBIePay Payment Gateway.'
+package: Custom
+core_version_requirement: ^9.2 || ^10
+dependencies:
+  - commerce_payment
+
+version: 1.0
