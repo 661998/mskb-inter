@@ -55,7 +55,8 @@ class PaymentSBIePayForm extends BasePaymentOffsiteForm {
     ], ['absolute' => TRUE])->toString();
 
     //requestparameter 
-    $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$redirect_url."|".$cancel_url."|SBIEPAY|".$order_id."|2|NB|ONLINE|ONLINE";
+    // $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$redirect_url."|".$cancel_url."|SBIEPAY|".$order_id."|2|NB|ONLINE|ONLINE";
+    $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$redirect_url."|".$cancel_url."|SBIEPAY|1144ID7Q9ML7|2|NB|ONLINE|ONLINE";
 
     // $parameters = [
     //   'merchant_id' => $merchant_id,
@@ -97,6 +98,7 @@ class PaymentSBIePayForm extends BasePaymentOffsiteForm {
     } else {
       $redirect_url = self::CCAVENUE_LIVE_URL;
     }
+    // dd($parameters['EncryptTrans']);
 
     return $this->buildRedirectForm($form, $form_state, $redirect_url, $parameters, $redirect_method);
   }

@@ -16,7 +16,7 @@ class SBIePayEncryption {
     $algo='aes-128-cbc';
     $iv=substr($key, 0, 16);
     $cipherText = openssl_encrypt(
-      $data,
+      $plainText,
       $algo,
       $key,
       OPENSSL_RAW_DATA,
