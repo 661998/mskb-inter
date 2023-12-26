@@ -31,6 +31,7 @@ ini_set('session.gc_maxlifetime', 200000);
 ini_set('session.cookie_lifetime', 2000000);
 
 ini_set('session.cookie_samesite', 'none');
+ini_set('session.cookie_secure', 1);
 
 /**
  * If there is a local settings file, then include it
