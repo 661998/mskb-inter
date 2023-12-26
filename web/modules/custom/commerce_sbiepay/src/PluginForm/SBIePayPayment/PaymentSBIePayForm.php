@@ -68,7 +68,7 @@ class PaymentSBIePayForm extends BasePaymentOffsiteForm {
     $encrypt = new SBIePayEncryption();
     $parameters['EncryptTrans'] = $encrypt->encrypt($requestParameter, $merchant_key);
     $parameters['merchIdVal'] = $merchant_id;
-    $parameters['submit'] = 'Submit';
+    // $parameters['submit'] = 'Submit';
 
     if ($mode == 'test') {
       $redirect_url = self::CCAVENUE_TEST_URL;
