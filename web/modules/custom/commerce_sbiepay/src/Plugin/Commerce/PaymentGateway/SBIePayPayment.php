@@ -101,20 +101,21 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
     $encResponse = $request->get('encData');
     $decrypt = new SBIePayEncryption();
     $rcvdString = $decrypt->decrypt($encResponse, $this->configuration['merchant_key']);
-    $decryptValues = explode('|', $rcvdString);
-    dd($decryptValues);
-    for ($i = 0; $i < count($decryptValues); $i++) {
-      $information = explode('=', $decryptValues[$i]);
-      if (count($information) == 2) {
-        $response[$information[0]] = $information[1];
-      }
-    }
-    dd($response);
+    $response = explode('|', $rcvdString);
+    // dd($decryptValues);
+    // for ($i = 0; $i < count($decryptValues); $i++) {
+    //   $information = explode('=', $decryptValues[$i]);
+    //   if (count($information) == 2) {
+    //     $response[$information[0]] = $information[1];
+    //   }
+    // }
+    // dd($response);
 
-    switch ($response['order_status']) {
+    switch ($response[2]) {
 
-      case 'Success':
-      if($order->id() == $response['order_id'] && round($order->getTotalPrice()->getNumber(), 2) == round($response['mer_amount'], 2)){
+      case 'SUCCESS':
+      // if($order->id() == $response['order_id'] && round($order->getTotalPrice()->getNumber(), 2) == round($response['mer_amount'], 2)){
+        if(round($order->getTotalPrice()->getNumber(), 2) == round($response[3], 2)){
         $payment_storage = $this->entityTypeManager->getStorage('commerce_payment');
         $payment = $payment_storage->create([
           'state' => 'authorization',
@@ -122,14 +123,14 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
           'payment_gateway' => $this->parentEntity->id(),
           'order_id' => $order->id(),
           'test' => $this->getMode() == 'test',
-          'remote_id' => $response['tracking_id'],
-          'remote_state' => $response['order_status'],
+          'remote_id' => $response[1],
+          'remote_state' => $response[2],
           'authorized' => $this->time->getRequestTime(),
         ]);
         $payment->save();
         $this->messenger()->addMessage(t('Your payment was successful with Order Id : @orderid and Transaction Id : @transaction_id', [
           '@orderid' => $order->id(),
-          '@transaction_id' => $response['tracking_id'],
+          '@transaction_id' => $response[1],
         ]));
         
         $total_amount = intval($order->total_price->number);
@@ -142,13 +143,13 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
         }
 
         if($node_obj->field_payment_received->value == 3){
-   	      $node_obj->field_utr_ref_number_2 = $response['tracking_id'];
+   	      $node_obj->field_utr_ref_number_2 = $response[1];
           $node_obj->field_less_payment_amount = $total_amount;
           $node_obj->field_payment_received = 1;
           $node_obj->field_payment_date2 = $current_date;
           $node_obj->field_related_fee = $variation_id;
      	}else{
-          $node_obj->field_utr_ref_number = $response['tracking_id'];
+          $node_obj->field_utr_ref_number = $response[1];
           $node_obj->field_payment_amount = $total_amount;
           $node_obj->field_payment_received = 1;
           $node_obj->field_payment_date = $current_date;
