@@ -62,7 +62,7 @@ class PaymentSBIePayForm extends BasePaymentOffsiteForm {
         $d=$d ? chr(rand(65,90)) : chr(rand(48,57));
         $orderid=$orderid.$d;
     }
-    $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$success_url."|".$cancel_url."|SBIEPAY|".$orderid."|2|NB|ONLINE|ONLINE";
+    $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$success_url."|".$cancel_url."|SBIEPAY|".$order_id."|2|NB|ONLINE|ONLINE";
     // $requestParameter = $merchant_id."|DOM|IN|".$cur."|".$amt."|Other|".$success_url."|".$cancel_url."|SBIEPAY|11YK9JRA6F0P|2|NB|ONLINE|ONLINE";
 
     $encrypt = new SBIePayEncryption();
