@@ -32,7 +32,7 @@ ini_set('session.cookie_lifetime', 2000000);
 
 ini_set('session.cookie_samesite', 'none');
 ini_set('session.cookie_secure', 1);
-
+ini_set('session.cookie_path', '/; samesite=None');
 /**
  * If there is a local settings file, then include it
  */
