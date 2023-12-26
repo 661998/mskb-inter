@@ -44,7 +44,8 @@ class PaymentInstructionForm extends FormBase {
         $pid = $ucpaymentManager->getPidbyNid($nid);
         $variation_details = $ucpaymentManager->getAmountbyPid($pid, $late_fine, NULL, $gender, $caste_category);
       }elseif($node_type == 'registration'){
-        $student_type = $node->get('field_student_type')->target_id;
+        // $student_type = $node->get('field_student_type')->target_id;
+        $student_type = NULL;
         $fee_text = 'registration';
         $pid = $ucpaymentManager->getPidbyNid($nid);
         $variation_details = $ucpaymentManager->getAmountbyPid($pid, $late_fine, $board, NULL, NULL, $student_type);
