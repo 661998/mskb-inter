@@ -98,8 +98,7 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
    */
   public function onReturn(OrderInterface $order, Request $request) {
     $response = array();
-    dd($request);
-    $encResponse = $request->get('encResp');
+    $encResponse = $request->get('encData');
     $decrypt = new SBIePayEncryption();
     $rcvdString = $decrypt->decrypt($encResponse, $this->configuration['merchant_key']);
     $decryptValues = explode('&', $rcvdString);
@@ -110,6 +109,7 @@ class SBIePayPayment extends OffsitePaymentGatewayBase {
         $response[$information[0]] = $information[1];
       }
     }
+    dd($response);
 
     switch ($response['order_status']) {
 
