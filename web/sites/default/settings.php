@@ -26,3 +26,5 @@ $settings['config_sync_directory'] = '../config';
 $settings['hash_salt'] = 'ppayA4PRb80lapYp0UuYNFxR70H5BqTSqoqfGqP3zuwStBmBnL6BZRZPcqF2YFXG3ImUdotw8w';
 $settings['twig_tweak_enable_php_filter'] = TRUE;
 $settings['file_private_path'] = 'sites/default/files/private/';
+
+ini_set('session.cookie_samesite', 'none');
