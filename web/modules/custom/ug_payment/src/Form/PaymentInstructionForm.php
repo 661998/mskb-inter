@@ -26,26 +26,28 @@ class PaymentInstructionForm extends FormBase {
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
       $pid = $board = 0;
-      $variation_details = [];
+      $variation_details = $gender = $caste_category = '';
       $node = \Drupal::routeMatch()->getParameter('node');
       if ($node instanceof \Drupal\node\NodeInterface) {
         $nid = $node->id();
         $board = $node->get('field_board_university')->target_id;
+        $gender = $node->get('field_gender')->value;
+        $caste_category = $node->get('field_caste_category')->value;
       }
       $node_type = $node->bundle();
       $ugsettingManager = \Drupal::config('ug_settings.settings');
       $late_fine = $ugsettingManager->get($node_type.'_latefine');
       $ucpaymentManager = \Drupal::service('ug_payment.settings');
-
-
+      
       if($node_type == 'admission_part_1'){
         $fee_text = 'admission';
-        $pid = $ucpaymentManager->gettempPidbyNid($nid);
-        $variation_details = $ucpaymentManager->gettempAmountbyPid($pid, $nid);
+        $pid = $ucpaymentManager->getPidbyNid($nid);
+        $variation_details = $ucpaymentManager->getAmountbyPid($pid, $late_fine, NULL, $gender, $caste_category);
       }elseif($node_type == 'registration'){
+        $student_type = $node->get('field_student_type')->target_id;
         $fee_text = 'registration';
         $pid = $ucpaymentManager->getPidbyNid($nid);
-        $variation_details = $ucpaymentManager->getAmountbyPid($pid, $late_fine, $board);
+        $variation_details = $ucpaymentManager->getAmountbyPid($pid, $late_fine, $board, NULL, NULL, $student_type);
       }elseif($node_type == 'examination_part_1'){
         $fee_text = 'examination';
       }elseif($node_type == 'examination_part_2'){
@@ -63,11 +65,11 @@ class PaymentInstructionForm extends FormBase {
         '#url' => $editurl,
         '#attributes' => ['class'=> 'button button--primary js-form-submit form-submit'],
       ];
-
+      
       if (empty($pid)) {
         \Drupal::messenger()->addError('Fee amount not set. Please contact with College.');
       }else{
-
+        
         if (empty($variation_details['variation_id'])) {
           \Drupal::messenger()->addError('Fee amount not set. Please contact with College.');
         }else{
@@ -182,6 +184,7 @@ class PaymentInstructionForm extends FormBase {
 
         $responce =  new RedirectResponse('/checkout');
         $responce->send();
+        exit();
     }
 
 }

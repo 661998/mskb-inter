@@ -1,12 +1,9 @@
 uuid: 15fc48a1-b491-47df-9f13-4a520cb1567c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - commerce_product.commerce_product_type.default
-    - field.storage.commerce_product.field_caste_category
-    - field.storage.commerce_product.field_gender
-    - field.storage.commerce_product.field_select_type
     - field.storage.commerce_product.field_session
     - field.storage.commerce_product.field_stream
     - field.storage.commerce_product_variation.field_late_fine
@@ -91,68 +88,6 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_select_type:
-          id: field_select_type
-          table: commerce_product__field_select_type
-          field: field_select_type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Select type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -281,130 +216,6 @@ display:
           settings:
             link: false
           group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_caste_category:
-          id: field_caste_category
-          table: commerce_product__field_caste_category
-          field: field_caste_category
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Caste Category'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_gender:
-          id: field_gender
-          table: commerce_product__field_gender
-          field: field_gender
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Gender
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -891,9 +702,6 @@ display:
         - user
         - user.roles
       tags:
-        - 'config:field.storage.commerce_product.field_caste_category'
-        - 'config:field.storage.commerce_product.field_gender'
-        - 'config:field.storage.commerce_product.field_select_type'
         - 'config:field.storage.commerce_product.field_session'
         - 'config:field.storage.commerce_product.field_stream'
         - 'config:field.storage.commerce_product_variation.field_late_fine'
@@ -915,9 +723,6 @@ display:
         - user
         - user.roles
       tags:
-        - 'config:field.storage.commerce_product.field_caste_category'
-        - 'config:field.storage.commerce_product.field_gender'
-        - 'config:field.storage.commerce_product.field_select_type'
         - 'config:field.storage.commerce_product.field_session'
         - 'config:field.storage.commerce_product.field_stream'
         - 'config:field.storage.commerce_product_variation.field_late_fine'

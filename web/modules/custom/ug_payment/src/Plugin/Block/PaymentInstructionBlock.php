@@ -95,8 +95,11 @@ class PaymentInstructionBlock extends BlockBase {
         }elseif($node_type == 'examination_part_1'){
           $pdfurl = Url::fromUri($base_url.'/examination-part-1-pdf/'.$nid);
           $instruct_text = 'नोट: परीक्षा प्रपत्र भरकर सभी कागजातों सहित हार्ड कॉपी महाविद्यालय कार्यालय में जमा करें अन्यथा परीक्षा प्रपत्र मान्य नहीं समझा जायेगा.';
-        }else{
+        }elseif($node_type == 'examination_part_2'){
           $pdfurl = Url::fromUri($base_url.'/examination-part-2-pdf/'.$nid);
+          $instruct_text = 'नोट: परीक्षा प्रपत्र भरकर सभी कागजातों सहित हार्ड कॉपी महाविद्यालय कार्यालय में जमा करें अन्यथा परीक्षा प्रपत्र मान्य नहीं समझा जायेगा.';
+        }else{
+          $pdfurl = Url::fromUri($base_url.'/examination-part-3-pdf/'.$nid);
           $instruct_text = 'नोट: परीक्षा प्रपत्र भरकर सभी कागजातों सहित हार्ड कॉपी महाविद्यालय कार्यालय में जमा करें अन्यथा परीक्षा प्रपत्र मान्य नहीं समझा जायेगा.';
         }
         $form['print_pdf'] = [

@@ -1,4 +1,4 @@
-uuid: 3ac4a455-3b66-4193-9503-76cee0dc951c
+uuid: 750db249-70ad-47af-95dc-69cb514293c1
 langcode: en
 status: true
 dependencies:
@@ -9,9 +9,9 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: commerce_product.field_caste_category
+id: commerce_product_variation.field_caste_category
 field_name: field_caste_category
-entity_type: commerce_product
+entity_type: commerce_product_variation
 type: list_string
 settings:
   allowed_values:
@@ -19,14 +19,14 @@ settings:
       value: GEN
       label: GEN
     -
+      value: BC
+      label: BC
+    -
       value: SC
       label: SC
     -
       value: ST
       label: ST
-    -
-      value: BC
-      label: BC
     -
       value: EBC
       label: EBC

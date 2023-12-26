@@ -5,10 +5,10 @@ dependencies: {  }
 _core:
   default_config_hash: hwJoqnxqBS0fPM3s6FccZ2bWaq9LneRYLzFk-wlJWjs
 id: default
-label: Default
+label: Admission
 traits: {  }
 locked: false
-description: ''
+description: 'This is used for Admission'
 variationType: default
 variationTypes:
   - default

@@ -1,15 +1,15 @@
-uuid: 31b2fda3-82d7-4590-a358-c4c1be285230
+uuid: 99670492-450a-4bf1-b61c-717917774189
 langcode: en
 status: true
 dependencies:
   config:
-    - commerce_product.commerce_product_type.default
-    - field.storage.commerce_product.field_gender
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.field_gender
   module:
     - options
-id: commerce_product.default.field_gender
+id: commerce_product_variation.default.field_gender
 field_name: field_gender
-entity_type: commerce_product
+entity_type: commerce_product_variation
 bundle: default
 label: Gender
 description: ''

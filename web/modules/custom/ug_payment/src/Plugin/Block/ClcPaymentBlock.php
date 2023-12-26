@@ -38,7 +38,12 @@ class ClcPaymentBlock extends BlockBase {
       }elseif (($node_obj->field_payment_received->value == 1) && (($uid == $node_uid) || !in_array('student',$roles))) {
         $node_type = $node->bundle();
         global $base_url;
-        $pdfurl = Url::fromUri($base_url.'/clcreceipt-pdf/'.$nid);
+        if($node_type == 'clc'){
+          $pdfurl = Url::fromUri($base_url.'/clc-receipt-pdf/'.$nid);
+        }else{
+          $pdfurl = Url::fromUri($base_url.'/tc-receipt-pdf/'.$nid);
+        }
+
         $form['print_pdf'] = [
           '#prefix' => '<div class="text-center mx-3">',
           '#suffix' => '</div>',

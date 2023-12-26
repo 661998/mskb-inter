@@ -5,6 +5,8 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
     - core.entity_view_mode.commerce_product_variation.summary
+    - field.field.commerce_product_variation.default.field_caste_category
+    - field.field.commerce_product_variation.default.field_gender
     - field.field.commerce_product_variation.default.field_late_fine
   module:
     - commerce_price
@@ -44,6 +46,8 @@ content:
     weight: -5
     region: content
 hidden:
+  field_caste_category: true
+  field_gender: true
   field_late_fine: true
   price: true
   sku: true

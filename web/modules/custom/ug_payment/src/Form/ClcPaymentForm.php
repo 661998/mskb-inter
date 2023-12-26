@@ -30,17 +30,13 @@ class ClcPaymentForm extends FormBase {
         if ($node instanceof \Drupal\node\NodeInterface) {
           $nid = $node->id();
         }
-        $node_type = $node->bundle();
-        if($node->field_certificate_type == 'CLC'){
+
+        if($node->bundle() == 'clc'){
           $pay_type = 1;
-        }elseif($node->field_certificate_type == 'Character'){
+        }else {
           $pay_type = 2;
-        }elseif($node->field_certificate_type == 'Character'){
-          $pay_type = 3;
-        }elseif($node->field_certificate_type == 'Character'){
-          $pay_type = 4;
         }
-        $pay_type = 1;
+        // $pay_type = 1;
 
         $editurl = Url::fromRoute('entity.node.edit_form', ['node' => $nid]);
         $form['node_edit'] = [
@@ -53,6 +49,10 @@ class ClcPaymentForm extends FormBase {
         ];
         $ucpaymentManager = \Drupal::service('ug_payment.settings');
         $pid = $ucpaymentManager->getPidbyNidperclc();
+
+        if (empty($pid)) {
+          \Drupal::messenger()->addError('Fee amount not set. Please contact with College.');
+        }else{
 
           $variation_details = $ucpaymentManager->getAmountbyPidperclc($pid, $pay_type);
           if (empty($variation_details['variation_id'])) {
@@ -92,7 +92,7 @@ class ClcPaymentForm extends FormBase {
               '#suffix' => '</div>',
             );
           }
-
+        }
         return $form;
     }
 

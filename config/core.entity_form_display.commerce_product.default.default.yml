@@ -4,13 +4,8 @@ status: true
 dependencies:
   config:
     - commerce_product.commerce_product_type.default
-    - field.field.commerce_product.default.field_board_university
-    - field.field.commerce_product.default.field_caste_category
-    - field.field.commerce_product.default.field_gender
-    - field.field.commerce_product.default.field_select_type
     - field.field.commerce_product.default.field_session
     - field.field.commerce_product.default.field_stream
-    - field.field.commerce_product.default.field_student_type
   module:
     - commerce
     - path
@@ -27,30 +22,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_board_university:
-    type: options_buttons
-    weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_caste_category:
-    type: options_buttons
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_gender:
-    type: options_buttons
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_select_type:
-    type: options_select
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_session:
     type: options_select
     weight: 7
@@ -60,12 +31,6 @@ content:
   field_stream:
     type: options_buttons
     weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_student_type:
-    type: options_buttons
-    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
